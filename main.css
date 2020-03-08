@@ -1,5 +1,7 @@
 .container{
     display: grid;
+    height: 100%;
+    width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
@@ -29,8 +31,19 @@
 
 .func{
     grid-area: func;
+    
 }
 
+
+.func ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 8px;
+    margin-bottom: 8px;
+}
 .more{
     grid-area: more;
 
