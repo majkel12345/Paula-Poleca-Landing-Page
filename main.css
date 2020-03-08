@@ -1,0 +1,46 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:"nav nav nav nav"
+                        "hero hero hero hero"
+                        "main main main main"
+                        "func func func func"
+                        "more more more more"
+                        "mail mail mail mail"
+                        "onas onas onas onas";
+}
+
+
+
+.nav{
+    grid-area: nav;
+}
+
+.hero{
+    grid-area: hero;
+
+}
+
+.main{
+    grid-area: main;
+    
+}
+
+.func{
+    grid-area: func;
+}
+
+.more{
+    grid-area: more;
+
+}
+
+.mail{
+
+    grid-area: mail;
+}
+
+.onas{
+    grid-area:  onas;
+}
