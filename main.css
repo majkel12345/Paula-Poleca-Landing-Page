@@ -14,9 +14,33 @@
 
 
 .nav{
-     
+    grid-area: nav;
 }
 
 .hero{
+    grid-area: hero;
 
+}
+
+.main{
+    grid-area: main;
+    
+}
+
+.func{
+    grid-area: func;
+}
+
+.more{
+    grid-area: more;
+
+}
+
+.mail{
+
+    grid-area: mail;
+}
+
+.onas{
+    grid-area:  onas;
 }
