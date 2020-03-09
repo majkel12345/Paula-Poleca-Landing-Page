@@ -33,7 +33,10 @@
     grid-area: func;
     
 }
+.func li{
+    margin: 8px;
 
+}
 
 .func ul{
     display: flex;
