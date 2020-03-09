@@ -43,6 +43,12 @@
     flex-wrap: wrap;
     padding: 8px;
     margin-bottom: 8px;
+    color: #333132;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.fa-check-circle {
+    color: green;
 }
 .more{
     grid-area: more;
