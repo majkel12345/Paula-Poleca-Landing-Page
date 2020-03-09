@@ -31,10 +31,12 @@
 
 .func{
     grid-area: func;
+    background-color: #f7f7f7;
     
 }
 .func li{
     margin: 8px;
+    text-align: center;
 
 }
 
@@ -52,6 +54,7 @@
 
 .fa-check-circle {
     color: green;
+    font-size: 4em;
 }
 .more{
     grid-area: more;
