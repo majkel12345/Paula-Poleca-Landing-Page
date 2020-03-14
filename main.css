@@ -32,6 +32,8 @@
 .func{
     grid-area: func;
     background-color: #f7f7f7;
+    align-self: center;
+    justify-content: space-around;
     
 }
 .func li{
@@ -68,4 +70,62 @@
 
 .onas{
     grid-area:  onas;
+    background-color: #f7f7f7;
+}
+
+h2{
+    text-align: center;
+    color: #333132;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.onas__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.onas__info img {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.onas__info ul {
+    list-style: none;
+
+
+
+}
+
+.onas__info {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    color: #333132;
+    font-family: 'Fira Sans', sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+    color: #333132;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:green ;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bolder;
 }
