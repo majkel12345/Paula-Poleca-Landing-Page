@@ -1,5 +1,7 @@
 .container{
     display: grid;
+    height: 100%;
+    width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
@@ -29,8 +31,33 @@
 
 .func{
     grid-area: func;
+    background-color: #f7f7f7;
+    align-self: center;
+    justify-content: space-around;
+    
+}
+.func li{
+    margin: 8px;
+    text-align: center;
+
 }
 
+.func ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 8px;
+    margin-bottom: 8px;
+    color: #333132;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.fa-check-circle {
+    color: green;
+    font-size: 4em;
+}
 .more{
     grid-area: more;
 
@@ -43,4 +70,100 @@
 
 .onas{
     grid-area:  onas;
+    background-color: #f7f7f7;
+}
+
+h2{
+    text-align: center;
+    color: #333132;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.onas__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.onas__info img {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.onas__info ul {
+    list-style: none;
+
+
+
+}
+
+.onas__info {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    color: #333132;
+    font-family: 'Fira Sans', sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+    color: #333132;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:green ;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+    .onas__info {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .func li{
+        text-align: center;
+        margin-left: 70px;
+        margin-right: 70px;
+        padding: 8px
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .onas__info{
+        margin-left: 55px;
+        margin-right: 55px;
+    }
+}
+
+@media screen and (min-width: 1025px){
+    .onas__info{
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+}
+
+
+ @media screen and (max-width: 530px) {
+    .func li{
+        text-align: center;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 8px
+    }
 }
