@@ -1,3 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+.container > div {
+    outline: 1px solid red;
+}
+
+
 .container{
     display: grid;
     height: 100%;
@@ -14,10 +29,55 @@
 }
 
 
-
 .nav{
     grid-area: nav;
 }
+
+.nav {
+    grid-area: nav;    
+    outline: 1px dotted red;
+    background: orange;
+    overflow: auto;
+    position: fixed;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+/* menu */
+.nav ul {
+    /* display: flex;
+    flex-wrap: wrap; */
+    list-style: none;
+    display: flex;
+    flex-direction: row;    
+}
+.nav li {
+    /* list-style: none; */
+}
+.nav a {
+    text-decoration: none;
+    display: block;
+    /* width: 150px; */
+    padding: 0 15px 0 15px;
+    line-height: 32px;
+    color: white;
+    text-align: left;
+}
+.nav .icon {
+    display: none;
+}
+.nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.link-nav {
+    margin-bottom: 32px;
+    display: inline-block; 
+}
+
+
+
+
 
 .hero{
     grid-area: hero;
@@ -165,5 +225,33 @@ a:hover {
         margin-left: 15px;
         margin-right: 15px;
         padding: 8px
+    }
+}
+
+
+
+@media screen and (max-width: 635px) {
+    .container {
+        grid-template-rows: 128px 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .nav a {
+        display: none;
+    }
+    .nav a.icon {
+        float: right;
+        display: block;
+    }
+}
+@media screen and (max-width: 635px) {
+    .responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .responsive a {
+        display: block;
+    } 
+    .nav ul {
+        flex-direction: column;
     }
 }
