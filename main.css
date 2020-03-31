@@ -11,6 +11,8 @@
                         "more more more more"
                         "mail mail mail mail"
                         "onas onas onas onas";
+
+    
 }
 
 
@@ -21,6 +23,25 @@
 
 .hero{
     grid-area: hero;
+    width: 100%;
+    height: 100%;
+    background-image: url(Gda.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.hero__block{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    color: white;
+
+       
 
 }
 
