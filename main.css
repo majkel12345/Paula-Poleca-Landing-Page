@@ -24,24 +24,35 @@
 .hero{
     grid-area: hero;
     width: 100%;
-    height: 100%;
+    height: 400px;
     background-image: url(Gda.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
     
 }
 
-.hero__block{
-    width: 35%;
+.hero__opis{
+    width: 55%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 40px;
-    color: white;
+    padding-left: 20px;
+    color: white;     
 
-       
+}
+
+.hero__opis h1{
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    border-bottom: 1px solid;
+}
+
+.hero__opis p{
+    font-size: 1rem;
+    line-height: 1,5;
+    letter-spacing: 1px;
 
 }
 
