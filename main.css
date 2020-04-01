@@ -172,6 +172,8 @@ h2 {
     text-align: center;
     color: #333132;
     font-family: 'Fira Sans', sans-serif;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .onas__wrapper{
