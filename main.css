@@ -1,16 +1,33 @@
-.container {
-  display: grid;
-  height: 100%;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:"nav nav nav nav"
-                      "hero hero hero hero"
-                      "main main main main"
-                      "func func func func"
-                      "more more more more"
-                      "mail mail mail mail"
-                      "onas onas onas onas";
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+html{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+.container{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:"nav nav nav nav"
+                        "hero hero hero hero"
+                        "main main main main"
+                        "func func func func"
+                        "more more more more"
+                        "mail mail mail mail"
+                        "onas onas onas onas";
+
+    
+
 }
 
 .nav {
@@ -19,6 +36,36 @@
 
 .hero{
     grid-area: hero;
+    width: 100%;
+    height: 400px;
+    background-image: url(Gda.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    
+}
+
+.hero__opis{
+    width: 65%;
+    height: 100%;
+    padding-left: 20px;
+    color: white;     
+
+}
+
+.hero__opis h1{
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    border-bottom: 1px solid;
+}
+
+.hero__opis p{
+    font-size: 1rem;
+    line-height: 1,5;
+    letter-spacing: 1px;
 
 }
 
@@ -87,6 +134,7 @@
 }
 .more{
     grid-area: more;
+
 }
 
 .fa-check-circle {
@@ -95,6 +143,42 @@
 }
 .more {
     grid-area: more;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    padding: 25px 0;
+
+}
+
+.more__wrapper {
+    /*display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;*/
+    
+}
+
+.more__col{
+    padding: 10px 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.more__col ul{
+    list-style: none;
+
+}
+.more__col img{
+    border-radius: 50%;
+}
+
+.more__col div{
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.more__col div:hover{
+    background-color: white;
+    border-radius: 20px;
 }
 
 .mail {
@@ -256,3 +340,19 @@ a:hover {
   text-transform: uppercase;
 }
 
+
+
+@media (min-width:768px) {
+    html, body {
+        font-size: 18px;
+    }
+    .hero__opis{
+        width: 40%;
+    }
+    .more__wrapper{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+   
+}
