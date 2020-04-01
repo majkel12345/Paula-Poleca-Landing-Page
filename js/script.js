@@ -1,7 +1,7 @@
 var nav = document.querySelector("#nav");
 var menu = document.querySelector("#nav .icon");
 menu.onclick = function() {
-    var flag = nav.classList.toggle('responsive');
+    nav.classList.toggle('responsive');
 }
 
 var option = document.querySelectorAll('.nav a:not(.icon)');

@@ -43,37 +43,75 @@ html {
     width: 100%;
 }
 
-/* menu */
-.nav ul {
-    /* display: flex;
-    flex-wrap: wrap; */
-    list-style: none;
-    display: flex;
-    flex-direction: row;    
-}
-.nav li {
-    /* list-style: none; */
-}
-.nav a {
-    text-decoration: none;
-    display: block;
-    /* width: 150px; */
-    padding: 0 15px 0 15px;
-    line-height: 32px;
-    color: white;
-    text-align: left;
-}
-.nav .icon {
-    display: none;
-}
-.nav a:hover {
-    background-color: #ddd;
-    color: black;
-}
 .link-nav {
     margin-bottom: 32px;
     display: inline-block; 
+} 
+
+/* menu            */
+/* =============== */
+
+.nav .nav__link {
+    text-decoration: none;
+    padding: 0 15px 0 15px;
+    line-height: 32px;
+    color: white;
+    text-align: center;
+    width: 100px;
+    transition: all 0.4s;
 }
+.nav .nav__link.icon {
+    width: 44px;
+}
+.nav .nav__link:not(.icon):hover {
+    background-color: #ccc;
+    color: #333;
+}
+
+/* mobile first */
+.nav .nav__wrapper {
+    list-style: none;
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-end;   
+}
+.nav .nav__link:not(.icon) {
+    display: none;
+}
+
+/* desktop */
+@media screen and (min-width: 636px) {
+    .nav .nav__wrapper {
+        justify-content: flex-start;   
+    }    
+    .nav .nav__link:not(.icon) {
+        display: block;
+    }
+    .nav .nav__link.icon {
+        display: none;
+    }
+}
+
+/* mobile - responsive */
+@media screen and (max-width: 635px) {
+    .nav.responsive .nav__wrapper .nav__link {
+        display: block;
+    } 
+    .responsive .nav__wrapper {
+        flex-direction: column;
+    }
+    .nav.responsive .nav__wrapper .nav__link.icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .nav .nav__link {
+        width: 100%;
+        text-align: left; /* center */
+        display: block;
+    }
+}
+
 
 
 
@@ -133,7 +171,7 @@ html {
     background-color: #f7f7f7;
 }
 
-h2{
+h2 {
     text-align: center;
     color: #333132;
     font-family: 'Fira Sans', sans-serif;
@@ -161,7 +199,6 @@ h2{
     list-style: none;
 
 
-
 }
 
 .onas__info {
@@ -173,7 +210,6 @@ h2{
     text-align: center;
     color: #333132;
     font-family: 'Fira Sans', sans-serif;
-
 }
 
 a{
@@ -230,28 +266,3 @@ a:hover {
 
 
 
-@media screen and (max-width: 635px) {
-    .container {
-        grid-template-rows: 128px 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
-    .nav a {
-        display: none;
-    }
-    .nav a.icon {
-        float: right;
-        display: block;
-    }
-}
-@media screen and (max-width: 635px) {
-    .responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .responsive a {
-        display: block;
-    } 
-    .nav ul {
-        flex-direction: column;
-    }
-}
