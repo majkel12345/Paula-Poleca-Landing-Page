@@ -8,9 +8,6 @@ html {
     height: 100%;
     width: 100%;
 }
-.container > div {
-    outline: 1px solid red;
-}
 
 
 .container{
