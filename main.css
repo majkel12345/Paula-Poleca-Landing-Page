@@ -36,11 +36,11 @@ html{
 
 .nav {
     grid-area: nav;    
-    outline: 1px dotted red;
-    background: orange;
+    outline: 1px dotted grey;
+    background: white;
     overflow: auto;
     position: fixed;
-    font-size: 1.2em;
+    font-size: 16px;
     width: 100%;
 }
 
@@ -54,9 +54,9 @@ html{
 
 .nav .nav__link {
     text-decoration: none;
-    padding: 0 15px 0 15px;
+    padding: 0 16px 0 16px;
     line-height: 32px;
-    color: white;
+    color: black;
     text-align: center;
     width: 100px;
     transition: all 0.4s;
@@ -126,6 +126,7 @@ html{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Fira Sans', sans-serif;
 
     
 }
@@ -140,16 +141,19 @@ html{
 
 .hero__opis h1{
     text-align: center;
+    margin-top: 16px;
     font-size: 2.5rem;
     line-height: 1.6;
     letter-spacing: 2px;
     border-bottom: 1px solid;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .hero__opis p{
     font-size: 1rem;
     line-height: 1,5;
     letter-spacing: 1px;
+    font-family: 'Fira Sans', sans-serif;
 
 }
 
@@ -177,14 +181,14 @@ html{
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 8px;
+    padding: 16px;
     margin-bottom: 8px;
     color: #333132;
     font-family: 'Fira Sans', sans-serif;
 }
 
 .fa-check-circle {
-    color: green;
+    color: #013883;
     font-size: 4em;
 }
 .more{
@@ -289,7 +293,7 @@ a{
 
 a:hover {
     text-decoration: underline;
-    color:green ;
+    color: #013883;
     font-family: 'Fira Sans', sans-serif;
     font-weight: bolder;
 }
