@@ -1,15 +1,12 @@
 html{
     --primary-color: #1d1d1f; /*#333132;*/
     --primary-text-color: #1d1d1f;
-  --sekonrady-text-color: #86868b;
+    --sekonrady-text-color: #86868b;
     --menu-color: #1d1d1f;
     --secondary-color: #444444;
     --basic-color: #ffffff;
-    --primary-box-shadow: /*-webkit-box-shadow: 0px 2px 10px 0px*/ rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
-        box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
     --primary-footer-text: #515154;
     --primary-border: #d2d2d7;
-    --logo-color: #41413e;
+    --logo-color: #fff;
 }
 

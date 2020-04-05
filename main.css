@@ -9,6 +9,7 @@ html{
     width: 100%;
     height: 100%;
     font-size: 16px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
@@ -36,11 +37,12 @@ html{
 
 .nav {
     grid-area: nav;    
-    outline: 1px dotted red;
-    background: orange;
+
+    outline: 1px dotted grey;
+    background: white;
     overflow: auto;
     position: fixed;
-    font-size: 1.2em;
+    font-size: 16px;
     width: 100%;
 }
 
@@ -54,9 +56,9 @@ html{
 
 .nav .nav__link {
     text-decoration: none;
-    padding: 0 15px 0 15px;
+    padding: 0 16px 0 16px;
     line-height: 32px;
-    color: white;
+    color: black;
     text-align: center;
     width: 100px;
     transition: all 0.4s;
@@ -113,35 +115,31 @@ html{
     }
 }
 
-
-
-
-
-
 .hero{
     grid-area: hero;
     display: flex;
-    justify-content: left;
+    flex-wrap:wrap;
+    justify-content: space-around;
     width: 100%;
     height: 400px;
-    background-image: url(Gda.jpg);
+    background-image: url(/images/Gda.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
-    
 }
 
 .hero__opis{
     width: 65%;
     height: 100%;
-    padding-left: 20px;
+    padding-left: 20px; /*można usunąć - będzie po centru*/
     color: white;     
 
 }
 
 .hero__opis h1{
     text-align: center;
+    color: white; 
+    margin-top: 16px;
     font-size: 2.5rem;
     line-height: 1.6;
     letter-spacing: 2px;
@@ -152,7 +150,31 @@ html{
     font-size: 1rem;
     line-height: 1,5;
     letter-spacing: 1px;
+    color: white; 
 
+}
+
+/* logo */
+
+.logo {
+    padding: 8px;
+}
+.logo img {
+  width: 150px;
+  height: 150px;  
+  border: 1px solid white;
+  border-radius: 10px;
+  border-radius: 50%;
+  padding: 16px;
+}
+
+.logo__name {
+  font-size: 1em;
+  color: white;
+  align-self: center;
+  padding: 8px;
+  text-align: center;
+  /*text-transform: uppercase;*/
 }
 
 .main{
@@ -179,14 +201,13 @@ html{
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 8px;
+    padding: 16px;
     margin-bottom: 8px;
     color: #333132;
-    font-family: 'Fira Sans', sans-serif;
 }
 
 .fa-check-circle {
-    color: green;
+    color: #013883;
     font-size: 4em;
 }
 .more{
@@ -242,7 +263,6 @@ html{
 h2 {
     text-align: center;
     color: #333132;
-    font-family: 'Fira Sans', sans-serif;
     padding-top: 16px;
     padding-bottom: 16px;
 }
@@ -279,20 +299,17 @@ h2 {
     align-items: center;
     text-align: center;
     color: #333132;
-    font-family: 'Fira Sans', sans-serif;
 }
 
 a{
     text-decoration: none;
     color: #333132;
-    font-family: 'Fira Sans', sans-serif;
     font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
-    color:green ;
-    font-family: 'Fira Sans', sans-serif;
+    color: #013883;
     font-weight: bolder;
 }
 
@@ -375,3 +392,4 @@ a:hover {
     
    
 }
+
