@@ -9,6 +9,7 @@ html{
     width: 100%;
     height: 100%;
     font-size: 16px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
@@ -36,6 +37,7 @@ html{
 
 .nav {
     grid-area: nav;    
+
     outline: 1px dotted grey;
     background: white;
     overflow: auto;
@@ -113,48 +115,66 @@ html{
     }
 }
 
-
-
-
-
-
 .hero{
     grid-area: hero;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
     width: 100%;
     height: 400px;
-    background-image: url(Gda.jpg);
+    background-image: url(/images/Gda.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Fira Sans', sans-serif;
-
-    
 }
 
 .hero__opis{
     width: 65%;
     height: 100%;
-    padding-left: 20px;
+    padding-left: 20px; /*można usunąć - będzie po centru*/
     color: white;     
 
 }
 
 .hero__opis h1{
     text-align: center;
+    color: white; 
     margin-top: 16px;
     font-size: 2.5rem;
     line-height: 1.6;
     letter-spacing: 2px;
     border-bottom: 1px solid;
-    font-family: 'Fira Sans', sans-serif;
 }
 
 .hero__opis p{
     font-size: 1rem;
     line-height: 1,5;
     letter-spacing: 1px;
-    font-family: 'Fira Sans', sans-serif;
+    color: white; 
 
+}
+
+/* logo */
+
+.logo {
+    padding: 8px;
+}
+.logo img {
+  width: 150px;
+  height: 150px;  
+  border: 1px solid white;
+  border-radius: 10px;
+  border-radius: 50%;
+  padding: 16px;
+}
+
+.logo__name {
+  font-size: 1em;
+  color: white;
+  align-self: center;
+  padding: 8px;
+  text-align: center;
+  /*text-transform: uppercase;*/
 }
 
 .main{
@@ -184,7 +204,6 @@ html{
     padding: 16px;
     margin-bottom: 8px;
     color: #333132;
-    font-family: 'Fira Sans', sans-serif;
 }
 
 .fa-check-circle {
@@ -244,7 +263,6 @@ html{
 h2 {
     text-align: center;
     color: #333132;
-    font-family: 'Fira Sans', sans-serif;
     padding-top: 16px;
     padding-bottom: 16px;
 }
@@ -281,20 +299,17 @@ h2 {
     align-items: center;
     text-align: center;
     color: #333132;
-    font-family: 'Fira Sans', sans-serif;
 }
 
 a{
     text-decoration: none;
     color: #333132;
-    font-family: 'Fira Sans', sans-serif;
     font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
     color: #013883;
-    font-family: 'Fira Sans', sans-serif;
     font-weight: bolder;
 }
 
@@ -348,6 +363,33 @@ a:hover {
         justify-content: space-around;
         
     }
+.logo {
+   
+    text-align: center;
+    font-size: 2em;
+        
+      
+    }
+    .logo img {
+        width: 150px;
+        height: 150px;  
+        /*border: 1px solid #333132;*/
+        /*border-radius: 10px;*/
+        /*border-radius: 50%*/
+        padding: 8px;
+        margin: 20px 10px 10px 20px;
+ 
+    }
+    
+    .logo p {
+        font-size: 1em;
+        color: #fff;;
+        align-self: center;
+        padding: 8px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
    
 }
 
