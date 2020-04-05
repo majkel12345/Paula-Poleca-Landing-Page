@@ -46,10 +46,19 @@ html{
     width: 100%;
 }
 
-.link-nav {
-    margin-bottom: 32px;
-    display: inline-block; 
+.hero .link-nav {
+    margin-top: -50px;
+    display: block;
 } 
+.more .link-nav {
+    display: block;
+    margin-bottom: 30px;;
+} 
+.onas .link-nav {
+    display: block;
+    margin-bottom: 30px;;
+} 
+
 
 /* menu            */
 /* =============== */
@@ -60,7 +69,6 @@ html{
     line-height: 32px;
     color: black;
     text-align: center;
-    width: 100px;
     transition: all 0.4s;
 }
 .nav .nav__link.icon {
