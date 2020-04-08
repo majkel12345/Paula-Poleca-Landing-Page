@@ -47,7 +47,8 @@ html{
 }
 
 .hero .link-nav {
-    margin-top: -50px;
+    margin-top: 0px;
+    margin-bottom: 32px;
     display: block;
 } 
 .more .link-nav {
@@ -230,13 +231,6 @@ html{
 
 }
 
-.more__wrapper{
-    /*display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;*/
-    
-}
-
 .more__col{
     padding: 10px 50px;
     width: 100%;
@@ -417,6 +411,9 @@ button {
         display: flex;
         flex-wrap:wrap;
     }
+    .hero .link-nav {
+        margin-top: -50px;
+    }
 }
     
 .logo {
@@ -446,6 +443,5 @@ button {
         text-transform: uppercase;
     }
     
-   
-}
+
 
