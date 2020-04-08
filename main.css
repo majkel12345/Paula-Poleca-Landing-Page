@@ -130,7 +130,8 @@ html{
     justify-content: space-around;
     width: 100%;
     height: auto;
-    background-image: url(/images/Gda.jpg);
+    /* background-image: url(/images/Gda.jpg); */
+    background-image: url(./images/gda.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
