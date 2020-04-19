@@ -39,7 +39,7 @@ html{
     grid-area: nav;    
 
     outline: 1px dotted grey;
-    background: white;
+    background: var(--nav-bg-color);
     overflow: auto;
     position: fixed;
     font-size: 16px;
@@ -76,7 +76,7 @@ html{
     width: 44px;
 }
 .nav .nav__link:not(.icon):hover {
-    background-color: #ccc;
+    background-color: var(--nav-bg-color-hover);
     color: #333;
 }
 
@@ -142,13 +142,13 @@ html{
 .hero__opis{
     margin-bottom: 10px;
     height: 100%;
-    color: white;     
+    color: var(--hero-text-color);     
 
 }
 
 .hero__opis h1{
     text-align: center;
-    color: white; 
+    color: var(--hero-text-color); 
     margin-top: 16px;
     font-size: 2.5rem;
     line-height: 1.6;
@@ -161,7 +161,7 @@ html{
     font-size: 1rem;
     line-height: 1,5;
     letter-spacing: 1px;
-    color: white; 
+    color: var(--hero-text-color); 
     display: none;
 
 }
@@ -169,24 +169,27 @@ html{
 /* logo */
 
 .logo {
+    font-size: 2em;
+    text-align: center;
     padding: 8px;
-}
-.logo img {
-  width: 150px;
-  height: 150px;  
-  border: 1px solid white;
-  border-radius: 10px;
-  border-radius: 50%;
-  padding: 16px;
 }
 
 .logo__name {
-  font-size: 1em;
-  color: white;
-  align-self: center;
-  padding: 8px;
-  text-align: center;
-  /*text-transform: uppercase;*/
+    font-size: 1em;
+    color: var(--hero-text-color);
+    align-self: center;
+    padding: 8px;
+    text-align: center;
+  }
+
+.logo img {
+    width: 150px;
+    height: 150px;  
+    border: 1px solid white;
+    border-radius: 10px;
+    border-radius: 50%;
+    margin: 20px 10px 10px 20px;
+    padding: 8px;
 }
 
 .main{
@@ -196,7 +199,7 @@ html{
 
 .func{
     grid-area: func;
-    background-color: #f7f7f7;
+    background-color: var(--primary-bg-color);
     align-self: center;
     justify-content: space-around;
     
@@ -215,18 +218,18 @@ html{
     flex-wrap: wrap;
     padding: 16px;
     margin-bottom: 8px;
-    color: #333132;
+    color: var(--primary-text-color);
 }
 
 .fa-check-circle {
-    color: #013883;
+    color: var(--additional-color);
     font-size: 4em;
 }
 .more{
     grid-area: more;
     width: 100%;
     height: 100%;
-    background-color: #f7f7f7;
+    background-color: var(--primary-bg-color);
     padding: 25px 0;
 
 }
@@ -251,7 +254,7 @@ html{
 }
 
 .more__col div:hover{
-    background-color: white;
+    background-color: var(--secondary-bg-color);
     border-radius: 20px;
 }
 
@@ -262,12 +265,12 @@ html{
 
 .onas{
     grid-area:  onas;
-    background-color: #f7f7f7;
+    background-color: var(--primary-bg-color);
 }
 
 h2 {
     text-align: center;
-    color: #333132;
+    color: var(--primary-text-color);
     padding-top: 16px;
     padding-bottom: 16px;
 }
@@ -277,7 +280,6 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .onas__info img {
@@ -292,8 +294,6 @@ h2 {
 
 .onas__info ul {
     list-style: none;
-
-
 }
 
 .onas__info {
@@ -303,22 +303,24 @@ h2 {
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    color: #333132;
+    color: var(--primary-text-color);
 }
 
-a{
+a {
     text-decoration: none;
-    color: #333132;
+    color: var(--primary-text-color);
     font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #013883;
+    color: var(--additional-color);
     font-weight: bolder;
 }
 
-.mail{
+/* mail */
+
+.mail {
     grid-area: mail;
     flex-wrap: wrap;
     justify-content: center;
@@ -326,33 +328,32 @@ a:hover {
     padding: 16px 16px 16px 16px;
     margin: 16px 16px 16px 16px;
     font-family: 'Fira Sans', sans-serif;
-
 }
 
-.mail__description{
+.mail__description {
     margin-bottom: 8px;
     margin-right: auto;
 }
 
 
 button {
-    background-color: #013883;
-    color: white;
+    background-color: var(--additional-color);
+    color: var(--secondary-bg-color);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     margin-top: 16px;
     font-size: 16px;
-  }
+}
 
-  input{
+input {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-color:#013883 ;
-  }
+    border-color: var(--additional-color);
+}
 
 @media screen and (max-width: 970px) {
     .onas__info {
@@ -381,7 +382,6 @@ button {
         margin-right: -10px;
     }
 }
-
 
  @media screen and (max-width: 530px) {
     .func li{
@@ -415,33 +415,6 @@ button {
         margin-top: -50px;
     }
 }
-    
-.logo {
-   
-    text-align: center;
-    font-size: 2em;
-        
-      
-    }
-    .logo img {
-        width: 150px;
-        height: 150px;  
-        /*border: 1px solid #333132;*/
-        /*border-radius: 10px;*/
-        /*border-radius: 50%*/
-        padding: 8px;
-        margin: 20px 10px 10px 20px;
- 
-    }
-    
-    .logo p {
-        font-size: 1em;
-        color: #fff;;
-        align-self: center;
-        padding: 8px;
-        text-align: center;
-        text-transform: uppercase;
-    }
-    
+
 
 
