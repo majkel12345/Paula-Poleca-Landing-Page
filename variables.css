@@ -1,12 +1,10 @@
 html{
-    --primary-color: #1d1d1f; /*#333132;*/
-    --primary-text-color: #1d1d1f;
-    --sekonrady-text-color: #86868b;
-    --menu-color: #1d1d1f;
-    --secondary-color: #444444;
-    --basic-color: #ffffff;
-    --primary-footer-text: #515154;
-    --primary-border: #d2d2d7;
-    --logo-color: #fff;
+    --primary-bg-color: #f7f7f7;
+    --secondary-bg-color: #fff;
+    --nav-bg-color: #fff;
+    --nav-bg-color-hover: #ccc;
+    --hero-text-color: #fff;
+    --primary-text-color: #333132;
+    --additional-color: #013883;
 }
 
