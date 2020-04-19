@@ -46,10 +46,20 @@ html{
     width: 100%;
 }
 
-.link-nav {
+.hero .link-nav {
+    margin-top: 0px;
     margin-bottom: 32px;
-    display: inline-block; 
+    display: block;
 } 
+.more .link-nav {
+    display: block;
+    margin-bottom: 30px;;
+} 
+.onas .link-nav {
+    display: block;
+    margin-bottom: 30px;;
+} 
+
 
 /* menu            */
 /* =============== */
@@ -60,7 +70,6 @@ html{
     line-height: 32px;
     color: black;
     text-align: center;
-    width: 100px;
     transition: all 0.4s;
 }
 .nav .nav__link.icon {
@@ -122,7 +131,8 @@ html{
     justify-content: space-around;
     width: 100%;
     height: auto;
-    background-image: url(/images/Gda.jpg);
+    /* background-image: url(/images/Gda.jpg); */
+    background-image: url(./images/gda.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -222,13 +232,6 @@ html{
     background-color: var(--primary-bg-color);
     padding: 25px 0;
 
-}
-
-.more__wrapper{
-    /*display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;*/
-    
 }
 
 .more__col{
@@ -408,6 +411,10 @@ input {
         display: flex;
         flex-wrap:wrap;
     }
+    .hero .link-nav {
+        margin-top: -50px;
+    }
 }
+
 
 
