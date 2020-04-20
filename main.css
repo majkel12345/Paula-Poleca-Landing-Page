@@ -356,6 +356,16 @@ input {
     border-color: var(--additional-color);
 }
 
+footer{
+    grid-area: footer;
+    padding: 16px 16px 16px 16px;
+    margin: auto;
+    font-size: 10px;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: end;
+}
+    
+
 @media screen and (max-width: 970px) {
     .onas__info {
         margin-left: 100px;
