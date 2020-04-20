@@ -343,6 +343,21 @@ a:hover {
     margin-top: 16px;
 }
 
+.mail__checkbox{
+    display: flex;
+    padding: inherit;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.mail__checkbox p{
+    margin-left: 8px;
+}
+
+.mail__checkbox .checkbox{
+    align-self: center;
+
+}
 
 button {
     background-color: var(--additional-color);
