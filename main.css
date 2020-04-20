@@ -203,22 +203,21 @@ html{
     background-color: var(--primary-bg-color);
     align-self: center;
     justify-content: space-around;
+    background: white;
     
 }
 .func li{
     text-align: center;
-    margin-left: 80px;
-    margin-right: 80px;
-    padding: 16px
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
 
 }
 
 .func ul{
-    display: flex;
     list-style: none;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
     padding: 16px;
     margin-bottom: 8px;
     color: var(--primary-text-color);
@@ -290,10 +289,15 @@ h2 {
     align-items: center;
     padding: 8px;
     border-radius: 50%;
+
 }
 
-.onas__info ul {
+.onas__info ul{
     list-style: none;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .onas__info {
@@ -303,8 +307,6 @@ h2 {
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    margin: 16px 100px 16px 100px;
-
     color: var(--primary-text-color);
 }
 
@@ -335,6 +337,10 @@ a:hover {
 .mail__description {
     margin-bottom: 8px;
     margin-right: auto;
+}
+
+.mail__description h3{
+    margin-top: 16px;
 }
 
 .mail__checkbox{
@@ -405,28 +411,49 @@ footer{
     .hero .link-nav {
         margin-top: -50px;
     }
-
-    .func li{
-        text-align: center;
-        margin-right: 100px ;
-    }
-
-
-}
-
-
-@media (min-width: 800px) {
     .onas__wrapper{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        padding-left: 60px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
-
-    .onas__info{
-        margin: auto;
-    }
-    
 
 }
+
+@media (min-width: 1024px) {
+    .func ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .func li{
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+        padding-top: 16px;
+        font-size: 13px;
+    }
+    .onas__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .onas__info ul {
+        list-style: none;
+        padding-right: 0px; 
+        padding-left: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+
+
+
+    }
 
 
