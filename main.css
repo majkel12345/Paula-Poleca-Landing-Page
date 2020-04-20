@@ -18,14 +18,15 @@ html{
     height: 100%;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
                         "hero hero hero hero"
                         "main main main main"
                         "func func func func"
                         "more more more more"
                         "mail mail mail mail"
-                        "onas onas onas onas";
+                        "onas onas onas onas"
+                        "footer footer footer footer";
 
     
 }
