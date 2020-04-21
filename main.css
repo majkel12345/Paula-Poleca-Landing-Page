@@ -281,6 +281,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 16px;
 }
 
 .onas__info img {
@@ -291,10 +292,15 @@ h2 {
     align-items: center;
     padding: 8px;
     border-radius: 50%;
+    border: 2px solid /*var(--additional-color)*/#fff;
 }
 
 .onas__info ul {
     list-style: none;
+}
+
+.onas__info ul li{
+    margin: 8px;
 }
 
 .onas__info {
@@ -360,7 +366,7 @@ footer{
     grid-area: footer;
     padding: 16px 16px 16px 16px;
     margin: auto;
-    font-size: 10px;
+    font-size: 0.7em;
     font-family: 'Fira Sans', sans-serif;
     text-align: end;
 }
