@@ -203,20 +203,21 @@ html{
     background-color: var(--primary-bg-color);
     align-self: center;
     justify-content: space-around;
+    background: white;
     
 }
 .func li{
-    margin: 8px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
 
 }
 
 .func ul{
-    display: flex;
     list-style: none;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
     padding: 16px;
     margin-bottom: 8px;
     color: var(--primary-text-color);
@@ -277,9 +278,6 @@ h2 {
 }
 
 .onas__wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
     margin-bottom: 16px;
 }
@@ -292,11 +290,16 @@ h2 {
     align-items: center;
     padding: 8px;
     border-radius: 50%;
-    border: 2px solid /*var(--additional-color)*/#fff;
+
+
 }
 
-.onas__info ul {
+.onas__info ul{
     list-style: none;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .onas__info ul li{
@@ -342,6 +345,25 @@ a:hover {
     margin-right: auto;
 }
 
+.mail__description h3{
+    margin-top: 16px;
+}
+
+.mail__checkbox{
+    display: flex;
+    padding: inherit;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.mail__checkbox p{
+    margin-left: 8px;
+}
+
+.mail__checkbox .checkbox{
+    align-self: center;
+
+}
 
 button {
     background-color: var(--additional-color);
@@ -362,6 +384,7 @@ input {
     border-color: var(--additional-color);
 }
 
+
 footer{
     grid-area: footer;
     padding: 16px 16px 16px 16px;
@@ -371,43 +394,6 @@ footer{
     text-align: end;
 }
     
-
-@media screen and (max-width: 970px) {
-    .onas__info {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-
-    .func li{
-        text-align: center;
-        margin-left: 70px;
-        margin-right: 70px;
-        padding: 8px
-    }
-}
-
-@media screen and (max-width: 1024px){
-    .onas__info{
-        margin-left: 55px;
-        margin-right: 55px;
-    }
-}
-
-@media screen and (min-width: 1025px){
-    .onas__info{
-        margin-left: -10px;
-        margin-right: -10px;
-    }
-}
-
- @media screen and (max-width: 530px) {
-    .func li{
-        text-align: center;
-        margin-left: 15px;
-        margin-right: 15px;
-        padding: 8px
-    }
-}
 
 @media (min-width:768px) {
     html, body {
@@ -431,7 +417,49 @@ footer{
     .hero .link-nav {
         margin-top: -50px;
     }
+    .onas__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 60px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
 }
 
+@media (min-width: 1024px) {
+    .func ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .func li{
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+        padding-top: 16px;
+        font-size: 13px;
+    }
+    .onas__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .onas__info ul {
+        list-style: none;
+        padding-right: 0px; 
+        padding-left: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+
+
+
+    }
 
 
