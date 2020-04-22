@@ -24,8 +24,10 @@
       </ul>
     </nav>
 
-      <div class="main"></div>
+    <!-- main - for the time - empty -->
+    <div class="main"></div>
     
+    <!-- hero -->
     <div class="hero">
       <a id="glowna" class="link-nav"></a>
       <div class="logo">
@@ -40,6 +42,7 @@
       </div>     
     </div>
 
+    <!-- func -->
     <div class="func">
       <ul>
         <li> <i class="fa fa-check-circle "></i> Zaplanuj swój czas z PaulaPoleca!</li>
@@ -49,8 +52,8 @@
 
       </ul>
     </div>
-
-
+    
+    <!-- more -->
     <div class="more">
       <a id="oferta" class="link-nav"></a>
       <h2>Oferta</h2>
@@ -124,6 +127,7 @@
       </div>
     </div>
 
+    <!-- onas -->
     <div class="onas">
       <a id="onas" class="link-nav"></a>
       <h2>O nas</h2>
@@ -165,15 +169,27 @@
         </div>
       </div>
     </div>
+
+    <!-- mail -->
     <div class="mail">
       <div class="mail__description"> 
         <p>Chcesz być na bieżąco z wydarzeniami w Trójmieście. Zapisz się na premierę!</p>
         <h3>Podaj Twój adres e-mail:</h3>
-
       </div>
+      <div id="message" class="mail_message"></div>
       <div class="mail__wrapper">
-        <input type="email" id="email" name="email" required>
-        <button type="submit" id="confirm">Zapisz</button>
+
+        <form id="mail__form">
+          <input class="mail__input" type="email" id="email" name="email" required >
+          <div class="mail__checkbox">
+            <label for="checkbox">
+              <input type="checkbox" class="checkbox" id="checkbox" required>
+              Wypełniając formularz zgadzasz się na przetwarzanie Twoich danych w celu nawiązania kontaktu w sprawie udziału w kursie
+            </label>
+          </div>  
+          <button type="submit" id="confirm">Zapisz</button>          
+        </form>
+
       </div>
       <div class="mail__checkbox">
         <input type="checkbox" class="checkbox" id="checkbox" required> 
@@ -184,6 +200,13 @@
         <p>Wszelkie prawa zastrzeżone przez paulapoleca.pl 2020  </p>
       </footer> 
     </div>
+
+      <!-- footer -->
+      <footer>
+        <p>Wszelkie prawa zastrzeżone przez paulapoleca.pl 2020  </p>
+      </footer> 
+      
+  </div> <!-- end - container -->
  
 
   <script src="js/script.js"></script>
