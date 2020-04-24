@@ -253,12 +253,14 @@ html{
 .more__col div{
     margin-top: 20px;
     padding: 10px;
+    
 }
 
 .more__col div:hover{
     background-color: var(--secondary-bg-color);
     border-radius: 20px;
 }
+
 
 .mail{
 
@@ -455,6 +457,10 @@ footer{
         padding-left: 60px;
         margin-left: 20px;
         margin-right: 20px;
+    }
+
+    .more__col div{
+        height: 265px;
     }
 
 }
