@@ -279,6 +279,7 @@ h2 {
 
 .onas__wrapper{
     align-items: center;
+    margin-bottom: 16px;
 }
 
 .onas__info img {
@@ -289,7 +290,6 @@ h2 {
     align-items: center;
     padding: 8px;
     border-radius: 50%;
-
 }
 
 .onas__info ul{
@@ -298,6 +298,10 @@ h2 {
     padding-left: 40px;
     margin-right: 20px;
     margin-left: 20px;
+}
+
+.onas__info ul li{
+    margin: 8px;
 }
 
 .onas__info {
@@ -373,6 +377,25 @@ a:hover {
 
 
 
+.mail__description h3{
+    margin-top: 16px;
+}
+
+.mail__checkbox{
+    display: flex;
+    padding: inherit;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.mail__checkbox p{
+    margin-left: 8px;
+}
+
+.mail__checkbox .checkbox{
+    align-self: center;
+
+}
 
 button {
     background-color: var(--additional-color);
@@ -385,11 +408,19 @@ button {
     font-size: 16px;
 }
 
+input {
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-color: var(--additional-color);
+}
+
 footer{
     grid-area: footer;
     padding: 16px 16px 16px 16px;
     margin: auto;
-    font-size: 10px;
+    font-size: 0.7em;
     font-family: 'Fira Sans', sans-serif;
     text-align: end;
 }
