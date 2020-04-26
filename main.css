@@ -164,6 +164,7 @@ html{
     letter-spacing: 1px;
     color: var(--hero-text-color); 
     display: none;
+    padding-top: 16px;
 
 }
 
@@ -227,6 +228,7 @@ html{
     color: var(--additional-color);
     font-size: 4em;
 }
+
 .more{
     grid-area: more;
     width: 100%;
@@ -235,23 +237,26 @@ html{
     padding: 25px 0;
 
 }
-
+.more p{
+    margin-top: 8px;
+}
 .more__col{
-    padding: 10px 50px;
+    padding: 10px;
     width: 100%;
     text-align: center;
 }
 
 .more__col ul{
     list-style: none;
-
 }
+
 .more__col img{
     border-radius: 50%;
+    margin-bottom:8px;
 }
 
 .more__col div{
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 10px;
     
 }
@@ -259,6 +264,9 @@ html{
 .more__col div:hover{
     background-color: var(--secondary-bg-color);
     border-radius: 20px;
+}
+.more_col p{
+    margin: 16px;
 }
 
 
@@ -481,7 +489,7 @@ footer{
         margin-right: 0px;
         padding: 0px;
         padding-top: 16px;
-        font-size: 13px;
+        font-size: 16px;
     }
     .onas__wrapper{
         display: flex;
