@@ -316,6 +316,11 @@ h2 {
     color: var(--primary-text-color);
 }
 
+.onas__info h3{
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--additional-color);
+}
+
 a {
     text-decoration: none;
     color: var(--primary-text-color);
@@ -454,7 +459,7 @@ footer{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding-left: 60px;
+        padding-left: 0px;
         margin-left: 20px;
         margin-right: 20px;
     }
