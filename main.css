@@ -454,7 +454,7 @@ footer{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding-left: 60px;
+        padding-left: 0px;
         margin-left: 20px;
         margin-right: 20px;
     }
