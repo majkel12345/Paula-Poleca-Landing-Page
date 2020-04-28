@@ -36,16 +36,6 @@ html{
     grid-area: nav;
 }
 
-.nav {
-    grid-area: nav;    
-
-    outline: 1px dotted grey;
-    background: var(--nav-bg-color);
-    overflow: auto;
-    position: fixed;
-    font-size: 16px;
-    width: 100%;
-}
 
 .hero .link-nav {
     margin-top: 0px;
@@ -65,19 +55,35 @@ html{
 /* menu            */
 /* =============== */
 
+.nav {
+    grid-area: nav;    
+
+    outline: 1px dotted red;
+    background: var(--nav-bg-color);
+    overflow: auto;
+    position: fixed;
+    font-size: 16px;
+    width: 100%;
+}
+
+.nav__menu .active {
+    background-color: lightgreen;
+}
+
 .nav .nav__link {
     text-decoration: none;
     padding: 0 16px 0 16px;
     line-height: 32px;
     color: black;
     text-align: center;
-    transition: all 0.4s;
+    transition: all 0.6s;
 }
 .nav .nav__link.icon {
     width: 44px;
 }
 .nav .nav__link:not(.icon):hover {
-    background-color: var(--nav-bg-color-hover);
+    /* background-color: var(--nav-bg-color-hover); */
+    background-color: lightgreen;
     color: #333;
 }
 
@@ -95,7 +101,7 @@ html{
 /* desktop */
 @media screen and (min-width: 636px) {
     .nav .nav__wrapper {
-        justify-content: flex-start;   
+        justify-content: flex-end;   
     }    
     .nav .nav__link:not(.icon) {
         display: block;
