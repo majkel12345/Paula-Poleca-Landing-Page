@@ -46,3 +46,24 @@ form.onsubmit = function(e) {
     }
     e.preventDefault();
 };
+
+const cookieNoticeBtn = document.querySelector('#cookie-accept');
+const cookieNoticeBanner = document.querySelector('.cookie__notice');
+
+cookieNoticeBtn.addEventListener('click', () => {
+    const cookieDataResult = sessionStorage.getItem('cookie');
+
+    if (cookieNoticeBanner.style.display === 'flex'){
+        cookieNoticeBanner.style.display = 'none'
+        const coockieData = sessionStorage.setItem('cookie', 'ok')
+        console.log(cookieDataResult)
+    } 
+    if (cookieDataResult === 'ok'){
+        cookieNoticeBanner.style.display = 'none'
+    }
+    
+    else {cookieNoticeBanner.style.display ='flex'}
+
+})
+
+
