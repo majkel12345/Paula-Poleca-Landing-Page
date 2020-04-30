@@ -49,19 +49,15 @@ form.onsubmit = function(e) {
 
 const cookieNoticeBtn = document.querySelector('#cookie-accept');
 const cookieNoticeBanner = document.querySelector('.cookie__notice');
-const cookieDataResult = sessionStorage.getItem('cookie');
+const cookieDataResult = localStorage.getItem('cookie');
 
 cookieNoticeBtn.addEventListener('click', () => {
-
-    if (cookieNoticeBanner.style.display === 'flex'){
         cookieNoticeBanner.style.display = 'none'
-        const coockieData = sessionStorage.setItem('cookie', 'ok')
-    }   else {cookieNoticeBanner.style.display ='flex'}
-
+        const coockieData = localStorage.setItem('cookie', 'ok')
 });
 
 (function(){ 
-    const cookieDataResult = sessionStorage.getItem('cookie');
+    const cookieDataResult = localStorage.getItem('cookie');
 
     if (cookieDataResult === 'ok'){
         cookieNoticeBanner.style.display = 'none'
