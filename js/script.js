@@ -49,21 +49,21 @@ form.onsubmit = function(e) {
 
 const cookieNoticeBtn = document.querySelector('#cookie-accept');
 const cookieNoticeBanner = document.querySelector('.cookie__notice');
+const cookieDataResult = sessionStorage.getItem('cookie');
 
 cookieNoticeBtn.addEventListener('click', () => {
-    const cookieDataResult = sessionStorage.getItem('cookie');
 
     if (cookieNoticeBanner.style.display === 'flex'){
         cookieNoticeBanner.style.display = 'none'
         const coockieData = sessionStorage.setItem('cookie', 'ok')
-        console.log(cookieDataResult)
-    } 
+    }   else {cookieNoticeBanner.style.display ='flex'}
+
+});
+
+(function(){ 
+    const cookieDataResult = sessionStorage.getItem('cookie');
+
     if (cookieDataResult === 'ok'){
         cookieNoticeBanner.style.display = 'none'
-    }
     
-    else {cookieNoticeBanner.style.display ='flex'}
-
-})
-
-
+}})();
