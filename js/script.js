@@ -46,3 +46,20 @@ form.onsubmit = function(e) {
     }
     e.preventDefault();
 };
+
+const cookieNoticeBtn = document.querySelector('#cookie-accept');
+const cookieNoticeBanner = document.querySelector('.cookie__notice');
+const cookieDataResult = localStorage.getItem('cookie');
+
+cookieNoticeBtn.addEventListener('click', () => {
+        cookieNoticeBanner.style.display = 'none'
+        const coockieData = localStorage.setItem('cookie', 'ok')
+});
+
+(function(){ 
+    const cookieDataResult = localStorage.getItem('cookie');
+
+    if (cookieDataResult === 'ok'){
+        cookieNoticeBanner.style.display = 'none'
+    
+}})();

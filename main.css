@@ -431,6 +431,39 @@ input {
     border-color: var(--additional-color);
 }
 
+.cookie__notice{
+    padding: 8px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--additional-color);
+    color: #fff;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    display: flex;
+}
+
+.cookie__notice a{
+    color: #fff;
+    font-size: 12px;
+
+}
+
+.cookie-notice__btn{
+    background: #fff;
+    color: var(--additional-color);
+    margin-left: 15px;
+    padding: 8px 8px 8px 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
 footer{
     grid-area: footer;
     padding: 16px 16px 16px 16px;
@@ -475,6 +508,7 @@ footer{
     .more__col div{
         height: 265px;
     }
+    
 
 }
 
