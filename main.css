@@ -10,6 +10,7 @@ html{
     height: 100%;
     font-size: 16px;
     font-family: 'Fira Sans', sans-serif;
+    background-color: var(--primary-bg-color);
 }
 
 
@@ -18,9 +19,10 @@ html{
     height: 100%;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
                         "hero hero hero hero"
+                        "new new new new"
                         "main main main main"
                         "func func func func"
                         "more more more more"
@@ -128,8 +130,8 @@ html{
 .hero{
     grid-area: hero;
     /*display: flex;
-    flex-wrap:wrap;*/
-    justify-content: space-around;
+    flex-wrap:wrap;
+    justify-content: space-around;*/
     width: 100%;
     height: auto;
     /* background-image: url(/images/Gda.jpg); */
@@ -147,7 +149,7 @@ html{
 
 }
 
-.hero__opis h1{
+/*.hero__opis h1{
     text-align: center;
     color: var(--hero-text-color); 
     margin-top: 16px;
@@ -166,7 +168,33 @@ html{
     display: none;
     padding-top: 16px;
 
+}*/
+
+/*nowa sekcja*/
+
+.new {
+    grid-area: new;
+    margin: 16px;
+    padding: 16px;
+    background-color: var(--primary-bg-color);
 }
+
+.new h2 { 
+    font-size: 2.5rem;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    border-bottom: 1px solid;
+}
+
+.new p{
+    font-size: 1rem;
+    line-height: 1,5;
+    letter-spacing: 1px;
+    padding-top: 16px;
+
+}
+
+
 
 /* logo */
 
@@ -174,6 +202,7 @@ html{
     font-size: 2em;
     text-align: center;
     padding: 8px;
+    align-self: center;
 }
 
 .logo__name {
@@ -183,6 +212,14 @@ html{
     padding: 8px;
     text-align: center;
   }
+
+.logo h1{
+    font-size: 1em;
+    color: var(--hero-text-color);
+    align-self: center;
+    padding: 8px;
+    text-align: center;
+}
 
 .logo img {
     width: 150px;
@@ -348,8 +385,9 @@ a:hover {
     justify-content: center;
     text-align: center;
     padding: 16px 16px 16px 16px;
-    margin: 16px 16px 16px 16px;
+    margin: 32px 16px 16px 16px;
     font-family: 'Fira Sans', sans-serif;
+    border: 4px solid #fff;
 }
 .mail__description {
     margin-bottom: 8px;
@@ -475,24 +513,48 @@ footer{
     
 
 @media (min-width:768px) {
+    .container{
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:"nav nav nav nav"
+                            "hero hero hero hero"
+                            "new new mail mail"
+                            "main main main main"
+                            "func func func func"
+                            "more more more more"
+                            "onas onas onas onas"
+                            "footer footer footer footer";
+    
+        
+    }
     html, body {
         font-size: 18px;
     }
-    .hero__opis{
-        width: 40%;
+
+    .hero {
+        height: 550px;
+        display: flex;
+        flex-wrap:wrap;
     }
+
+    .logo {
+        width: 400px;
+        height: auto;
+    }
+    
+    .new {
+        display: block;
+    }
+
     .more__wrapper{
         display: flex;
         justify-content: space-around;
         
     }
-    .hero__opis p{
-        display: block;
-    }
-    .hero {
-        display: flex;
-        flex-wrap:wrap;
-    }
+    
     .hero .link-nav {
         margin-top: -50px;
     }
