@@ -22,25 +22,18 @@ const setActive = function(item) {
 // active link page
 const mainActive = function() {
     let page = document.location.href;
-    console.warn(page)
     let links = document.querySelectorAll('.nav a:not(.icon)');
     let chosenLink = false;
     links.forEach(item => {
-        
-        console.log(item.href);
+
         item.classList.remove('active');
         if(item.href === page) {
-            console.log(page);
             chosenLink = true;
             setActive(item);
         };
     });
-    // if(!chosenLink) {
-    //     document.getElementById('glowna').classList.add('active');
-    // }
     if(page.indexOf('#') === -1) {
-        console.log('not #');
-        document.getElementById('glowna').classList.add('active');
+        document.getElementById('mainPage').classList.add('active');
     }
 };
 

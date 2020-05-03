@@ -65,9 +65,12 @@ html{
     font-size: 16px;
     width: 100%;
 }
-
+.nav__wrapper {
+    margin-top: 42px;
+}
 .nav__menu .active {
     background-color: lightgreen;
+    background-color: var(--nav-bg-color-active);
 }
 
 .nav .nav__link {
@@ -80,10 +83,17 @@ html{
 }
 .nav .nav__link.icon {
     width: 44px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 30px;
+    padding: 5px;
 }
 .nav .nav__link:not(.icon):hover {
-    /* background-color: var(--nav-bg-color-hover); */
-    background-color: lightgreen;
+    background-color: var(--nav-bg-color-hover);
+    /* background-color: lightgreen; */
     color: #333;
 }
 
@@ -101,7 +111,8 @@ html{
 /* desktop */
 @media screen and (min-width: 636px) {
     .nav .nav__wrapper {
-        justify-content: flex-end;   
+        justify-content: flex-end; 
+        margin-top: 0;  
     }    
     .nav .nav__link:not(.icon) {
         display: block;
