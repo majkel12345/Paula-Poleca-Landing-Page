@@ -179,12 +179,6 @@ html{
     background-color: var(--primary-bg-color);
 }
 
-.new h2 { 
-    font-size: 2.5rem;
-    line-height: 1.6;
-    letter-spacing: 2px;
-    border-bottom: 1px solid;
-}
 
 .new p{
     font-size: 1rem;
