@@ -1,6 +1,6 @@
-var nav = document.querySelector("#nav");
-var menu = document.querySelector("#nav .icon");
-var options = document.querySelectorAll('.nav a:not(.icon)');
+const nav = document.querySelector("#nav");
+const humberger = document.querySelector("#nav .icon");
+const links = document.querySelectorAll('.nav a:not(.icon)');
 
 // active link 
 const setActive = function(item) {
@@ -22,36 +22,32 @@ const setActive = function(item) {
 // active link page
 const mainActive = function() {
     let page = document.location.href;
-    let links = document.querySelectorAll('.nav a:not(.icon)');
-    let chosenLink = false;
     links.forEach(item => {
-
         item.classList.remove('active');
         if(item.href === page) {
-            chosenLink = true;
             setActive(item);
         };
     });
     if(page.indexOf('#') === -1) {
-        document.getElementById('mainPage').classList.add('active');
+        document.getElementById('glowna').classList.add('active');
     }
 };
 
 // run active link page
 mainActive();
 
-// toggle responsive menu
-menu.onclick = function() {
+// toggle responsive humberger
+humberger.onclick = function() {
     nav.classList.toggle('responsive');
 }
 
-// menu responsive & set active link
-options.forEach(function(item) {
+// nav responsive & set active link
+links.forEach(function(item) {
     item.onclick = function() {
         if(nav.classList.contains('responsive')) {
             nav.classList.toggle('responsive');
         }
-        options.forEach(it => {
+        links.forEach(it => {
             it.classList.remove('active');
         });
         setActive(item)
@@ -95,19 +91,4 @@ form.onsubmit = function(e) {
     e.preventDefault();
 };
 
-const cookieNoticeBtn = document.querySelector('#cookie-accept');
-const cookieNoticeBanner = document.querySelector('.cookie__notice');
-const cookieDataResult = localStorage.getItem('cookie');
 
-cookieNoticeBtn.addEventListener('click', () => {
-        cookieNoticeBanner.style.display = 'none'
-        const coockieData = localStorage.setItem('cookie', 'ok')
-});
-
-(function(){ 
-    const cookieDataResult = localStorage.getItem('cookie');
-
-    if (cookieDataResult === 'ok'){
-        cookieNoticeBanner.style.display = 'none'
-    
-}})();

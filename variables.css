@@ -3,6 +3,7 @@ html{
     --secondary-bg-color: #fff;
     --nav-bg-color: #fff;
     --nav-bg-color-hover: #ccc;
+    --nav-bg-color-active: #bbb;
     --hero-text-color: #fff;
     --primary-text-color: #333132;
     --additional-color: #013883;
