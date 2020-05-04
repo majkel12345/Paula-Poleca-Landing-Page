@@ -29,7 +29,6 @@ html{
                         "mail mail mail mail"
                         "onas onas onas onas"
                         "footer footer footer footer";
-
     
 }
 
@@ -46,11 +45,11 @@ html{
 } 
 .more .link-nav {
     display: block;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
 } 
 .onas .link-nav {
     display: block;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
 } 
 
 
@@ -60,7 +59,6 @@ html{
 .nav {
     grid-area: nav;    
 
-    outline: 1px dotted red;
     background: var(--nav-bg-color);
     overflow: auto;
     position: fixed;
