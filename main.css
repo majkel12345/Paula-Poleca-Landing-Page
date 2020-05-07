@@ -98,6 +98,7 @@ html{
     left: 0;
     font-size: 20px;
     background: #fff;
+    color: #555;
 }
 
 .nav .nav__link:not(.icon):hover {
@@ -106,7 +107,7 @@ html{
 }
 .nav .nav__link.logo:hover {
     background-color: white;
-    color: gray;
+    color: #000;
 }
 
 /* mobile first */
@@ -121,6 +122,7 @@ html{
 }
 .nav .nav__link.logo:hover {
     font-size: 24px;
+    color: #000;
 }
 
 /* desktop */
