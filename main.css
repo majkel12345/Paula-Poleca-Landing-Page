@@ -29,7 +29,6 @@ html{
                         "mail mail mail mail"
                         "onas onas onas onas"
                         "footer footer footer footer";
-
     
 }
 
@@ -38,16 +37,6 @@ html{
     grid-area: nav;
 }
 
-.nav {
-    grid-area: nav;    
-
-    outline: 1px dotted grey;
-    background: var(--nav-bg-color);
-    overflow: auto;
-    position: fixed;
-    font-size: 16px;
-    width: 100%;
-}
 
 .hero .link-nav {
     margin-top: 0px;
@@ -56,16 +45,33 @@ html{
 } 
 .more .link-nav {
     display: block;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
 } 
 .onas .link-nav {
     display: block;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
 } 
 
 
 /* menu            */
 /* =============== */
+
+.nav {
+    grid-area: nav;    
+
+    background: var(--nav-bg-color);
+    overflow: auto;
+    position: fixed;
+    font-size: 16px;
+    width: 100%;
+}
+.nav__wrapper {
+    margin-top: 42px;
+}
+.nav__menu .active {
+    background-color: lightgreen;
+    background-color: var(--nav-bg-color-active);
+}
 
 .nav .nav__link {
     text-decoration: none;
@@ -73,14 +79,35 @@ html{
     line-height: 32px;
     color: black;
     text-align: center;
-    transition: all 0.4s;
+    transition: all 0.6s;
 }
 .nav .nav__link.icon {
     width: 44px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 30px;
+    padding: 5px;
 }
+.nav .nav__link.logo {
+    width: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    background: #fff;
+    color: #555;
+}
+
 .nav .nav__link:not(.icon):hover {
     background-color: var(--nav-bg-color-hover);
     color: #333;
+}
+.nav .nav__link.logo:hover {
+    background-color: white;
+    color: #000;
 }
 
 /* mobile first */
@@ -90,14 +117,19 @@ html{
     flex-direction: row; 
     justify-content: flex-end;   
 }
-.nav .nav__link:not(.icon) {
+.nav .nav__link:not(.icon, .logo) {
     display: none;
+}
+.nav .nav__link.logo:hover {
+    font-size: 24px;
+    color: #000;
 }
 
 /* desktop */
 @media screen and (min-width: 636px) {
     .nav .nav__wrapper {
-        justify-content: flex-start;   
+        justify-content: flex-end; 
+        margin-top: 0;  
     }    
     .nav .nav__link:not(.icon) {
         display: block;
@@ -109,6 +141,28 @@ html{
 
 /* mobile - responsive */
 @media screen and (max-width: 635px) {
+    .nav .nav__link {
+        width: 100%;
+        text-align: right;     
+        display: none; 
+    } 
+    .nav .nav__link {
+        border-bottom: 1px dotted gray;
+    }
+
+    .nav .nav__link.icon {
+        display: block;
+        border-bottom: none; 
+    } 
+    .nav .nav__link.logo {
+        display: block; 
+        padding-top: 5px;
+        font-size: 30px;
+        border-bottom: none;
+    } 
+    .nav .nav__link.logo:hover {
+        font-size: 34px;
+    }
     .nav.responsive .nav__wrapper .nav__link {
         display: block;
     } 
@@ -119,11 +173,6 @@ html{
         position: absolute;
         top: 0;
         right: 0;
-    }
-    .nav .nav__link {
-        width: 100%;
-        text-align: left; /* center */
-        display: block;
     }
 }
 
@@ -281,6 +330,7 @@ html{
 }
 .more p{
     margin-top: 8px;
+    padding-bottom: 8px;
 }
 .more__col{
     padding: 10px;
@@ -295,20 +345,23 @@ html{
 .more__col img{
     border-radius: 50%;
     margin-bottom:8px;
+    margin-top: 8px;
 }
 
-.more__col div{
-    margin-top: 30px;
-    padding: 10px;
+.more__col__item{
+    margin: 24px;
+    padding: 8px 8px 8px 8px;
     
 }
 
 .more__col div:hover{
     background-color: var(--secondary-bg-color);
     border-radius: 20px;
+    height: 340px;
 }
-.more_col p{
-    margin: 16px;
+.more_col__item p{
+    margin: 8px 0px 8px 0px;
+    padding: 8px 0px 8px 0px;
 }
 
 
@@ -572,8 +625,8 @@ footer{
         margin-right: 20px;
     }
 
-    .more__col div{
-        height: 265px;
+   .more__col__item{
+        height: 320px;
     }
     
 

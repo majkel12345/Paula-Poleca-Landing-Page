@@ -1,71 +1,103 @@
 var nav = document.querySelector("#nav");
 var menu = document.querySelector("#nav .icon");
-var options = document.querySelectorAll('.nav a:not(.icon)');
-
-// active link 
-const setActive = function(item) {
-    let active = item.href.slice(item.href.indexOf('#')+1);
-    switch(active) {
-        case 'glowna': 
-            item.classList.add('active');
-            break;
-        case 'oferta': 
-            item.classList.add('active');
-            break;
-        case 'onas': 
-            item.classList.add('active');
-            break;
-        default:
-    }
-}
-
-// active link page
-const mainActive = function() {
-    let page = document.location.href;
-    let links = document.querySelectorAll('.nav a:not(.icon)');
-    let chosenLink = false;
-    links.forEach(item => {
-
-        item.classList.remove('active');
-        if(item.href === page) {
-            chosenLink = true;
-            setActive(item);
-        };
-    });
-    if(page.indexOf('#') === -1) {
-        document.getElementById('mainPage').classList.add('active');
-    }
-};
-
-// run active link page
-mainActive();
-
-// toggle responsive menu
 menu.onclick = function() {
     nav.classList.toggle('responsive');
 }
 
-// menu responsive & set active link
-options.forEach(function(item) {
+const setActive = function(item) {
+
+    console.log(item)
+    // console.log(item.href);
+    // console.log(item.href.slice(item.href.indexOf('#')+1));
+    let active = item.href.slice(item.href.indexOf('#')+1);
+    switch(active) {
+        case 'glowna': 
+            console.log(active);
+            item.classList.add('active');
+            break;
+        case 'oferta': 
+            console.log(active);
+            item.classList.add('active');
+            break;
+        case 'onas': 
+            console.log(active);
+            item.classList.add('active');
+            break;
+        default:
+            console.log('default');
+    }
+}
+
+const mainActive = function() {
+    let page = document.location.href;
+    console.log(page);
+    let links = document.querySelectorAll('.nav a:not(.icon)');
+    links.forEach(item => {
+        console.log(item.href);
+        if(item.href === page) {
+            console.log(item);
+            setActive(item);
+        } 
+    })
+};
+
+mainActive();
+
+
+var option = document.querySelectorAll('.nav a:not(.icon)');
+option.forEach(function(item){
+ 
     item.onclick = function() {
         if(nav.classList.contains('responsive')) {
             nav.classList.toggle('responsive');
+
         }
-        options.forEach(it => {
-            it.classList.remove('active');
+
+        option.forEach(it => {
+                // console.log(it);
+                it.classList.remove('active');
         });
+
+        // console.log(this);
+        // this.classList.remove('active');  
+
         setActive(item)
+
     }
 });
 
-const linkLogo = document.querySelector('.nav__link.logo');
-linkLogo.addEventListener('click', function() {
-    console.log('home');
-    setActive(document.getElementById('mainPage'));
+// var navLink = document.querySelectorAll('.nav .nav__link');
+// navLink.forEach(function(item){
+//     item.classList.remove('active'); 
+//     item.addEventListener('click', function() {
 
-});
 
-// FORM
+//         navLink.forEach(it => {
+//             // console.log(it);
+//             if(it.className === 'nav__link') {
+//                 console.log(it);
+//                 it.classList.remove('active');
+//             }
+//         });
+
+//         let active = item.href.slice(item.href.indexOf('#')+1);
+
+//         switch(active) {
+//             case 'onas': 
+//                 console.log(active);
+//                 item.classList.add('active');
+//                 break;
+//             case 'glowna': 
+//                 console.log(active);
+//                 item.classList.add('active');
+//                 break;
+//             default:
+//                 console.log('default');
+//         }
+//     })
+// });
+
+
 var form = document.querySelector('#mail__form');
 form.onsubmit = function(e) {
     var email = this.email,
@@ -100,20 +132,3 @@ form.onsubmit = function(e) {
     }
     e.preventDefault();
 };
-
-const cookieNoticeBtn = document.querySelector('#cookie-accept');
-const cookieNoticeBanner = document.querySelector('.cookie__notice');
-const cookieDataResult = localStorage.getItem('cookie');
-
-cookieNoticeBtn.addEventListener('click', () => {
-        cookieNoticeBanner.style.display = 'none'
-        const coockieData = localStorage.setItem('cookie', 'ok')
-});
-
-(function(){ 
-    const cookieDataResult = localStorage.getItem('cookie');
-
-    if (cookieDataResult === 'ok'){
-        cookieNoticeBanner.style.display = 'none'
-    
-}})();
