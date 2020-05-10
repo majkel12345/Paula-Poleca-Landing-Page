@@ -58,6 +58,12 @@ options.forEach(function(item) {
     }
 });
 
+const linkLogo = document.querySelector('.nav__link.logo');
+linkLogo.addEventListener('click', function() {
+    console.log('home');
+    setActive(document.getElementById('mainPage'));
+
+});
 
 // FORM
 var form = document.querySelector('#mail__form');
