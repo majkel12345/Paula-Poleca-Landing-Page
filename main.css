@@ -19,7 +19,7 @@ html{
     height: 100%;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
                         "hero hero hero hero"
                         "new new new new"
@@ -28,6 +28,7 @@ html{
                         "more more more more"
                         "mail mail mail mail"
                         "onas onas onas onas"
+                        "slider slider slider slider"
                         "footer footer footer footer";
     
 }
@@ -320,6 +321,7 @@ html{
     font-size: 4em;
 }
 
+
 .more{
     grid-area: more;
     width: 100%;
@@ -557,6 +559,42 @@ input {
     cursor: pointer;
 }
 
+.slider {
+    grid-area: slider;    
+    display: flex;
+    align-items: center;
+
+}
+
+
+.slider_items{
+    display: flex;
+
+}
+
+.slider_img__item{
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+    
+}
+
+
+
+.fa-arrow-alt-circle-left{
+    color: var(--additional-color);
+    font-size: 3em;
+    position: absolute;
+    margin-left: 16px;
+}
+
+.fa-arrow-alt-circle-right{
+    color: var(--additional-color);
+    font-size: 3em;
+    margin-right: 16px;
+
+}
+
 
 
 
@@ -576,7 +614,7 @@ footer{
         height: 100%;
         width: 100%;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:"nav nav nav nav"
                             "hero hero hero hero"
                             "new new mail mail"
@@ -584,6 +622,7 @@ footer{
                             "func func func func"
                             "more more more more"
                             "onas onas onas onas"
+                            "slider slider slider slider"
                             "footer footer footer footer";
     
         
@@ -643,7 +682,7 @@ footer{
         margin-right: 0px;
         padding: 0px;
         padding-top: 16px;
-        font-size: 16px;
+        font-size: 14px;
     }
     .onas__wrapper{
         display: flex;
