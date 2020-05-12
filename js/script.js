@@ -142,6 +142,7 @@ cookieNoticeBtn.addEventListener('click', () => {
 
 // Slider logic
 
+
 const sliderBox = document.querySelector(".slider_items")
 const sliderImg = document.getElementsByClassName('slider_img__item');
 
@@ -151,20 +152,28 @@ const sliderBtnRight = document.querySelector('.fa-arrow-alt-circle-right');
 const sliderBtnLeft = document.querySelector('.fa-arrow-alt-circle-left');
 
 
-(function hiddenImagesinSLider () {
-    for( i = 1 ; i < sliderImg.length; i++) {
-        sliderImg[i].classList.add("hidden")
-    }
-})();
-
-
-
-
-// sliderBtnRight.addEventListener('click', () => {
-//     forEach( i = 1 ; i < sliderImg.length; i++) {
-//         sliderImg[i].classList.remove('hidden')
-//         console.log(sliderItem)
+// (function hiddenImagesinSLider () {
+//     for( i = 1 ; i < sliderImg.length; i++) {
+//         sliderImg[i].classList.add("hidden")
 //     }
+// })();
 
- 
-// });
+
+let slideIndex = 0;
+
+(function carousel() {
+  let i;
+
+  const sliderImg = document.getElementsByClassName('slider_img__item');
+
+  for (i = 0; i < sliderImg.length; i++) {
+    sliderImg[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > sliderImg.length) {
+      slideIndex = 1
+    }
+
+  sliderImg[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 5000); // Change image every 5 seconds
+})();
