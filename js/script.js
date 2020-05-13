@@ -119,61 +119,42 @@ cookieNoticeBtn.addEventListener('click', () => {
 }})();
 
 
-// var slideIndex = 1;
-// showDivs(slideIndex);
 
-// function plusDivs(n) {
-//   showDivs(slideIndex += n);
-// }
-
-// function showDivs(n) {
-//   var i;
-//   var x = document.getElementsByClassName("slider_img__item");
-//   if (n > x.length) {slideIndex = 1}
-//   if (n < 1) {slideIndex = x.length} ;
-//   for (i = 0; i < x.length; i++) {
-//     x[i].style.display = "none";
-//   }
-//   x[slideIndex-1].style.display = "block";
-// }
-
-// sliderBtnLeft.addEventListener( 'clicl')
-
-
-// Slider logic
-
-
-const sliderBox = document.querySelector(".slider_items")
 const sliderImg = document.getElementsByClassName('slider_img__item');
-
-const sliderItem = document.querySelector(".slider_img__item");
-
 const sliderBtnRight = document.querySelector('.fa-arrow-alt-circle-right');
 const sliderBtnLeft = document.querySelector('.fa-arrow-alt-circle-left');
 
 
-// (function hiddenImagesinSLider () {
-//     for( i = 1 ; i < sliderImg.length; i++) {
-//         sliderImg[i].classList.add("hidden")
-//     }
-// })();
+(function hiddenImagesinSLider () {
+    for( i = 1 ; i < sliderImg.length; i++) {
+        sliderImg[i].classList.add("hidden")
+    }
+})();
 
 
 let slideIndex = 0;
+let right = 1 ;
+let left = -1 ;
 
-(function carousel() {
-  let i;
+function showImagesinSlider () {
 
-  const sliderImg = document.getElementsByClassName('slider_img__item');
-
-  for (i = 0; i < sliderImg.length; i++) {
-    sliderImg[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > sliderImg.length) {
-      slideIndex = 1
+    if (right > sliderImg.length || left > sliderImg.length){
+        slideIndex = sliderImg.length
     }
+    for( i = 0; i < sliderImg.length; i++){
+        sliderImg[i].classList.add("hidden")
+    }
+    sliderImg[slideIndex -1].classList.remove("hidden")
+};
 
-  sliderImg[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 5000); // Change image every 5 seconds
-})();
+
+sliderBtnRight.addEventListener('click', () => {
+    showImagesinSlider(slideIndex += right);
+
+});
+
+
+sliderBtnLeft.addEventListener('click', () => {
+    showImagesinSlider(slideIndex -= left);
+
+});
