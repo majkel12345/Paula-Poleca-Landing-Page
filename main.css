@@ -53,6 +53,10 @@ html{
     margin-bottom: 30px;
 } 
 
+.more__col__item:hover{
+    background-color: white;
+
+}
 
 /* menu            */
 /* =============== */
@@ -356,11 +360,6 @@ html{
     
 }
 
-.more__col div:hover{
-    background-color: var(--secondary-bg-color);
-    border-radius: 20px;
-    height: 340px;
-}
 .more_col__item p{
     margin: 8px 0px 8px 0px;
     padding: 8px 0px 8px 0px;
@@ -726,7 +725,8 @@ footer{
         margin-right: 0px;
         padding: 0px;
         padding-top: 16px;
-        font-size: 14px;
+        font-size: 13px;
+
     }
     .onas__wrapper{
         display: flex;
