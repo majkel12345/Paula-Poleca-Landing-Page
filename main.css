@@ -52,6 +52,10 @@ html{
     margin-bottom: 30px;
 } 
 
+.more__col__item:hover{
+    background-color: white;
+
+}
 
 /* menu            */
 /* =============== */
