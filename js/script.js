@@ -121,8 +121,8 @@ cookieNoticeBtn.addEventListener('click', () => {
 
 
 const sliderImg = document.getElementsByClassName('slider_img__item');
-const sliderBtnRight = document.querySelector('.fa-arrow-alt-circle-right');
-const sliderBtnLeft = document.querySelector('.fa-arrow-alt-circle-left');
+const sliderBtnRight = document.querySelector('.fa-chevron-right');
+const sliderBtnLeft = document.querySelector('.fa-chevron-left');
 
 
 (function hiddenImagesinSLider () {
@@ -133,12 +133,11 @@ const sliderBtnLeft = document.querySelector('.fa-arrow-alt-circle-left');
 
 
 let slideIndex = 0;
-let right = 1 ;
-let left = -1 ;
+let n = 1 ;
 
 function showImagesinSlider () {
 
-    if (right > sliderImg.length || left > sliderImg.length){
+    if (n > sliderImg.length){
         slideIndex = sliderImg.length
     }
     for( i = 0; i < sliderImg.length; i++){
@@ -149,12 +148,12 @@ function showImagesinSlider () {
 
 
 sliderBtnRight.addEventListener('click', () => {
-    showImagesinSlider(slideIndex += right);
+    showImagesinSlider(slideIndex += n);
 
 });
 
 
 sliderBtnLeft.addEventListener('click', () => {
-    showImagesinSlider(slideIndex -= left);
+    showImagesinSlider(slideIndex -= n);
 
 });
