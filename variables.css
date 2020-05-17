@@ -7,5 +7,7 @@ html{
     --hero-text-color: #fff;
     --primary-text-color: #333132;
     --additional-color: #013883;
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Lora', serif;
 }
 
