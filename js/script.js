@@ -147,15 +147,22 @@ function showImagesinSlider () {
 
 
 sliderBtnRight.addEventListener('click', () => {
-    showImagesinSlider(slideIndex += n);
-    
 
+    if (slideIndex >= sliderImg.length - 1) {
+    	slideIndex = 0
+    } else {
+    	showImagesinSlider(slideIndex += n);
+    }
 });
 
+    
 
 sliderBtnLeft.addEventListener('click', () => {
-    showImagesinSlider(slideIndex -= n);
-
+	if (slideIndex <= 0){
+		slideIndex = sliderImg.length - 1;
+	} else {
+    	showImagesinSlider(slideIndex -= n);
+	}
 });
 
 
