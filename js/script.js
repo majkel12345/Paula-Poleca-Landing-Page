@@ -138,8 +138,10 @@ let n = 1 ;
 function showImagesinSlider () {
 
     for( i = 0; i < sliderImg.length; i++){
+        console.log(slideIndex)
+
         sliderImg[i].classList.add("hidden")    
-        sliderImg[slideIndex -1].classList.remove("hidden")
+        sliderImg[slideIndex].classList.remove("hidden")
 
     }  
 
@@ -151,7 +153,8 @@ sliderBtnRight.addEventListener('click', () => {
     if (slideIndex >= sliderImg.length - 1) {
     	slideIndex = 0
     } else {
-    	showImagesinSlider(slideIndex += n);
+        slideIndex += n
+    	showImagesinSlider();
     }
 });
 
@@ -161,7 +164,9 @@ sliderBtnLeft.addEventListener('click', () => {
 	if (slideIndex <= 0){
 		slideIndex = sliderImg.length - 1;
 	} else {
-    	showImagesinSlider(slideIndex -= n);
+        slideIndex -= n
+        showImagesinSlider();
+         
 	}
 });
 
