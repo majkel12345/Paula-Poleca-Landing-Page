@@ -574,16 +574,20 @@ input {
 }
 
 .slider_img__item{
+    display: none;
     width: 100%;
     height: auto;
     max-height: 700px;
 
     
 }
-
-.hidden {
-    display: none;
+.slider_img__item.active{
+    display: block;
 }
+
+/* .hidden {
+    display: none;
+} */
 
 .slider__arrow{
     display: flex;

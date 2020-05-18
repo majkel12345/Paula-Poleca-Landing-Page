@@ -127,26 +127,21 @@ const sliderBtnLeft = document.querySelector('.fa-chevron-left');
 let slideIndex = 0;
 let n = 1 ;
 
-(function hiddenImagesinSLider () {
-    for( i = 1 ; i < sliderImg.length; i++) {
-        sliderImg[i].classList.add("hidden")
-    }
-})();
-
 (function carusel () {
     for(let i=0; i<sliderImg.length; i++) {
-        sliderImg[i].style.display = "none";
+        sliderImg[slideIndex].classList.remove("active");
+        sliderImg[slideIndex].classList.add("slider_img__item");
     }
 
     slideIndex++
 
-    if(slideIndex >  sliderImg.length) {
-        slideIndex = 1;
+    if(slideIndex >= sliderImg.length) {
+        slideIndex = 0;
     }
 
-    sliderImg[slideIndex -1].style.display = "block";
+    sliderImg[slideIndex].classList.add("active");
     
-    setTimeout(carusel, 3000);
+    setTimeout(carusel, 5000)
   
 })();
 
@@ -154,14 +149,15 @@ let n = 1 ;
 function showImagesinSlider () {
 
     for( i = 0; i < sliderImg.length; i++){
-        sliderImg[i].classList.add("hidden")    
-        sliderImg[slideIndex].classList.remove("hidden")
+        sliderImg[i].classList.add("slider_img__item")    
+        sliderImg[slideIndex].classList.add("active")
 
     }
 };
 
 
 sliderBtnRight.addEventListener('click', () => {
+    sliderImg[slideIndex].classList.remove("active")
 
     if (slideIndex >= sliderImg.length - 1) {
     	slideIndex = 0
@@ -174,6 +170,8 @@ sliderBtnRight.addEventListener('click', () => {
     
 
 sliderBtnLeft.addEventListener('click', () => {
+    sliderImg[slideIndex -1].classList.remove("active")
+
 	if (slideIndex <= 0){
 		slideIndex = sliderImg.length - 1;
 	} else {
