@@ -117,3 +117,7 @@ cookieNoticeBtn.addEventListener('click', () => {
         cookieNoticeBanner.style.display = 'none'
     
 }})();
+
+
+const modal = document.querySelector(".modal");
+const modalCloseBtn = document.querySelector(".fas.fa-times")
