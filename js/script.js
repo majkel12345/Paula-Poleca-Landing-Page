@@ -118,8 +118,6 @@ cookieNoticeBtn.addEventListener('click', () => {
     
 }})();
 
-
-
 const sliderImg = document.getElementsByClassName('slider_img__item');
 const sliderBtnRight = document.querySelector('.fa-chevron-right');
 const sliderBtnLeft = document.querySelector('.fa-chevron-left');
@@ -151,13 +149,13 @@ function showImagesinSlider () {
     for( i = 0; i < sliderImg.length; i++){
         sliderImg[i].classList.add("slider_img__item")    
         sliderImg[slideIndex].classList.add("active")
-
+        
     }
 };
 
 
 sliderBtnRight.addEventListener('click', () => {
-    sliderImg[slideIndex].classList.remove("active")
+    sliderImg[slideIndex + 1].classList.remove("active")
 
     if (slideIndex >= sliderImg.length - 1) {
     	slideIndex = 0
