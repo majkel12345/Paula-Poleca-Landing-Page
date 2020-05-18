@@ -130,10 +130,9 @@ let n = 1 ;
 (function carusel () {
     for(let i=0; i<sliderImg.length; i++) {
         sliderImg[slideIndex].classList.remove("active");
-        sliderImg[slideIndex].classList.add("slider_img__item");
     }
 
-    slideIndex++
+    slideIndex += n
 
     if(slideIndex >= sliderImg.length) {
         slideIndex = 0;
@@ -149,7 +148,6 @@ let n = 1 ;
 function showImagesinSlider () {
 
     for( i = 0; i < sliderImg.length; i++){
-        sliderImg[i].classList.add("slider_img__item")    
         sliderImg[slideIndex].classList.add("active")
 
     }
