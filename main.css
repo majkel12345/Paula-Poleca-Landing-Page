@@ -561,16 +561,13 @@ input {
 .slider {
     grid-area: slider; 
     display: flex;   
-
 }
-
 
 .slider_items{
     display: flex;
     width: 100%;
     height: auto;
     justify-content: space-around;
-
 }
 
 .slider_img__item{
@@ -578,16 +575,10 @@ input {
     width: 100%;
     height: auto;
     max-height: 700px;
-
-    
 }
 .slider_img__item.active{
     display: block;
 }
-
-/* .hidden {
-    display: none;
-} */
 
 .slider__arrow{
     display: flex;
@@ -595,7 +586,6 @@ input {
     width: 100%;
     align-self: center;
     justify-content: space-between;
-
 }
 
 
@@ -615,9 +605,6 @@ input {
 
 
 }
-
-
-
 
 footer{
     grid-area: footer;
