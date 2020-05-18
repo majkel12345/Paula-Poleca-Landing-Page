@@ -124,6 +124,8 @@ const sliderImg = document.getElementsByClassName('slider_img__item');
 const sliderBtnRight = document.querySelector('.fa-chevron-right');
 const sliderBtnLeft = document.querySelector('.fa-chevron-left');
 
+let slideIndex = 0;
+let n = 1 ;
 
 (function hiddenImagesinSLider () {
     for( i = 1 ; i < sliderImg.length; i++) {
@@ -131,20 +133,31 @@ const sliderBtnLeft = document.querySelector('.fa-chevron-left');
     }
 })();
 
+(function carusel () {
+    for(let i=0; i<sliderImg.length; i++) {
+        sliderImg[i].style.display = "none";
+    }
 
-let slideIndex = 0;
-let n = 1 ;
+    slideIndex++
+
+    if(slideIndex >  sliderImg.length) {
+        slideIndex = 1;
+    }
+
+    sliderImg[slideIndex -1].style.display = "block";
+    
+    setTimeout(carusel, 3000);
+  
+})();
+
 
 function showImagesinSlider () {
 
     for( i = 0; i < sliderImg.length; i++){
-        console.log(slideIndex)
-
         sliderImg[i].classList.add("hidden")    
         sliderImg[slideIndex].classList.remove("hidden")
 
-    }  
-
+    }
 };
 
 
