@@ -132,7 +132,7 @@ let n = 1 ;
         sliderImg[slideIndex].classList.remove("active");
     }
 
-    slideIndex += n
+    slideIndex++
 
     if(slideIndex >= sliderImg.length) {
         slideIndex = 0;
@@ -149,19 +149,21 @@ function showImagesinSlider () {
 
     for( i = 0; i < sliderImg.length; i++){
         sliderImg[slideIndex].classList.add("active")
-
     }
+
 };
 
 
 sliderBtnRight.addEventListener('click', () => {
     sliderImg[slideIndex].classList.remove("active")
 
-    if (slideIndex >= sliderImg.length - 1) {
-    	slideIndex = 0
-    } else {
+    if (slideIndex >= sliderImg.length) {
+    	slideIndex = 0;
+    } 
+    else {
         slideIndex += n
-    	showImagesinSlider();
+        showImagesinSlider();
+
     }
 });
 
