@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="game.css">
     <link rel="shortcut icon" href="images/logo.png" type="image/png">
     <title>Paula Poleca</title>
 </head>
@@ -18,7 +19,7 @@
     <nav class="nav" id="nav">
       <ul class="nav__wrapper">
         <li class="nav__menu"><a class="nav__link active" id="mainPage" href="#glowna">Strona główna</a></li>
-        <li class="nav__menu"><a class="nav__link" href="#main">Wydarzenia</a></li>
+        <!-- <li class="nav__menu"><a class="nav__link" href="#main">Wydarzenia</a></li> -->
         <li class="nav__menu"><a class="nav__link" href="#oferta">Oferta</a></li>
         <li class="nav__menu"><a class="nav__link" href="#onas">O nas</a></li>
         <li class="nav__menu"><a class="nav__link icon" href="javascript:void(0);"><i class="fa fa-bars"></i></a></li>         
@@ -35,11 +36,27 @@
       <div class="logo">
         <img src="images/logo-white.png" alt="logo">
         <div class="logo__name">planer<br> weekendowy</div>
-    
       </div>
-
-      
     </div>
+
+    <!-- game -->
+    <div class="game">
+      <!-- <div class="game__area"> -->
+        <div id="gameDiv">
+          <h2>Jumper</h2>
+          <div>Your final score: 
+              <span id="yourScoreFinal">0</span><span id="yourScore"></span>
+          </div>
+          <div id="jumperDiv"></div>
+          <button id="jumperButton"> Jump  </button>
+          <div class="buttons">
+            <button id="startButton">Start game</button>
+            <button id="resetButton" disabled>Reset game</button>        
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+
 
     <!-- new -->
     <div class="new">
@@ -196,6 +213,7 @@
               Wypełniając formularz zgadzasz się na przetwarzanie Twoich danych w celu nawiązania kontaktu w sprawie udziału w kursie
             </label>
           </div>  
+          <button id="but">show game</button>
           <button type="submit" id="confirm">Zapisz</button>          
         </form>
 
@@ -208,5 +226,6 @@
   </div>      
  <!-- end - container -->
   <script src="js/script.js"></script>
+  <script src="./js/game.js"></script>
 </body>
 </html>
