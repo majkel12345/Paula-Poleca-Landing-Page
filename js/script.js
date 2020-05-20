@@ -119,7 +119,6 @@ cookieNoticeBtn.addEventListener('click', () => {
 }})();
 
 
-
 const sliderImg = document.getElementsByClassName('slider_img__item');
 const sliderBtnRight = document.querySelector('.fa-chevron-right');
 const sliderBtnLeft = document.querySelector('.fa-chevron-left');
@@ -181,4 +180,7 @@ sliderBtnLeft.addEventListener('click', () => {
 	}
 });
 
+
+const modal = document.querySelector(".modal");
+const modalCloseBtn = document.querySelector(".fas.fa-times")
 

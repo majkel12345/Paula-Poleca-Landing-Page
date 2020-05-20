@@ -9,8 +9,9 @@ html{
     width: 100%;
     height: 100%;
     font-size: 16px;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: var(--primary-font);
     background-color: var(--primary-bg-color);
+    scroll-behavior: smooth;
 }
 
 
@@ -231,16 +232,15 @@ html{
     background-color: var(--primary-bg-color);
     padding: 16px 16px 16px 16px;
     margin: 32px 16px 16px 16px;
-    font-family: 'Fira Sans', sans-serif;
     border: 4px solid #fff;
 }
 
 .new h1{
     text-align: center;
-    margin-top: 16px;
-    padding-top: 16px;
+    /*margin-top: 16px;
+    padding-top: 16px;*/
     padding-bottom: 16px;
-    border-bottom: 1px solid var(--primary-text-color);
+    border-bottom: 2px solid var(--additional-color);
     
 }
 
@@ -445,7 +445,6 @@ a:hover {
     text-align: center;
     padding: 16px 16px 16px 16px;
     margin: 32px 16px 16px 16px;
-    font-family: 'Fira Sans', sans-serif;
     border: 4px solid #fff;
 }
 .mail__description {
@@ -611,10 +610,38 @@ footer{
     padding: 16px 16px 16px 16px;
     margin: auto;
     font-size: 0.7em;
-    font-family: 'Fira Sans', sans-serif;
     text-align: end;
 }
-    
+
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+  }
+  
+  /* Modal Content */
+  .modal__content {
+    background-color: #fefefe;
+    margin: 16% auto; 
+    padding: 16px;
+    border: 1px solid #888;
+    width: 80%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+  .fas.fa-times{
+      color: red;
+  }
+
 
 @media (min-width:768px) {
     .container{
