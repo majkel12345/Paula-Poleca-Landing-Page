@@ -20,7 +20,7 @@ html{
     height: 100%;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
                         "hero hero hero hero"
                         "new new new new"
@@ -29,6 +29,7 @@ html{
                         "more more more more"
                         "mail mail mail mail"
                         "onas onas onas onas"
+                        "slider slider slider slider"
                         "footer footer footer footer";
     
 }
@@ -324,6 +325,7 @@ html{
     font-size: 4em;
 }
 
+
 .more{
     grid-area: more;
     width: 100%;
@@ -555,8 +557,53 @@ input {
     cursor: pointer;
 }
 
+.slider {
+    grid-area: slider; 
+    display: flex;   
+}
+
+.slider_items{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+}
+
+.slider_img__item{
+    display: none;
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+}
+.slider_img__item.active{
+    display: block;
+}
+
+.slider__arrow{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    align-self: center;
+    justify-content: space-between;
+}
 
 
+.fa.fa-chevron-left{
+    color: var(--additional-color);
+    font-size: 2em;
+    margin-left: 16px;
+
+
+ 
+}
+
+.fa.fa-chevron-right{
+    color: var(--additional-color);
+    margin-right: 16px;
+    font-size: 2em;
+
+
+}
 
 footer{
     grid-area: footer;
@@ -602,7 +649,7 @@ footer{
         height: 100%;
         width: 100%;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:"nav nav nav nav"
                             "hero hero hero hero"
                             "new new mail mail"
@@ -610,6 +657,7 @@ footer{
                             "func func func func"
                             "more more more more"
                             "onas onas onas onas"
+                            "slider slider slider slider"
                             "footer footer footer footer";
     
         
@@ -670,6 +718,7 @@ footer{
         padding: 0px;
         padding-top: 16px;
         font-size: 13px;
+
     }
     .onas__wrapper{
         display: flex;
