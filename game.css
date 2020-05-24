@@ -1,0 +1,32 @@
+.game #gameDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game #jumperDiv {
+  width: 480px;
+}
+.game #jumperButton,
+.game #startButton,
+.game #resetButton {
+  padding: 5px 10px;
+  font-size: 20px;
+  background-color: #eee;
+  border: 1px solid black;
+  transition: all 0.5s;
+}
+.game #startButton,
+.game #resetButton {
+  margin: 10px;
+}
+.game #jumperButton:hover {
+  color: white;
+  background-color: #777;
+}
+.game .buttons {
+  display: flex;
+}
+.game canvas {
+  border: 1px solid #444444;
+  background-color: #b3ebca;
+}
