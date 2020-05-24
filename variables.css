@@ -11,3 +11,25 @@ html{
     --secondary-font: 'Lora', serif;
 }
 
+/*.animate__animated.animate__zoomInDown {
+    --animate-duration: 2s;
+    --animation-delay: 0.9s;
+  }
+.animate__animated.animate__backInDown {
+    --animate-duration: 2s;
+    --animation-delay: 0.9s;
+  }  
+
+  .animate__animated.animate__backInUp {
+    --animate-duration: 2s;
+    --animation-delay: 0.5s;
+  }  
+  /*.animate__animated.animate__backInRight {
+    --animate-duration: 2s;
+    --animation-delay: 0.9s;
+  } 
+  .animate__animated.animate__backInLeft {
+    --animate-duration: 1s;
+    --animation-delay: 0.5s;
+  } 
+  */
