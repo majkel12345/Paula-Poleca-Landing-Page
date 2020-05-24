@@ -14,7 +14,6 @@ html{
     scroll-behavior: smooth;
 }
 
-
 .container{
     display: grid;
     height: 100%;
@@ -23,6 +22,7 @@ html{
     grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
                         "hero hero hero hero"
+                        "game game game game"
                         "new new new new"
                         "main main main main"
                         "func func func func"
@@ -33,7 +33,6 @@ html{
                         "footer footer footer footer";
     
 }
-
 
 .nav{
     grid-area: nav;
@@ -225,6 +224,27 @@ html{
     padding-top: 16px;
 
 }*/
+
+
+/* section - game */
+
+.game {
+    grid-area: game;
+    height: 0;
+    background: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.game__area {
+    /* border: 1px solid red;
+    width: 200px;
+    height: 100px;
+    margin: 10px 0; */
+}
+
+
 
 /*nowa sekcja*/
 
@@ -681,6 +701,7 @@ footer{
         grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:"nav nav nav nav"
                             "hero hero hero hero"
+                            "game game game game"
                             "new new mail mail"
                             "main main main main"
                             "func func func func"
@@ -688,9 +709,9 @@ footer{
                             "onas onas onas onas"
                             "slider slider slider slider"
                             "footer footer footer footer";
-    
-        
+
     }
+
     html, body {
         font-size: 18px;
     }
