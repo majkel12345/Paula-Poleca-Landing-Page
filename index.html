@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="animate.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/jquery.waypoints.js"></script>
     <link rel="shortcut icon" href="images/logo.png" type="image/png">
     <title>Paula Poleca</title>
 </head>
 <body>
 
   <div class="container">
-
     <nav class="nav" id="nav">
       <ul class="nav__wrapper">
         <li class="nav__menu"><a class="nav__link active" id="mainPage" href="#glowna">Strona główna</a></li>
@@ -33,13 +35,10 @@
     <!-- hero -->
     <div class="hero">
       <a id="glowna" class="link-nav"></a>
-      <div class="logo">
+      <div class="logo animated delay-03s">
         <img src="images/logo-white.png" alt="logo">
         <div class="logo__name">planer<br> weekendowy</div>
-    
       </div>
-
-      
     </div>
 
     <!-- new -->
@@ -144,7 +143,7 @@
       <a id="onas" class="link-nav"></a>
       <h2>O nas</h2>
       <div class="onas__wrapper">
-        <div class="onas__info">
+        <div class="onas__info animated delay-03s">
           <ul>
             <li><img src="images/PaulaIMG.png" alt="Foto Paula" height="200" width="200"></li>
             <li><h3>Paulina Kreft</h3></li>
@@ -153,7 +152,7 @@
           </ul>
         </div>
 
-        <div class="onas__info">
+        <div class="onas__info animated delay-05s">
           <ul>
             <li><img src="images/foto_as.jpg" alt="Avatar" height="200" width="200"></li>
             <li><h3>Andrzej Stasiński</h3></li>
@@ -162,7 +161,7 @@
           </ul>
         </div>
 
-        <div class="onas__info">
+        <div class="onas__info animated delay-07s">
           <ul>
             <li><img src="images/Michal.jpg" alt="Avatar" height="200" width="200"></li>
             <li><h3>Michał Karnath</h3></li>
@@ -171,7 +170,7 @@
           </ul>
         </div>
 
-        <div class="onas__info">
+        <div class="onas__info animated delay-1s">
           <ul>
             <li><img src="images/volhan-foto.png" alt="Foto Vol-Han" height="200" width="200"></li>
             <li><h3>Volodymyr Władyk</h3></li>
@@ -239,6 +238,7 @@
 
   </div>      
  <!-- end - container -->
+  <script src="js/animate.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
