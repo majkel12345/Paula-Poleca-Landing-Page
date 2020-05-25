@@ -1,3 +1,5 @@
+// NAV-MENU
+// ====================================
 var nav = document.querySelector("#nav");
 var menu = document.querySelector("#nav .icon");
 var options = document.querySelectorAll('.nav a:not(.icon)');
@@ -65,42 +67,9 @@ linkLogo.addEventListener('click', function() {
 
 });
 
-// FORM
-var form = document.querySelector('#mail__form');
-form.onsubmit = function(e) {
-    var email = this.email,
-        checkbox = this.checkbox,
-        message = document.getElementById('message'),
-        msg = "";
-    if(email.value === "") {
-        msg += "Wypełnij pole email <br/>";
-    }
-    if(email.value !== "") {
-        var reg = /\S+@\S+\.\S+/;
-        test = reg.test(email.value);
-        if(!test) {
-            msg += "Wpisz poprawnie adres email <br/>";
-        }
-    }
-    if(!checkbox.checked) {
-        msg += "Zaznacz zgodę warunków bezpieczeństwa"
-    }
-    if(msg === "") {
-        message.classList.remove("messageError");
-        message.classList.add("messageSuccess");
-        message.innerHTML = "Form sended...";
-        // send form - not for real
-        // return true;
-    } else {
-        message.classList.remove("messageSuccess");
-        message.classList.add("messageError");
-        message.innerHTML = msg;
-        // send form stoped
-        // return false;  
-    }
-    e.preventDefault();
-};
 
+// COOKIE
+// ====================================
 const cookieNoticeBtn = document.querySelector('#cookie-accept');
 const cookieNoticeBanner = document.querySelector('.cookie__notice');
 const cookieDataResult = localStorage.getItem('cookie');
@@ -119,6 +88,8 @@ cookieNoticeBtn.addEventListener('click', () => {
 }})();
 
 
+// SLIDER
+// ====================================
 const sliderImg = document.getElementsByClassName('slider_img__item');
 const sliderBtnRight = document.querySelector('.fa-chevron-right');
 const sliderBtnLeft = document.querySelector('.fa-chevron-left');
