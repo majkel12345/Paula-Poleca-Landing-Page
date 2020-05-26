@@ -3,6 +3,20 @@
     flex-direction: column;
     align-items: center;
 }
+.jumper-level {
+    display: flex;
+    width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+#gameDiv h2 {
+    padding: 0;
+}
+.jumper-level div {
+
+}
 .buttonGame[disabled] {
     color: #666;
     background: #ccc;
@@ -27,9 +41,11 @@
     margin: 10px;
     border: 2px solid gray;
 }
-.game #jumperButton:hover {
-    /* color: white;
-    background-color: #307ae0; */
+.resetButton:hover, 
+.startButton:hover, 
+.jumperButton:hover {
+    color: white;
+    background-color: #307ae0;
 }
 .game .game_buttons {
     display: flex;
