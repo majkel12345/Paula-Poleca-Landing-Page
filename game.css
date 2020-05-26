@@ -2,31 +2,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.game #jumperDiv {
+  }
+  .game #jumperDiv {
   width: 480px;
-}
-.game #jumperButton,
-.game #startButton,
-.game #resetButton {
+  }
+  .game .jumperButton,
+  .game .startButton,
+  .game .resetButton {
   padding: 5px 10px;
   font-size: 20px;
-  background-color: #eee;
+  background-color: #013883;
   border: 1px solid black;
   transition: all 0.5s;
-}
-.game #startButton,
-.game #resetButton {
-  margin: 10px;
-}
-.game #jumperButton:hover {
-  color: white;
-  background-color: #777;
-}
-.game .buttons {
+  color: #eee;
+  width: 140px;
+  }
+  .game .startButton,
+  .game .resetButton,
+  .game .jumperButton {
+      margin: 10px;
+      border: 2px solid gray;
+  }
+  .game #jumperButton:hover {
+  /* color: white;
+  background-color: #307ae0; */
+  }
+  .game .game_buttons {
   display: flex;
-}
-.game canvas {
+  }
+  .resetButton[disabled], 
+  .startButton[disabled], 
+  .jumperButton[disabled] {
+  color: #666;
+  background: #ccc;
+  }
+  .game canvas {
   border: 1px solid #444444;
   background-color: #b3ebca;
-}
+  }
