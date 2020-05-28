@@ -567,6 +567,10 @@ button {
     margin-top: 16px;
     font-size: 16px;
 }
+#confirm[disabled] {
+    color: #666;
+    background: #ccc;
+}
 
 input {
     padding: 15px 32px;

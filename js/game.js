@@ -1,23 +1,17 @@
 
 (function() {
   console.log('mini-game - Jumper ver 2.0'); 
-  
 
 //Modal
   const modal = document.querySelector(".modal");
   const modalCloseBtn = document.querySelector(".fas.fa-times")
   const btnShowGame   = document.querySelector("#btnShowGame")
 
-  // btnShowGame.addEventListener('click', () => {
-  //     // modal.style.display = 'block';
-  //     showGameDiv();
-  // });
-
   modalCloseBtn.addEventListener('click', () => {
       modal.style.display = 'none';
   });
 
-// control game for desktop  
+// control game for Desktop  
   let gameDesktop = null;
   const checkWidthGame = function() {
     let widthGame = window.innerWidth;
@@ -42,6 +36,7 @@
   const userName= document.querySelector(".userName");
   let user = '';
 
+// show DIV game
   function showGameDiv() {
     if(window.innerWidth >= 768 && gameDesktop) {
       gameDIV.style.transition = "height 3.0s linear 0s";
@@ -50,18 +45,11 @@
         modal.style.display = 'block';
       }, 4000);            
     }
-
-    // Próba animacji
-    // ---------------
-      // let modal__content = document.querySelector('.modal__content');
-      // modal.style.display = 'block';
-      // modal__content.style.transition = "height 3.0s linear 0s";
-      // modal__content.style.height = '470px'; 
   }
 
 // button - show gameDIV
   btnShowGame.addEventListener('click', function() {
-      showGameDiv();
+    showGameDiv();
   });
 
 
@@ -101,11 +89,7 @@
             getStorageScore(user);
           } else {
             showGameDiv();
-            // localStorage.setItem(user, 0);
-            // lastScore = 0;
-            console.log('test', user);
             resetScores();
-            boardGame.clear()
             saveStorageNewUser(user);
             showYourFinalScore(0);
           }
@@ -122,24 +106,23 @@
   };
 
 
-// INPUT 
+// INPUT - recognize user
 // ==================================
-  // email.addEventListener('keyup', function() {
-  //   console.log(email.value);
-  //   let userInStarage = localStorage.getItem(email.value);
-  //   if(userInStarage) {
-  //     console.log('Jest taki mail');
-  //     userName.textContent = email.value;
-  //     console.log(userInStarage);
-  //     btnShowGame.disabled = false;
-  //     user = email.value;
-  //     getStorageScore(user);
-  //   } else {
-  //     console.log('Brak takiego maila');
-  //     console.log(localStorage.getItem(email.value));
-  //     btnShowGame.disabled = true;
-  //   }
-  // });
+  email.addEventListener('keyup', function() {
+    let userInStarage = localStorage.getItem(email.value);
+    if(userInStarage) {
+      // mail yes
+      btnShowGame.disabled = false;
+      user = email.value;
+      getStorageScore(user);
+      setNewPlayer(email.value);      
+    } else {
+      // mail no
+      console.log('Brak takiego maila');
+      console.log(localStorage.getItem(email.value));
+      btnShowGame.disabled = true;
+    }
+  });
 
 
 // MINI-GAME version 2.0
@@ -162,12 +145,6 @@
   let hitBottomStatus = true;
   let hitTopStatus = true;
   let countPress = 0;
-
-function resetScores() {
-  score = 0;
-  lastScore = 0;
-
-}
 
 // Jumper's hit - control boolean
   function hitBottomFalse() {
@@ -277,7 +254,6 @@ function resetScores() {
           console.log(lastScore);
           lastScore = boardGame.counter;
           console.warn(lastScore);
-          // yourScoreFinal.innerText = lastScore;
           showYourFinalScore(lastScore);
           savaStorage(lastScore);
         }
@@ -286,33 +262,32 @@ function resetScores() {
     };
   }
 
-// getStorageScore
+// getStorage - score
   const getStorageScore = function(user) {
     let lastScoreStorage = localStorage.getItem(user);
     if(lastScoreStorage) {
       lastScore = lastScoreStorage;
-      // yourScoreFinal.textContent = lastScore; 
       showYourFinalScore(lastScore)   
     } else {
-      // yourScoreFinal.textContent = 0; 
       showYourFinalScore(0);
     }
   }
 
-// savaStorage
+// savaStorage - new score
   const savaStorage = function(scoreParam) {
     let lastScoreStorage = localStorage.getItem(user);
     if(lastScoreStorage) {
       if(scoreParam > lastScoreStorage) {
         localStorage.setItem(user, scoreParam);
       }      
-    }
+    } 
   }
 
+  // saveStorage - new user
   const saveStorageNewUser = function(newUser) {
-    console.log(newUser);
       localStorage.setItem(newUser, 0);
-      lastScore = 0;
+      // userName.textContent = newUser;
+      setNewPlayer(newUser);
   }
 
 // your final score
@@ -320,10 +295,21 @@ function resetScores() {
     yourScoreFinal.textContent = scoreParam;
   }
 
+// reset Scores
+  function resetScores() {
+    score = 0;
+    lastScore = 0;
+  }
+
 // actual Score
   function showActualScore(actualScore) {
     score = actualScore;
     yourScore.textContent = " Actual score: " + score;
+  }
+
+// set new player
+  function setNewPlayer(newUser) {
+    userName.textContent = newUser;
   }
 
 // change Level
@@ -494,6 +480,7 @@ function resetScores() {
     jumperButton.disabled = false;
     jumperButton.style.color = '#fff';
     jumperButton.focus();
+    document.getElementById('confirm').disabled = true;
   }
 
 // reset Game
@@ -510,6 +497,7 @@ function resetScores() {
     console.log(countPress);
     startButton.disabled = false;
     this.disabled = true;
+    document.getElementById('confirm').disabled = false;
   }
 
 // load & start game & reset game
