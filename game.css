@@ -15,7 +15,7 @@
 #gameDiv h2 {
     padding: 0;
 }
-.buttonGame[disabled] {
+.btnShowGame[disabled] {
     color: #666;
     background: #ccc;
 }

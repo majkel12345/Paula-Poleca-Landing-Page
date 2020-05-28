@@ -1,34 +1,54 @@
+
+(function() {
+  console.log('mini-game - Jumper ver 2.0'); 
+  
+
 //Modal
   const modal = document.querySelector(".modal");
   const modalCloseBtn = document.querySelector(".fas.fa-times")
-  const showGameBtn = document.querySelector("#buttonGame")
+  const btnShowGame   = document.querySelector("#btnShowGame")
 
-  showGameBtn.addEventListener('click', () => {
+  btnShowGame.addEventListener('click', () => {
       modal.style.display = 'block'
   });
   modalCloseBtn.addEventListener('click', () => {
       modal.style.display = 'none'
   });
 
-
-(function() {
-  console.log('mini-game');  
+// control game for desktop  
+  let gameDesktop = null;
+  const checkWidthGame = function() {
+    let widthGame = window.innerWidth;
+    console.log(widthGame);
+    if(widthGame < 768) {
+      btnShowGame.style.display = 'none';
+      gameDesktop = false;
+    } else {
+      btnShowGame.style.display = 'inline-block';
+      gameDesktop = true;
+    }  
+  }
+  checkWidthGame();
+  document.body.onresize = function() {
+    checkWidthGame();
+  }
 
 // Botton - show game
 // =================================
-  const buttonGame = document.getElementById('buttonGame');
   const email   = document.getElementById('email');
   const gameDIV = document.getElementsByClassName('game')[0];
   const userName= document.querySelector(".userName");
   let user = '';
 
   function showGameDiv() {
+    if(window.innerWidth >= 768 && gameDesktop) {
       gameDIV.style.transition = "height 3.0s linear 0s";
-      gameDIV.style.height = '470px';
+      gameDIV.style.height = '470px';      
+    }
   }
 
 // button - show gameDIV
-  buttonGame.addEventListener('click', function() {
+  btnShowGame.addEventListener('click', function() {
       showGameDiv();
   });
 
@@ -91,13 +111,13 @@
       console.log('Jest taki mail');
       userName.textContent = email.value;
       console.log(userInStarage);
-      buttonGame.disabled = false;
+      btnShowGame.disabled = false;
       user = email.value;
       getStorageScore(user);
     } else {
       console.log('Brak takiego maila');
       console.log(localStorage.getItem(email.value));
-      buttonGame.disabled = true;
+      btnShowGame.disabled = true;
     }
   });
 
