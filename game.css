@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .jumper-level {
     display: flex;
@@ -58,7 +59,13 @@
     border: 1px solid #444444;
     background-color: #b3ebca;
 }
-
+.closeGame {
+    position: absolute;
+    top:0;right:0;
+}
+.closeGame .fas.fa-times {
+    color: blue;
+}
 
 /* Modal */
 .modal {
@@ -86,6 +93,7 @@
     background-color: #f7f7f7;
     /* transition: all 2s; */
 }
-.fas.fa-times{
+
+.modal .fas.fa-times{
     color: red;
 }

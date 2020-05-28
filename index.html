@@ -44,8 +44,8 @@
 
     <!-- game -->
     <div class="game">
-      <!-- <div class="game__area"> -->
         <div id="gameDiv">
+          <span id="closeGame" class="closeGame"><i class="fas fa-times"></i></span>
           <h2>Jumper</h2>
           <div class="jumper-level">
             <div class="userName"></div>
@@ -61,7 +61,6 @@
             <button id="resetButton" class="resetButton" disabled>Reset game</button>        
           </div>
         </div>
-      <!-- </div> -->
     </div>
 
 
@@ -250,7 +249,7 @@
     <div class="modal">
       <div class="modal__content">
         <h3>Jak grać?</h3>
-        <i class="fas fa-times"></i>
+        <i id="closeModal" class="fas fa-times"></i>
         <p>Kliknij START w celu rozpoczęcia gry! Następnie kliknij JUMP w celu przeskoczenia przeszkody. 
           Spiesz się, wraz z wzrastającą liczbą zdobytych przez Ciebie punktów plansza przyspiesza. 
           Jeżeli chcesz rozpocząć grę od nowa, kliknij RESTART GAME.</p>

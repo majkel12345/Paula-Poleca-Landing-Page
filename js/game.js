@@ -4,7 +4,7 @@
 
 //Modal
   const modal = document.querySelector(".modal");
-  const modalCloseBtn = document.querySelector(".fas.fa-times")
+  const modalCloseBtn = document.querySelector("#closeModal")
   const btnShowGame   = document.querySelector("#btnShowGame")
 
   modalCloseBtn.addEventListener('click', () => {
@@ -19,6 +19,7 @@
     if(widthGame < 768) {
       btnShowGame.style.display = 'none';
       gameDesktop = false;
+      closeGame();
     } else {
       btnShowGame.style.display = 'inline-block';
       gameDesktop = true;
@@ -34,6 +35,7 @@
   const email   = document.getElementById('email');
   const gameDIV = document.getElementsByClassName('game')[0];
   const userName= document.querySelector(".userName");
+  const btnCloseGame = document.querySelector("#closeGame");
   let user = '';
 
 // show DIV game
@@ -46,6 +48,14 @@
       }, 4000);            
     }
   }
+
+  function closeGame() {
+    console.log('close');
+    gameDIV.style.transition = "height 3.0s linear 0s";
+    gameDIV.style.height = '0px';
+  }
+
+  btnCloseGame.addEventListener('click', closeGame)
 
 // button - show gameDIV
   btnShowGame.addEventListener('click', function() {
@@ -115,7 +125,7 @@
       btnShowGame.disabled = false;
       user = email.value;
       getStorageScore(user);
-      setNewPlayer(email.value);      
+      setNewPlayer(user);      
     } else {
       // mail no
       console.log('Brak takiego maila');
@@ -267,7 +277,8 @@
     let lastScoreStorage = localStorage.getItem(user);
     if(lastScoreStorage) {
       lastScore = lastScoreStorage;
-      showYourFinalScore(lastScore)   
+      showYourFinalScore(lastScore);
+      debugger  
     } else {
       showYourFinalScore(0);
     }
