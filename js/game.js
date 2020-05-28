@@ -30,7 +30,7 @@
     checkWidthGame();
   }
 
-// Botton - show game
+// Bottons - show/close game
 // =================================
   const email   = document.getElementById('email');
   const gameDIV = document.getElementsByClassName('game')[0];
@@ -49,10 +49,23 @@
     }
   }
 
+// close DIV game
   function closeGame() {
     console.log('close');
     gameDIV.style.transition = "height 3.0s linear 0s";
     gameDIV.style.height = '0px';
+
+    resetScores();
+    showYourFinalScore(0);
+    showActualScore(0);
+    resetGame();
+
+    document.querySelector('#jumperButton').disabled = true;
+    document.querySelector('#resetButton').disabled = true;
+    email.value = '';
+
+    document.getElementById('confirm').disabled = false;
+    btnShowGame.disabled = true;
   }
 
   btnCloseGame.addEventListener('click', closeGame)
@@ -277,8 +290,7 @@
     let lastScoreStorage = localStorage.getItem(user);
     if(lastScoreStorage) {
       lastScore = lastScoreStorage;
-      showYourFinalScore(lastScore);
-      debugger  
+      showYourFinalScore(lastScore); 
     } else {
       showYourFinalScore(0);
     }
@@ -492,6 +504,7 @@
     jumperButton.style.color = '#fff';
     jumperButton.focus();
     document.getElementById('confirm').disabled = true;
+    btnShowGame.disabled = true;
   }
 
 // reset Game
@@ -509,6 +522,7 @@
     startButton.disabled = false;
     this.disabled = true;
     document.getElementById('confirm').disabled = false;
+    btnShowGame.disabled = false;
   }
 
 // load & start game & reset game
