@@ -151,7 +151,3 @@ sliderBtnLeft.addEventListener('click', () => {
 	}
 });
 
-
-const modal = document.querySelector(".modal");
-const modalCloseBtn = document.querySelector(".fas.fa-times")
-

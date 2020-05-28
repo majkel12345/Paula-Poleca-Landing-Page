@@ -1,3 +1,4 @@
+/* GAME */
 .game #gameDiv {
     display: flex;
     flex-direction: column;
@@ -13,9 +14,6 @@
 }
 #gameDiv h2 {
     padding: 0;
-}
-.jumper-level div {
-
 }
 .buttonGame[disabled] {
     color: #666;
@@ -59,4 +57,35 @@
 .game canvas {
     border: 1px solid #444444;
     background-color: #b3ebca;
+}
+
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+  }
+  
+/* Modal Content */
+.modal__content {
+    background-color: #fefefe;
+    margin: 16% auto; 
+    padding: 16px;
+    border: 4px solid var(--additional-color);
+    width: 80%; 
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+
+}
+.fas.fa-times{
+    color: red;
 }

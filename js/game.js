@@ -1,3 +1,15 @@
+//Modal
+  const modal = document.querySelector(".modal");
+  const modalCloseBtn = document.querySelector(".fas.fa-times")
+  const showGameBtn = document.querySelector("#buttonGame")
+
+  showGameBtn.addEventListener('click', () => {
+      modal.style.display = 'block'
+  });
+  modalCloseBtn.addEventListener('click', () => {
+      modal.style.display = 'none'
+  });
+
 
 (function() {
   console.log('mini-game');  
