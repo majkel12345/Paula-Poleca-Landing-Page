@@ -8,11 +8,13 @@
   const modalCloseBtn = document.querySelector(".fas.fa-times")
   const btnShowGame   = document.querySelector("#btnShowGame")
 
-  btnShowGame.addEventListener('click', () => {
-      modal.style.display = 'block'
-  });
+  // btnShowGame.addEventListener('click', () => {
+  //     // modal.style.display = 'block';
+  //     showGameDiv();
+  // });
+
   modalCloseBtn.addEventListener('click', () => {
-      modal.style.display = 'none'
+      modal.style.display = 'none';
   });
 
 // control game for desktop  
@@ -43,8 +45,18 @@
   function showGameDiv() {
     if(window.innerWidth >= 768 && gameDesktop) {
       gameDIV.style.transition = "height 3.0s linear 0s";
-      gameDIV.style.height = '470px';      
+      gameDIV.style.height = '470px';
+      setTimeout(() => {
+        modal.style.display = 'block';
+      }, 4000);            
     }
+
+    // Próba animacji
+    // ---------------
+      // let modal__content = document.querySelector('.modal__content');
+      // modal.style.display = 'block';
+      // modal__content.style.transition = "height 3.0s linear 0s";
+      // modal__content.style.height = '470px'; 
   }
 
 // button - show gameDIV
@@ -57,6 +69,7 @@
 // ==================================
   var form = document.querySelector('#mail__form');
   form.onsubmit = function(e) {
+      // email.removeEventListener("mousemove", myFunction);
       let email = this.email,
           checkbox = this.checkbox,
           message = document.getElementById('message'),
@@ -80,7 +93,7 @@
           message.classList.remove("messageError");
           message.classList.add("messageSuccess");
           message.innerHTML = "Form sended...";
-
+          
           console.log(user);
           let userInStarage = localStorage.getItem(user);
           if(userInStarage) {
@@ -88,6 +101,13 @@
             getStorageScore(user);
           } else {
             showGameDiv();
+            // localStorage.setItem(user, 0);
+            // lastScore = 0;
+            console.log('test', user);
+            resetScores();
+            boardGame.clear()
+            saveStorageNewUser(user);
+            showYourFinalScore(0);
           }
           // send form - not for real
           // return true;
@@ -104,22 +124,22 @@
 
 // INPUT 
 // ==================================
-  email.addEventListener('keyup', function() {
-    console.log(email.value);
-    let userInStarage = localStorage.getItem(email.value);
-    if(userInStarage) {
-      console.log('Jest taki mail');
-      userName.textContent = email.value;
-      console.log(userInStarage);
-      btnShowGame.disabled = false;
-      user = email.value;
-      getStorageScore(user);
-    } else {
-      console.log('Brak takiego maila');
-      console.log(localStorage.getItem(email.value));
-      btnShowGame.disabled = true;
-    }
-  });
+  // email.addEventListener('keyup', function() {
+  //   console.log(email.value);
+  //   let userInStarage = localStorage.getItem(email.value);
+  //   if(userInStarage) {
+  //     console.log('Jest taki mail');
+  //     userName.textContent = email.value;
+  //     console.log(userInStarage);
+  //     btnShowGame.disabled = false;
+  //     user = email.value;
+  //     getStorageScore(user);
+  //   } else {
+  //     console.log('Brak takiego maila');
+  //     console.log(localStorage.getItem(email.value));
+  //     btnShowGame.disabled = true;
+  //   }
+  // });
 
 
 // MINI-GAME version 2.0
@@ -142,6 +162,12 @@
   let hitBottomStatus = true;
   let hitTopStatus = true;
   let countPress = 0;
+
+function resetScores() {
+  score = 0;
+  lastScore = 0;
+
+}
 
 // Jumper's hit - control boolean
   function hitBottomFalse() {
@@ -248,8 +274,11 @@
         jumperButton.disabled = true;
         jumperButton.style.color = '#666';
         if (boardGame.counter > lastScore) {
+          console.log(lastScore);
           lastScore = boardGame.counter;
-          yourScoreFinal.innerText = boardGame.counter;
+          console.warn(lastScore);
+          // yourScoreFinal.innerText = lastScore;
+          showYourFinalScore(lastScore);
           savaStorage(lastScore);
         }
         return crash;
@@ -262,18 +291,33 @@
     let lastScoreStorage = localStorage.getItem(user);
     if(lastScoreStorage) {
       lastScore = lastScoreStorage;
-      yourScoreFinal.textContent = lastScore;    
+      // yourScoreFinal.textContent = lastScore; 
+      showYourFinalScore(lastScore)   
     } else {
-      yourScoreFinal.textContent = 0; 
+      // yourScoreFinal.textContent = 0; 
+      showYourFinalScore(0);
     }
   }
 
 // savaStorage
-  const savaStorage = function(lastScore) {
+  const savaStorage = function(scoreParam) {
     let lastScoreStorage = localStorage.getItem(user);
-    if(lastScore > lastScoreStorage) {
-      localStorage.setItem(user, lastScore);
+    if(lastScoreStorage) {
+      if(scoreParam > lastScoreStorage) {
+        localStorage.setItem(user, scoreParam);
+      }      
     }
+  }
+
+  const saveStorageNewUser = function(newUser) {
+    console.log(newUser);
+      localStorage.setItem(newUser, 0);
+      lastScore = 0;
+  }
+
+// your final score
+  function showYourFinalScore(scoreParam) {
+    yourScoreFinal.textContent = scoreParam;
   }
 
 // actual Score

@@ -84,7 +84,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #f7f7f7;
-
+    /* transition: all 2s; */
 }
 .fas.fa-times{
     color: red;
