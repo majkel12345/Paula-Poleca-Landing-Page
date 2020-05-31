@@ -530,13 +530,6 @@
   startButton.addEventListener("click", startGame);
   resetButton.addEventListener("click", resetGame);
 
-// Test - it must be deleted
-  let but2 = document.querySelector('#but2');
-  but2.onclick = function() {
-    // reached.play();          
-    plum.play();          
-  }
-
 })();
 
 
