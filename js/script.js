@@ -142,22 +142,22 @@ sliderBtnLeft.addEventListener('click', () => {
 });
 
 
-// (function carusel () {
-//     for(let i=0; i<sliderImg.length; i++) {
-//         sliderImg[slideIndex].classList.remove("active");
-//     }
+(function carusel () {
+    for(let i=0; i<sliderImg.length; i++) {
+        sliderImg[slideIndex].classList.remove("active");
+    }
 
-//     slideIndex++
+    slideIndex++
 
-//     if(slideIndex >= sliderImg.length) {
-//         slideIndex = 0;
-//     }
+    if(slideIndex >= sliderImg.length) {
+        slideIndex = 0;
+    }
 
-//     sliderImg[slideIndex].classList.add("active");
+    sliderImg[slideIndex].classList.add("active");
     
-//     setTimeout(carusel, 5000)
+    setTimeout(carusel, 5000)
   
-// })();
+})();
 
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".fas.fa-times")
