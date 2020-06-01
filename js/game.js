@@ -195,18 +195,6 @@
       let ctx = boardGame.context;
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
-
-      // img in pattern
-      // ------------------
-      // var ground = document.getElementById("scream");
-      // var pat = ctx.createPattern(ground, "repeat");
-      // ctx.rect(0, 0, 300, 220);
-      // ctx.fillStyle = pat;
-      // ctx.fill();
-
-      // var img = document.getElementById("scream");
-      // ctx.drawImage(img, this.x, this.y, this.width, this.height);
-
     };
   }
 
