@@ -95,25 +95,7 @@ const sliderBtnRight = document.querySelector('.fa-chevron-right');
 const sliderBtnLeft = document.querySelector('.fa-chevron-left');
 
 let slideIndex = 0;
-let n = 1 ;
-
-(function carusel () {
-    for(let i=0; i<sliderImg.length; i++) {
-        sliderImg[slideIndex].classList.remove("active");
-    }
-
-    slideIndex++
-
-    if(slideIndex >= sliderImg.length) {
-        slideIndex = 0;
-    }
-
-    sliderImg[slideIndex].classList.add("active");
-    
-    setTimeout(carusel, 5000)
-  
-})();
-
+let n = 0 ;
 
 function showImagesinSlider () {
 
@@ -127,11 +109,17 @@ function showImagesinSlider () {
 sliderBtnRight.addEventListener('click', () => {
     sliderImg[slideIndex].classList.remove("active")
 
-    if (slideIndex >= sliderImg.length) {
-    	slideIndex = 0;
+
+
+    if (slideIndex > 4) {
+        console.log(slideIndex)
+        slide = sliderImg[0]
+        console.log(slide)
+        slide.classList.add("active")
+
     } 
     else {
-        slideIndex += n
+        slideIndex = slideIndex + 1
         showImagesinSlider();
 
     }
@@ -141,16 +129,35 @@ sliderBtnRight.addEventListener('click', () => {
 
 sliderBtnLeft.addEventListener('click', () => {
     sliderImg[slideIndex].classList.remove("active")
-
-	if (slideIndex <= 0){
+    
+	if (slideIndex < 0){
+        console.log(slideIndex)
 		slideIndex = sliderImg.length - 1;
 	} else {
-        slideIndex -= n
+        console.log(slideIndex)
+        slideIndex = slideIndex - 1
         showImagesinSlider();
          
 	}
 });
 
+
+// (function carusel () {
+//     for(let i=0; i<sliderImg.length; i++) {
+//         sliderImg[slideIndex].classList.remove("active");
+//     }
+
+//     slideIndex++
+
+//     if(slideIndex >= sliderImg.length) {
+//         slideIndex = 0;
+//     }
+
+//     sliderImg[slideIndex].classList.add("active");
+    
+//     setTimeout(carusel, 5000)
+  
+// })();
 
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".fas.fa-times")
