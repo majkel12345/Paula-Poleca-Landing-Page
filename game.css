@@ -5,6 +5,10 @@
     align-items: center;
     position: relative;
 }
+.gameDiv {
+    background-color: yellow;
+    padding: 10px 10px 0;
+}
 .jumper-level {
     display: flex;
     width: 480px;
@@ -20,8 +24,25 @@
     color: #666;
     background: #ccc;
 }
-.game #jumperDiv {
+.game {
+    background-color: #888;
+}
+.game #boardDiv {
     width: 480px;
+}
+.game canvas {
+    border: 1px solid #444444;
+    background-image: url('game/ground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #b3ebca;
+
+}
+canvas img {
+    /* opacity: 0.5; */
+}
+#boardDiv {
+    /* background-image: url('game/ground.jpg'); */
 }
 .game .jumperButton,
 .game .startButton,
@@ -55,13 +76,9 @@
     color: #666;
     background: #ccc;
 }
-.game canvas {
-    border: 1px solid #444444;
-    background-color: #b3ebca;
-}
 .closeGame {
     position: absolute;
-    top:0;right:0;
+    top:10px;right:10px;
 }
 .closeGame .fas.fa-times {
     color: blue;

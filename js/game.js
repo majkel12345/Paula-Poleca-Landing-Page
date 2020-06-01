@@ -45,7 +45,7 @@
       gameDIV.style.height = '470px';
       setTimeout(() => {
         modal.style.display = 'block';
-      }, 4000);            
+      }, 3000);            
     }
   }
 
@@ -152,7 +152,7 @@
 // ==================================
 
 // Declear
-  const jumperDiv    = document.getElementById("jumperDiv");
+  const boardDiv    = document.getElementById("boardDiv");
   const jumperButton = document.getElementById("jumperButton");
   const startButton  = document.getElementById("startButton");
   const resetButton  = document.getElementById("resetButton");
@@ -195,6 +195,18 @@
       let ctx = boardGame.context;
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
+
+      // img in pattern
+      // ------------------
+      // var ground = document.getElementById("scream");
+      // var pat = ctx.createPattern(ground, "repeat");
+      // ctx.rect(0, 0, 300, 220);
+      // ctx.fillStyle = pat;
+      // ctx.fill();
+
+      // var img = document.getElementById("scream");
+      // ctx.drawImage(img, this.x, this.y, this.width, this.height);
+
     };
   }
 
@@ -209,11 +221,45 @@
       this.speedUp = 0;
       this.cumulationSpeed = 0; 
       this.crashSound = true;
+      this.dinoRun = 0;
     }
     update = function () {
       let ctx = boardGame.context;
       ctx.fillStyle = this.color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
+
+
+      // img in pattern
+      // -------------------
+      var img = document.getElementById("ground");
+      ctx.drawImage(img, 0, 0);
+
+      // img in pattern
+      // ------------------
+      // var ground = document.getElementById("ground");
+      // var pat = ctx.createPattern(ground, "repeat");
+      // ctx.rect(0, 0, 480, 200);
+      // ctx.fillStyle = pat;
+      // ctx.fill();
+
+      // img dino - animation
+      let dino;
+      if(!hitBottomStatus) {
+        if(this.dinoRun < 5) {
+          dino = document.getElementById("dino1");
+          this.dinoRun++;
+        } else if(this.dinoRun < 10) {
+          dino = document.getElementById("dino2");
+          this.dinoRun++;
+        } else {
+          dino = document.getElementById("dino2");
+          this.dinoRun = 0;
+        }        
+      } else {
+        dino = document.getElementById("dino3");
+      }
+      ctx.drawImage(dino, this.x, this.y, this.width, this.height);
+
     };
     newPos = function () {
       this.y += this.speedUp;
@@ -241,7 +287,7 @@
         this.y = jumpBottom;
         this.cumulationSpeed = 0;
         if(hitBottomStatus) {
-          console.error("Hit bottom");  
+          console.error("Hit bottom"); 
           var yes = new Audio("./game/knock.wav");
           yes.play();
           hitBottomFalse();  
@@ -430,7 +476,7 @@
       this.canvas.width = 480;
       this.canvas.height = 270;
       this.context = this.canvas.getContext("2d");
-      jumperDiv.appendChild(this.canvas);
+      boardDiv.appendChild(this.canvas);
       this.counter = 0;
       this.intervalId = null;
     },
