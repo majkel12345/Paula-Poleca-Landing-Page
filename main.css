@@ -630,7 +630,9 @@ input {
     display: none;
     width: 100%;
     height: auto;
-    max-height: 700px;
+    max-height: 500px;
+    margin-left: 52px;
+    margin-right: 52px;
 }
 .slider_img__item.active{
     display: block;
