@@ -152,10 +152,11 @@
 // ==================================
 
 // Declear
-  const boardDiv    = document.getElementById("boardDiv");
+  const boardDiv     = document.getElementById("boardDiv");
   const jumperButton = document.getElementById("jumperButton");
   const startButton  = document.getElementById("startButton");
   const resetButton  = document.getElementById("resetButton");
+  // let groundImg      = document.getElementById("canvas");
   let yourScoreFinal = document.getElementById("yourScoreFinal");
   let yourScore      = document.getElementById("yourScore");
   let levelShow      = document.getElementById("levelShow");
@@ -168,6 +169,7 @@
   let hitBottomStatus = true;
   let hitTopStatus = true;
   let countPress = 0;
+  let intervalOfImages = 0;
 
 // Jumper's hit - control boolean
   function hitBottomFalse() {
@@ -219,8 +221,8 @@
 
       // img in pattern
       // -------------------
-      var img = document.getElementById("ground");
-      ctx.drawImage(img, 0, 0);
+      // var img = document.getElementById("ground");
+      // ctx.drawImage(img, 0, 0);
 
       // img in pattern
       // ------------------
@@ -300,6 +302,7 @@
           crash = false;
         } else {
         clearInterval(boardGame.interval);
+        clearTimeout(intervalOfImages);
         if(this.crashSound) {
           hit.play();
           this.crashSound = false;
@@ -519,6 +522,17 @@
     };
   }
 
+// randome images
+  function randomShowImages() {
+    const arrayImages = ['ground1.jpg', 'ground2.jpg', 'ground3.jpg', 'ground4.jpg'];
+    intervalOfImages = setTimeout(function() {
+      randomImage = Math.floor(Math.random() * arrayImages.length);
+      boardGame.canvas.style.background = 'url(/game/'+arrayImages[randomImage]+')'; 
+      randomShowImages();
+    }, 3000);
+
+  }
+
 // start Board
   function startBoard() {
     boardGame.start();
@@ -539,6 +553,7 @@
     jumperButton.focus();
     document.getElementById('confirm').disabled = true;
     btnShowGame.disabled = true;
+    randomShowImages();
   }
 
 // reset Game
@@ -552,11 +567,12 @@
     showActualScore(boardGame.counter);
     walls = [];
     countPress = 0;
-    console.log(countPress);
     startButton.disabled = false;
     this.disabled = true;
     document.getElementById('confirm').disabled = false;
     btnShowGame.disabled = false;
+    boardGame.canvas.style.background = 'url(/game/trojmiasto.jpg)';
+    boardGame.canvas.style.backgroundSize = 'cover';
   }
 
 // load & start game & reset game
