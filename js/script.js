@@ -111,19 +111,18 @@ sliderBtnRight.addEventListener('click', () => {
 
 
 
-    if (slideIndex > 4) {
-        console.log(slideIndex)
+    if (slideIndex >= 4) {
         slide = sliderImg[0]
-        console.log(slide)
+        slideIndex = 0
         slide.classList.add("active")
-
-    } 
-    else {
+    } else {
         slideIndex = slideIndex + 1
         showImagesinSlider();
+    }
 
     }
-});
+
+);
 
     
 
