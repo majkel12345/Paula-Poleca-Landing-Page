@@ -525,12 +525,12 @@ a:hover {
     text-decoration: none;
     display: inline-block;
     border-color: var(--additional-color);
+    font-size: 1em;
 }
 .mail__checkbox{
     display: flex;
     margin-top: 20px;
     justify-content: center;
-    /* font-size: 10px; */
 }
 
 .mail__checkbox p{
@@ -553,7 +553,7 @@ a:hover {
     display: flex;
     padding: inherit;
     justify-content: center;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .mail__checkbox p{
