@@ -4,12 +4,12 @@
 
 // Bottons - show/close game & modal
 // ========================================
-  const modal = document.querySelector(".modal");
+  const modal   = document.querySelector(".modal");
   const modalCloseBtn = document.querySelector("#closeModal")
   const btnShowGame   = document.querySelector("#btnShowGame")
-  const email   = document.getElementById('email');
-  const gameDIV = document.getElementsByClassName('game')[0];
-  const userName= document.querySelector(".userName");
+  const email     = document.getElementById('email');
+  const gameDIV   = document.getElementsByClassName('game')[0];
+  const userName  = document.querySelector(".userName");
   const btnCloseGame = document.querySelector("#closeGame");
   let user = '';
   
@@ -509,7 +509,8 @@
 
 // randome images
   function randomShowImages() {
-    const arrayImages = ['ground1.jpg', 'ground2.jpg', 'ground3.jpg', 'ground4.jpg'];
+    const arrayImages = ['ground1.jpg', 'ground2.jpg', 'ground3.jpg', 'ground4.jpg', 'ground5.jpg', 'ground6.jpg', 'ground7.jpg', 'ground8.jpg', 'ground9.jpg', 'ground10.jpg', 'ground11.jpg', 'ground12.jpg', 'ground13.jpg', 'ground14.jpg', 'ground15.jpg', 'ground16.jpg', 'ground17.jpg', 'ground18.jpg', 'ground19.jpg', 'ground20.jpg'
+  ];
     intervalOfImages = setTimeout(function() {
       randomImage = Math.floor(Math.random() * arrayImages.length);
       boardGame.canvas.style.background = 'url(/game/'+arrayImages[randomImage]+')'; 
