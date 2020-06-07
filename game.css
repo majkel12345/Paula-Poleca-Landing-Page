@@ -1,4 +1,5 @@
 /* GAME */
+
 .game #gameDiv {
     display: flex;
     flex-direction: column;
@@ -36,13 +37,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #b3ebca;
-
-}
-canvas img {
-    /* opacity: 0.5; */
-}
-#boardDiv {
-    /* background-image: url('game/ground.jpg'); */
 }
 .game .jumperButton,
 .game .startButton,
@@ -82,6 +76,7 @@ canvas img {
 }
 .closeGame .fas.fa-times {
     color: blue;
+    cursor: pointer;
 }
 
 /* Modal */
@@ -108,9 +103,18 @@ canvas img {
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #f7f7f7;
-    /* transition: all 2s; */
 }
 
 .modal .fas.fa-times{
     color: red;
+    cursor: pointer;
 }
+
+
+
+
+
+
+
+
+

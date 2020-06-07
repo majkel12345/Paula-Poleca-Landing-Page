@@ -1,12 +1,19 @@
 
 (function() {
-  console.log('mini-game - Jumper ver 2.0'); 
+  console.log('mini-game - Jumper ver 2.1'); 
 
-//Modal
-  const modal = document.querySelector(".modal");
+// Bottons - show/close game & modal
+// ========================================
+  const modal   = document.querySelector(".modal");
   const modalCloseBtn = document.querySelector("#closeModal")
   const btnShowGame   = document.querySelector("#btnShowGame")
-
+  const email     = document.getElementById('email');
+  const gameDIV   = document.getElementsByClassName('game')[0];
+  const userName  = document.querySelector(".userName");
+  const btnCloseGame = document.querySelector("#closeGame");
+  let user = '';
+  
+//Modal
   modalCloseBtn.addEventListener('click', () => {
       modal.style.display = 'none';
   });
@@ -15,7 +22,6 @@
   let gameDesktop = null;
   const checkWidthGame = function() {
     let widthGame = window.innerWidth;
-    console.log(widthGame);
     if(widthGame < 768) {
       btnShowGame.style.display = 'none';
       gameDesktop = false;
@@ -30,14 +36,6 @@
     checkWidthGame();
   }
 
-// Bottons - show/close game
-// =================================
-  const email   = document.getElementById('email');
-  const gameDIV = document.getElementsByClassName('game')[0];
-  const userName= document.querySelector(".userName");
-  const btnCloseGame = document.querySelector("#closeGame");
-  let user = '';
-
 // show DIV game
   function showGameDiv() {
     if(window.innerWidth >= 768 && gameDesktop) {
@@ -51,7 +49,6 @@
 
 // close DIV game
   function closeGame() {
-    console.log('close');
     gameDIV.style.transition = "height 3.0s linear 0s";
     gameDIV.style.height = '0px';
 
@@ -68,7 +65,7 @@
     btnShowGame.disabled = true;
   }
 
-  btnCloseGame.addEventListener('click', closeGame)
+  btnCloseGame.addEventListener('click', closeGame);
 
 // button - show gameDIV
   btnShowGame.addEventListener('click', function() {
@@ -105,7 +102,7 @@
           message.classList.add("messageSuccess");
           message.innerHTML = "Form sended...";
           
-          console.log(user);
+          // console.log(user);
           let userInStarage = localStorage.getItem(user);
           if(userInStarage) {
             showGameDiv();
@@ -141,14 +138,12 @@
       setNewPlayer(user);      
     } else {
       // mail no
-      console.log('Brak takiego maila');
-      console.log(localStorage.getItem(email.value));
       btnShowGame.disabled = true;
     }
   });
 
 
-// MINI-GAME version 2.0
+// MINI-GAME version 2.1
 // ==================================
 
 // Declear
@@ -156,10 +151,13 @@
   const jumperButton = document.getElementById("jumperButton");
   const startButton  = document.getElementById("startButton");
   const resetButton  = document.getElementById("resetButton");
-  // let groundImg      = document.getElementById("canvas");
   let yourScoreFinal = document.getElementById("yourScoreFinal");
   let yourScore      = document.getElementById("yourScore");
   let levelShow      = document.getElementById("levelShow");
+  const dino1 = document.getElementById("dino1");
+  const dino2 = document.getElementById("dino2");
+  const dino3 = document.getElementById("dino3");
+
   let speedGame = 20;
   let lastScore = 0;
   let score = 0;
@@ -186,21 +184,24 @@
   }
 
 // Wall
-  function Wall(width, height, color, x, y) {
+  class Wall {
+    constructor(width, height, color, x, y) {
     this.width = width;
     this.height = height;
+    this.color = color;
     this.x = x;
     this.y = y;
     this.speedUp = 0;
     this.cumulationSpeed = 0;
-    this.update = function () {
+    }
+    update() {
       let ctx = boardGame.context;
-      ctx.fillStyle = color;
+      ctx.fillStyle = this.color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
     };
   }
 
-  // Jumper
+  // Jumper & actions: newPosition, update, hitTop, hitBottom, crach
   class Jumper {
     constructor(width, height, color, x, y) {
       this.width = width;
@@ -213,55 +214,41 @@
       this.crashSound = true;
       this.dinoRun = 0;
     }
-    update = function () {
+    update() {
       let ctx = boardGame.context;
       ctx.fillStyle = this.color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
-
-
-      // img in pattern
-      // -------------------
-      // var img = document.getElementById("ground");
-      // ctx.drawImage(img, 0, 0);
-
-      // img in pattern
-      // ------------------
-      // var ground = document.getElementById("ground");
-      // var pat = ctx.createPattern(ground, "repeat");
-      // ctx.rect(0, 0, 480, 200);
-      // ctx.fillStyle = pat;
-      // ctx.fill();
 
       // img dino - animation
       let dino;
       if(!hitBottomStatus) {
         if(this.dinoRun < 5) {
-          dino = document.getElementById("dino1");
+          dino = dino1;
           this.dinoRun++;
         } else if(this.dinoRun < 10) {
-          dino = document.getElementById("dino2");
+          dino = dino2;
           this.dinoRun++;
         } else {
-          dino = document.getElementById("dino2");
+          dino = dino2;
           this.dinoRun = 0;
         }        
       } else {
-        dino = document.getElementById("dino3");
+        dino = dino3;
       }
       ctx.drawImage(dino, this.x, this.y, this.width, this.height);
 
     };
-    newPos = function () {
+    newPosition() {
       this.y += this.speedUp;
       this.hitBottom();
       this.hitTop();
     };
-    hitTop = function () {
+    hitTop() {
       if(this.y < 50 && countPress <= 1) {
         this.speedUp = 2.0;
       }
       if (this.y < 0) {
-        console.error("Too hight");
+        // console.error("Too hight");
         this.y = 0;
         if(hitTopStatus) {
           hitTopFalse(); 
@@ -271,13 +258,13 @@
         }
       }
     };
-    hitBottom = function () {
+    hitBottom() {
       var jumpBottom = boardGame.canvas.height - this.height;
       if (this.y > jumpBottom) {
         this.y = jumpBottom;
         this.cumulationSpeed = 0;
         if(hitBottomStatus) {
-          console.error("Hit bottom"); 
+          // console.error("Hit bottom"); 
           var yes = new Audio("./game/knock.wav");
           yes.play();
           hitBottomFalse();  
@@ -285,7 +272,7 @@
         }
       }
     };
-    crash = function (wallObj) {
+    crash(wallObj) {
       var myleft = this.x;
       var myright = this.x + this.width;
       var mytop = this.y;
@@ -311,9 +298,7 @@
         jumperButton.disabled = true;
         jumperButton.style.color = '#666';
         if (boardGame.counter > lastScore) {
-          console.log(lastScore);
           lastScore = boardGame.counter;
-          console.warn(lastScore);
           showYourFinalScore(lastScore);
           savaStorage(lastScore);
         }
@@ -374,7 +359,7 @@
 
 // change Level
   function changeLevel(level) {
-    console.log('New Level: ', `Level ${level}`, speedGame, score);
+    // console.log('New Level: ', `Level ${level}`, speedGame, score);
     levelShow.textContent = level;
     boardGame.startInterval();
     reached.play(); 
@@ -441,7 +426,7 @@
     boardGame.counter += 1;
     if (boardGame.counter == 1 || (boardGame.counter / 300) % 1 == 0) {
       x = boardGame.canvas.width;
-      height = 200;                                        // height = height from Top
+      height = 200;                                        
       let wall = new Wall(40, 70, "darkgreen", x, height); // width heightWall color x heightFromTop // heightWall => (heightWall + height) = boardGame.canvas.width (270) 
       walls.push(wall);
     }
@@ -450,7 +435,7 @@
       walls[i].update();
     }
     showActualScore(boardGame.counter);
-    jumper.newPos();
+    jumper.newPosition();
     jumper.update();
     increasingDifficulty();
   }
@@ -461,22 +446,24 @@
   }
 
 // Board Game = 480 x 270
-  boardGame = {
-    canvas: document.createElement("canvas"),
-    start: function () {
+  class BoardGame {
+    constructor() {
+      this.canvas = document.createElement("canvas");
       this.canvas.width = 480;
       this.canvas.height = 270;
       this.context = this.canvas.getContext("2d");
-      boardDiv.appendChild(this.canvas);
       this.counter = 0;
-      this.intervalId = null;
-    },
-    startInterval: function () {
+      this.intervalId = null;      
+    }
+    start() {
+      boardDiv.appendChild(this.canvas);
+    }
+    startInterval() {
       this.intervalId = setInterval(updateBoardGame, speedGame);
-    },
-    clear: function () {
+    }
+    clear() {
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    },
+    }
   };
 
 // for styleJump - bind
@@ -501,7 +488,6 @@
     jumperButton.onclick = function () {
       addCumulationSpeed(-2.0);
       countPress++;
-      console.log(countPress);
       hitBottomTrue();
       hitTopTrue();
       const binded = styleJump.bind(jumperButton);
@@ -514,7 +500,6 @@
       if (key_press == " ") {
         addCumulationSpeed(-2.0);
         countPress++;
-        console.log(countPress);
         hitBottomTrue();
         hitTopTrue();
         styleJump.call(jumperButton);
@@ -524,28 +509,30 @@
 
 // randome images
   function randomShowImages() {
-    const arrayImages = ['ground1.jpg', 'ground2.jpg', 'ground3.jpg', 'ground4.jpg'];
+    const arrayImages = ['ground1.jpg', 'ground2.jpg', 'ground3.jpg', 'ground4.jpg', 'ground5.jpg', 'ground6.jpg', 'ground7.jpg', 'ground8.jpg', 'ground9.jpg', 'ground10.jpg', 'ground11.jpg', 'ground12.jpg', 'ground13.jpg', 'ground14.jpg', 'ground15.jpg', 'ground16.jpg', 'ground17.jpg', 'ground18.jpg', 'ground19.jpg', 'ground20.jpg'
+  ];
     intervalOfImages = setTimeout(function() {
       randomImage = Math.floor(Math.random() * arrayImages.length);
       boardGame.canvas.style.background = 'url(/game/'+arrayImages[randomImage]+')'; 
       randomShowImages();
     }, 3000);
-
   }
 
 // start Board
   function startBoard() {
+    boardGame = new BoardGame();
     boardGame.start();
     getStorageScore(user);
+    startButton.addEventListener("click", startGame);
+    resetButton.addEventListener("click", resetGame);
   }
 
 // start Game
-  function startGame(event) {
-    boardGame.startInterval();
-    jumper = new Jumper(30, 40, "orange", 20, 100); // width height color left heightDrop
+  function startGame() {
+    jumper = new Jumper(30, 40, "orange", 20, 100); // width height color left heightDrop    
     jumper.speedUp = 2.0;
-    score = 0;
-
+    score = 0;    
+    boardGame.startInterval();
     controlGame();
     this.disabled = true;
     jumperButton.disabled = false;
@@ -575,10 +562,8 @@
     boardGame.canvas.style.backgroundSize = 'cover';
   }
 
-// load & start game & reset game
+// load game
   document.body.onload = startBoard();
-  startButton.addEventListener("click", startGame);
-  resetButton.addEventListener("click", resetGame);
 
 })();
 
