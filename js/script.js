@@ -142,6 +142,7 @@ sliderBtnLeft.addEventListener('click', () => {
 });
 
 
+
 (function carusel () {
     for(let i=0; i<sliderImg.length; i++) {
         sliderImg[slideIndex].classList.remove("active");
@@ -161,4 +162,5 @@ sliderBtnLeft.addEventListener('click', () => {
 
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".fas.fa-times")
+
 

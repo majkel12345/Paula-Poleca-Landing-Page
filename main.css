@@ -237,14 +237,6 @@ html{
     justify-content: center;
     overflow: hidden;
 }
-.game__area {
-    /* border: 1px solid red;
-    width: 200px;
-    height: 100px;
-    margin: 10px 0; */
-}
-
-
 
 /*nowa sekcja*/
 
@@ -525,12 +517,12 @@ a:hover {
     text-decoration: none;
     display: inline-block;
     border-color: var(--additional-color);
+    font-size: 1em;
 }
 .mail__checkbox{
     display: flex;
     margin-top: 20px;
     justify-content: center;
-    /* font-size: 10px; */
 }
 
 .mail__checkbox p{
@@ -553,7 +545,7 @@ a:hover {
     display: flex;
     padding: inherit;
     justify-content: center;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .mail__checkbox p{
@@ -574,6 +566,10 @@ button {
     display: inline-block;
     margin-top: 16px;
     font-size: 16px;
+}
+#confirm[disabled] {
+    color: #666;
+    background: #ccc;
 }
 
 input {
@@ -700,6 +696,7 @@ footer{
   .fas.fa-times{
       color: red;
   }
+
 
 
 @media (min-width:768px) {
