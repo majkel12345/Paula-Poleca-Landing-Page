@@ -95,7 +95,51 @@ const sliderBtnRight = document.querySelector('.fa-chevron-right');
 const sliderBtnLeft = document.querySelector('.fa-chevron-left');
 
 let slideIndex = 0;
-let n = 1 ;
+let n = 0 ;
+
+function showImagesinSlider () {
+
+    for( i = 0; i < sliderImg.length; i++){
+        sliderImg[slideIndex].classList.add("active")
+    }
+
+};
+
+
+sliderBtnRight.addEventListener('click', () => {
+    sliderImg[slideIndex].classList.remove("active")
+
+
+
+    if (slideIndex >= 4) {
+        slide = sliderImg[0]
+        slideIndex = 0
+        slide.classList.add("active")
+    } else {
+        slideIndex = slideIndex + 1
+        showImagesinSlider();
+    }
+
+    }
+
+);
+
+    
+
+sliderBtnLeft.addEventListener('click', () => {
+    sliderImg[slideIndex].classList.remove("active")
+    
+	if (slideIndex <= 0){
+        slide = sliderImg[5]
+        slideIndex = 5;
+        slide.classList.add("active")
+	} else {
+        console.log(slideIndex)
+        slideIndex = slideIndex - 1
+        showImagesinSlider();
+         
+	}
+});
 
 (function carusel () {
     for(let i=0; i<sliderImg.length; i++) {
@@ -114,40 +158,5 @@ let n = 1 ;
   
 })();
 
-
-function showImagesinSlider () {
-
-    for( i = 0; i < sliderImg.length; i++){
-        sliderImg[slideIndex].classList.add("active")
-    }
-
-};
-
-
-sliderBtnRight.addEventListener('click', () => {
-    sliderImg[slideIndex].classList.remove("active")
-
-    if (slideIndex >= sliderImg.length) {
-    	slideIndex = 0;
-    } 
-    else {
-        slideIndex += n
-        showImagesinSlider();
-
-    }
-});
-
-    
-
-sliderBtnLeft.addEventListener('click', () => {
-    sliderImg[slideIndex].classList.remove("active")
-
-	if (slideIndex <= 0){
-		slideIndex = sliderImg.length - 1;
-	} else {
-        slideIndex -= n
-        showImagesinSlider();
-         
-	}
-});
-
+const modal = document.querySelector(".modal");
+const modalCloseBtn = document.querySelector(".fas.fa-times")
