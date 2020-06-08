@@ -141,6 +141,7 @@ sliderBtnLeft.addEventListener('click', () => {
 	}
 });
 
+<<<<<<< HEAD
 
 (function carusel () {
     for(let i=0; i<sliderImg.length; i++) {
@@ -162,3 +163,5 @@ sliderBtnLeft.addEventListener('click', () => {
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".fas.fa-times")
 
+=======
+>>>>>>> master

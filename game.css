@@ -1,42 +1,120 @@
+/* GAME */
+
 .game #gameDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.gameDiv {
+    background-color: yellow;
+    padding: 10px 10px 0;
+}
+.jumper-level {
+    display: flex;
+    width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+#gameDiv h2 {
+    padding: 0;
+}
+.btnShowGame[disabled] {
+    color: #666;
+    background: #ccc;
+}
+.game {
+    background-color: #888;
+}
+.game #boardDiv {
+    width: 480px;
+}
+.game canvas {
+    border: 1px solid #444444;
+    background-image: url('game/trojmiasto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #b3ebca;
+}
+.game .jumperButton,
+.game .startButton,
+.game .resetButton {
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: #013883;
+    border: 1px solid black;
+    transition: all 0.5s;
+    color: #eee;
+    width: 140px;
+}
+.game .startButton,
+.game .resetButton,
+.game .jumperButton {
+    margin: 10px;
+    border: 2px solid gray;
+}
+.resetButton:hover, 
+.startButton:hover, 
+.jumperButton:hover {
+    color: white;
+    background-color: #307ae0;
+}
+.game .game_buttons {
+    display: flex;
+}
+.resetButton[disabled], 
+.startButton[disabled], 
+.jumperButton[disabled] {
+    color: #666;
+    background: #ccc;
+}
+.closeGame {
+    position: absolute;
+    top:10px;right:10px;
+}
+.closeGame .fas.fa-times {
+    color: blue;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
   }
-  .game #jumperDiv {
-  width: 480px;
-  }
-  .game .jumperButton,
-  .game .startButton,
-  .game .resetButton {
-  padding: 5px 10px;
-  font-size: 20px;
-  background-color: #013883;
-  border: 1px solid black;
-  transition: all 0.5s;
-  color: #eee;
-  width: 140px;
-  }
-  .game .startButton,
-  .game .resetButton,
-  .game .jumperButton {
-      margin: 10px;
-      border: 2px solid gray;
-  }
-  .game #jumperButton:hover {
-  /* color: white;
-  background-color: #307ae0; */
-  }
-  .game .game_buttons {
-  display: flex;
-  }
-  .resetButton[disabled], 
-  .startButton[disabled], 
-  .jumperButton[disabled] {
-  color: #666;
-  background: #ccc;
-  }
-  .game canvas {
-  border: 1px solid #444444;
-  background-color: #b3ebca;
-  }
+  
+/* Modal Content */
+.modal__content {
+    background-color: #fefefe;
+    margin: 16% auto; 
+    padding: 16px;
+    border: 4px solid var(--additional-color);
+    width: 80%; 
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+}
+
+.modal .fas.fa-times{
+    color: red;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
