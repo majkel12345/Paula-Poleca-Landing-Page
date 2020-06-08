@@ -141,12 +141,6 @@ sliderBtnLeft.addEventListener('click', () => {
 	}
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 938b32363ee75e8038cd885dbab8a211d3f15e7f
-
 (function carusel () {
     for(let i=0; i<sliderImg.length; i++) {
         sliderImg[slideIndex].classList.remove("active");
@@ -166,10 +160,3 @@ sliderBtnLeft.addEventListener('click', () => {
 
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".fas.fa-times")
-
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
-
->>>>>>> 938b32363ee75e8038cd885dbab8a211d3f15e7f
