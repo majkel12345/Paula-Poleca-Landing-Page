@@ -111,7 +111,7 @@ sliderBtnRight.addEventListener('click', () => {
 
 
 
-    if (slideIndex >= 4) {
+    if (slideIndex >= 6) {
         slide = sliderImg[0]
         slideIndex = 0
         slide.classList.add("active")
@@ -130,8 +130,8 @@ sliderBtnLeft.addEventListener('click', () => {
     sliderImg[slideIndex].classList.remove("active")
     
 	if (slideIndex <= 0){
-        slide = sliderImg[5]
-        slideIndex = 5;
+        slide = sliderImg[7]
+        slideIndex = 7;
         slide.classList.add("active")
 	} else {
         console.log(slideIndex)
