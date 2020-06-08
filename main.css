@@ -668,11 +668,7 @@ footer{
     text-align: end;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 938b32363ee75e8038cd885dbab8a211d3f15e7f
-            
+       
 /* Modal */
 .modal {
     display: none; /* Hidden by default */
@@ -701,12 +697,6 @@ footer{
       color: red;
   }
 
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
-
->>>>>>> 938b32363ee75e8038cd885dbab8a211d3f15e7f
 
 @media (min-width:768px) {
     .container{
