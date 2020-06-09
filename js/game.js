@@ -1,6 +1,6 @@
 
 (function() {
-  console.log('mini-game - Jumper ver 2.1'); 
+  console.log('mini-game - Jumper ver 2.2'); 
 
 // Bottons - show/close game & modal
 // ========================================
@@ -471,7 +471,7 @@
     styleJump();
   }
 
-// button Jump - style
+// button Jump - style & play
   function styleJump() {
     this.style.color = 'yellow';  
     this.style.fontWeight = 'bold';    
@@ -482,27 +482,31 @@
     snd.play();
   }
 
-// Control game by mouse-button & space
+// Control game by mouse-left-button & key-space
   function controlGame() {
 
+    const actionControlMouseAndSpace = () => {
+      if(countPress <= 1) {
+        addCumulationSpeed(-2.0);
+        countPress++;
+        console.log(countPress);
+        hitBottomTrue();
+        hitTopTrue();
+        const binded = styleJump.bind(jumperButton);
+        binded();  
+        // styleJump.call(jumperButton);      
+      }  
+    }
+
     jumperButton.onclick = function () {
-      addCumulationSpeed(-2.0);
-      countPress++;
-      hitBottomTrue();
-      hitTopTrue();
-      const binded = styleJump.bind(jumperButton);
-      binded();
+      actionControlMouseAndSpace();     
     };
 
     document.onkeyup = function (event) {
       jumperButton.onclick = null;
       let key_press = String.fromCharCode(event.keyCode);
       if (key_press == " ") {
-        addCumulationSpeed(-2.0);
-        countPress++;
-        hitBottomTrue();
-        hitTopTrue();
-        styleJump.call(jumperButton);
+        actionControlMouseAndSpace();
       }
     };
   }
@@ -515,7 +519,7 @@
       randomImage = Math.floor(Math.random() * arrayImages.length);
       boardGame.canvas.style.background = 'url(/game/'+arrayImages[randomImage]+')'; 
       randomShowImages();
-    }, 3000);
+    }, 5000);
   }
 
 // start Board
