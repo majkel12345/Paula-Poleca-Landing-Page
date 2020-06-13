@@ -162,12 +162,25 @@ const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".fas.fa-times")
 
 // Translate
+const buttonTrans = document.querySelector('.button__translate');
+let langPl = true;
 
-document.querySelector('.button__translate').addEventListener('click', () => {
-    const elements = document.querySelectorAll('[data-en]');   
-    Array.from(elements).forEach(element => {
-        element.setAttribute('data-pl', element.innerText);       
-        element.innerText = element.getAttribute('data-en');
-    });
-    console.log(elements);
+buttonTrans.addEventListener('click', () => {
+    if(langPl) {
+        buttonTrans.innerHTML = 'Polish <span>🇵🇱</span>';
+        const words = document.querySelectorAll('[data-en]');   
+        Array.from(words).forEach(word => {
+            word.setAttribute('data-pl', word.innerText);       
+            word.innerText = word.getAttribute('data-en');
+        });
+    } else {
+        buttonTrans.innerHTML = 'English <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>';
+        const words = document.querySelectorAll('[data-pl]');
+        Array.from(words).forEach(word => {
+            word.setAttribute('data-en', word.innerText);
+            word.innerText = word.getAttribute('data-pl');
+            word.removeAttribute('data-pl');
+        });
+      }
+      langPl = !langPl;
 });

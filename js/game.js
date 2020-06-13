@@ -18,6 +18,26 @@
       modal.style.display = 'none';
   });
 
+// close DIV game
+function closeGame() {
+  gameDIV.style.transition = "height 3.0s linear 0s";
+  gameDIV.style.height = '0px';
+
+  resetScores();
+  showYourFinalScore(0);
+  showActualScore(0);
+  resetGame();
+
+  document.querySelector('#jumperButton').disabled = true;
+  document.querySelector('#resetButton').disabled = true;
+  email.value = '';
+
+  document.getElementById('confirm').disabled = false;
+  btnShowGame.disabled = true;
+}
+
+btnCloseGame.addEventListener('click', closeGame);
+
 // control game for Desktop  
   let gameDesktop = null;
   const checkWidthGame = function() {
@@ -25,7 +45,9 @@
     if(widthGame < 768) {
       btnShowGame.style.display = 'none';
       gameDesktop = false;
-      closeGame();
+      // closeGame();
+      gameDIV.style.transition = "height 3.0s linear 0s";
+      gameDIV.style.height = '0px';
     } else {
       btnShowGame.style.display = 'inline-block';
       gameDesktop = true;
@@ -47,25 +69,7 @@
     }
   }
 
-// close DIV game
-  function closeGame() {
-    gameDIV.style.transition = "height 3.0s linear 0s";
-    gameDIV.style.height = '0px';
 
-    resetScores();
-    showYourFinalScore(0);
-    showActualScore(0);
-    resetGame();
-
-    document.querySelector('#jumperButton').disabled = true;
-    document.querySelector('#resetButton').disabled = true;
-    email.value = '';
-
-    document.getElementById('confirm').disabled = false;
-    btnShowGame.disabled = true;
-  }
-
-  btnCloseGame.addEventListener('click', closeGame);
 
 // button - show gameDIV
   btnShowGame.addEventListener('click', function() {
