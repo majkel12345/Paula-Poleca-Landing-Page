@@ -157,6 +157,8 @@
   const dino1 = document.getElementById("dino1");
   const dino2 = document.getElementById("dino2");
   const dino3 = document.getElementById("dino3");
+  const dinoflyUp   = document.getElementById("lion_fly_up");
+  const dinoflyDown = document.getElementById("lion_fly_down");
 
   let speedGame = 20;
   let lastScore = 0;
@@ -168,8 +170,8 @@
   let hitTopStatus = true;
   let countPress = 0;
   let intervalOfImages = 0;
-  let dinoUp = null;
-  let dinoDown = null;
+  let dinoUp = true;
+  let dinoDown = true;
 
 // Jumper's hit - control boolean
   function hitBottomFalse() {
@@ -184,6 +186,15 @@
   function hitTopTrue() {
       hitTopStatus = true;
   }
+// Jumper fly Up/Down
+const lionFlyUp = () => {
+  dinoUp = true;
+  dinoDown = false;
+}  
+const lionFlyDown = () => {
+  dinoUp = false;
+  dinoDown = true;
+}  
 
 // Wall
   class Wall {
@@ -237,7 +248,9 @@
           this.dinoRun = 0;
         }        
       } else {
-        dino = dino3;
+        // dino = dino3;
+        if(dinoUp)   {dino   = dinoflyUp;}
+        if(dinoDown) {dino = dino3;} 
       }
       ctx.drawImage(dino, this.x, this.y, this.width, this.height);
 
@@ -250,6 +263,7 @@
     hitTop() {
       if(this.y < 50 && countPress <= 1) {
         this.speedUp = 2.0;
+        lionFlyDown();
       }
       if (this.y < 0) {
         // console.error("Too hight");
@@ -259,6 +273,7 @@
           var yes = new Audio("./game/knock.wav");
           yes.play();
           this.speedUp = 2.0;  
+          lionFlyDown();
         }
       }
     };
@@ -272,6 +287,7 @@
           var yes = new Audio("./game/knock.wav");
           yes.play();
           hitBottomFalse();  
+          lionFlyUp();
           countPress = 0;         
         }
       }
@@ -498,7 +514,8 @@
         hitTopTrue();
         const binded = styleJump.bind(jumperButton);
         binded();  
-        // styleJump.call(jumperButton);      
+        // styleJump.call(jumperButton);  
+        lionFlyUp();  
       }  
     }
 
