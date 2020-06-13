@@ -1,32 +1,3 @@
-// bounceInDown Logo
-
-$('.logo')
-    .waypoint( function(dir) {
-        if ( dir === 'down' )
-            $(this)
-            .addClass('bounceInDown')
-            .removeClass('fadeOutDown');
-        else
-            $(this)
-            .addClass('fadeOutDown')
-            .removeClass('bounceInDown');
-        }, {
-            offset: '80%'
-        })
-    .waypoint( function(dir) {
-        if ( dir === 'down' )
-            $(this)
-            .addClass('fadeOutDown')
-            .removeClass('bounceInDown');
-        else
-            $(this)
-            .addClass('bounceInDown')
-            .removeClass('addHidden')
-            .removeClass('fadeOutDown');
-         }, {
-             offset: -95
-         })   
-         
 //zoomInDown O nas
 
 $('.onas__info')
@@ -52,5 +23,34 @@ $('.onas__info')
             $(this)
             .addClass('.onas__info');
     }, {
-        offset: -95
+        offset: -50
     })
+
+// bounceInDown Logo
+
+$('.logo')
+    .waypoint( function(dir) {
+        if ( dir === 'down' )
+            $(this)
+            .addClass('bounceInDown')
+            .removeClass('fadeOutDown');
+        else
+            $(this)
+            .addClass('fadeOutDown')
+            .removeClass('bounceInDown');
+    }, {
+        offset: '80%'
+    })
+    .waypoint( function(dir) {
+        if ( dir === 'down' )
+            $(this)
+            .addClass('fadeOutDown')
+            .removeClass('bounceInDown');
+        else
+            $(this)
+            .addClass('bounceInDown')
+            .removeClass('addHidden')
+            .removeClass('fadeOutDown');
+    }, {
+        offset: -50
+    })   
