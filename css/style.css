@@ -189,8 +189,7 @@ html{
     justify-content: space-around;*/
     width: 100%;
     height: auto;
-    /* background-image: url(/images/Gda.jpg); */
-    background-image: url(./images/gda.jpg);
+    background-image: url(/img/gdansk.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -557,7 +556,7 @@ a:hover {
 
 }
 
-button {
+.mail button {
     background-color: var(--additional-color);
     color: var(--secondary-bg-color);
     padding: 15px 32px;
@@ -797,4 +796,28 @@ footer{
 
     }
 
+.translate {
+    
+    margin-left: 55px;
+    float: left;
+}
 
+.translate button {
+    background-color: var(--additional-color);
+    color: var(--secondary-bg-color);
+    padding: 3px 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 3px 3px;
+}
+.translate button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 630px) {
+
+    .translate button {
+        margin-top: 8px;
+    }
+}

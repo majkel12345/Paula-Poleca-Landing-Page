@@ -160,3 +160,14 @@ sliderBtnLeft.addEventListener('click', () => {
 
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".fas.fa-times")
+
+// Translate
+
+document.querySelector('.button__translate').addEventListener('click', () => {
+    const elements = document.querySelectorAll('[data-en]');   
+    Array.from(elements).forEach(element => {
+        element.setAttribute('data-pl', element.innerText);       
+        element.innerText = element.getAttribute('data-en');
+    });
+    console.log(elements);
+});
