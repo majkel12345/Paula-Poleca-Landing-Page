@@ -168,6 +168,8 @@
   let hitTopStatus = true;
   let countPress = 0;
   let intervalOfImages = 0;
+  let dinoUp = null;
+  let dinoDown = null;
 
 // Jumper's hit - control boolean
   function hitBottomFalse() {
@@ -213,6 +215,7 @@
       this.cumulationSpeed = 0; 
       this.crashSound = true;
       this.dinoRun = 0;
+      // this.last_y = y;
     }
     update() {
       let ctx = boardGame.context;
@@ -220,6 +223,7 @@
       ctx.fillRect(this.x, this.y, this.width, this.height);
 
       // img dino - animation
+      console.log(dinoUp, dinoDown)
       let dino;
       if(!hitBottomStatus) {
         if(this.dinoRun < 5) {
