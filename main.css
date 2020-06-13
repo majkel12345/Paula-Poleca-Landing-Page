@@ -804,15 +804,20 @@ footer{
 
 }
 
-.up_button {
-    padding: 0;
-    width: 10px;
-    height: 10px;
-    background-color: brown;
+.up {
     position: fixed;
     bottom: 10px;
     left: 10px;
 }
+
+.up::after {
+    content: "\f0aa";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    color: var(--primary-text-color);
+  }
 
 .hidden {
     display: none;
