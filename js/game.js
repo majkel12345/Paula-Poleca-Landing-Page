@@ -168,6 +168,8 @@
   let hitTopStatus = true;
   let countPress = 0;
   let intervalOfImages = 0;
+  let dinoUp = null;
+  let dinoDown = null;
 
 // Jumper's hit - control boolean
   function hitBottomFalse() {
@@ -213,6 +215,7 @@
       this.cumulationSpeed = 0; 
       this.crashSound = true;
       this.dinoRun = 0;
+      // this.last_y = y;
     }
     update() {
       let ctx = boardGame.context;
@@ -220,6 +223,7 @@
       ctx.fillRect(this.x, this.y, this.width, this.height);
 
       // img dino - animation
+      console.log(dinoUp, dinoDown)
       let dino;
       if(!hitBottomStatus) {
         if(this.dinoRun < 5) {
@@ -427,7 +431,7 @@
     if (boardGame.counter == 1 || (boardGame.counter / 300) % 1 == 0) {
       x = boardGame.canvas.width;
       height = 200;                                        
-      let wall = new Wall(40, 70, "darkgreen", x, height); // width heightWall color x heightFromTop // heightWall => (heightWall + height) = boardGame.canvas.width (270) 
+      let wall = new Wall(40, 70, "green", x, height); // width heightWall color x heightFromTop // heightWall => (heightWall + height) = boardGame.canvas.width (270) 
       walls.push(wall);
     }
     for (i = 0; i < walls.length; i += 1) {
@@ -533,7 +537,7 @@
 
 // start Game
   function startGame() {
-    jumper = new Jumper(30, 40, "orange", 20, 100); // width height color left heightDrop    
+    jumper = new Jumper(30, 40, "transparent", 20, 100); // width height color left heightDrop    
     jumper.speedUp = 2.0;
     score = 0;    
     boardGame.startInterval();
