@@ -72,7 +72,7 @@ html{
     z-index: 99;
 }
 .nav__wrapper {
-    margin-top: 42px;
+    margin-top: 48px;
 }
 .nav__menu .active {
     background-color: lightgreen;
@@ -81,7 +81,7 @@ html{
 
 .nav .nav__link {
     text-decoration: none;
-    padding: 0 16px 0 16px;
+    padding: 10px 16px 10px 16px;
     line-height: 32px;
     color: black;
     text-align: center;
@@ -130,6 +130,16 @@ html{
     font-size: 24px;
     color: #000;
 }
+/* narrowed menu */
+
+.small {
+    font-size: 12px;
+}
+
+.small .nav__link{
+    padding: 0 16px;
+}
+
 
 /* desktop */
 @media screen and (min-width: 636px) {
@@ -791,9 +801,25 @@ footer{
         margin-left: 0px;
     }
 
+}
 
+.up {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
 
+.up::after {
+    content: "\f0aa";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    color: var(--primary-text-color);
+  }
 
+.hidden {
+    display: none;
     }
 
 .translate {
