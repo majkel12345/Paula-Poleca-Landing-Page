@@ -818,10 +818,8 @@ footer{
     color: var(--primary-text-color);
   }
 
-<<<<<<< HEAD:main.css
 .hidden {
     display: none;
-=======
     }
 
 .translate {
@@ -848,5 +846,4 @@ footer{
     .translate button {
         margin-top: 8px;
     }
->>>>>>> master:css/style.css
 }
