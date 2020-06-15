@@ -1,6 +1,6 @@
 
 (function() {
-  console.log('mini-game - Jumper ver 2.2'); 
+  // console.log('mini-game - Jumper ver 2.2'); 
 
 // Bottons - show/close game & modal
 // ========================================
@@ -69,13 +69,10 @@ btnCloseGame.addEventListener('click', closeGame);
     }
   }
 
-
-
 // button - show gameDIV
   btnShowGame.addEventListener('click', function() {
     showGameDiv();
   });
-
 
 // FORM
 // ==================================
@@ -105,8 +102,7 @@ btnCloseGame.addEventListener('click', closeGame);
           message.classList.remove("messageError");
           message.classList.add("messageSuccess");
           message.innerHTML = "Form sended...";
-          
-          // console.log(user);
+
           let userInStarage = localStorage.getItem(user);
           if(userInStarage) {
             showGameDiv();
@@ -158,9 +154,9 @@ btnCloseGame.addEventListener('click', closeGame);
   let yourScoreFinal = document.getElementById("yourScoreFinal");
   let yourScore      = document.getElementById("yourScore");
   let levelShow      = document.getElementById("levelShow");
-  const dino1 = document.getElementById("dino1");
-  const dino2 = document.getElementById("dino2");
-  const dino3 = document.getElementById("dino3");
+  const lion1 = document.getElementById("lion1");
+  const lion2 = document.getElementById("lion2");
+  const lion3 = document.getElementById("lion3");
   const dinoflyUp   = document.getElementById("lion_fly_up");
   const dinoflyDown = document.getElementById("lion_fly_down");
 
@@ -238,23 +234,22 @@ const lionFlyDown = () => {
       ctx.fillRect(this.x, this.y, this.width, this.height);
 
       // img dino - animation
-      console.log(dinoUp, dinoDown)
       let dino;
       if(!hitBottomStatus) {
         if(this.dinoRun < 5) {
-          dino = dino1;
+          dino = lion1;
           this.dinoRun++;
         } else if(this.dinoRun < 10) {
-          dino = dino2;
+          dino = lion2;
           this.dinoRun++;
         } else {
-          dino = dino2;
+          dino = lion2;
           this.dinoRun = 0;
         }        
       } else {
-        // dino = dino3;
-        if(dinoUp)   {dino   = dinoflyUp;}
-        if(dinoDown) {dino = dino3;} 
+        // dino = lion3;
+        if(dinoUp)   {dino = dinoflyUp;}
+        if(dinoDown) {dino = dinoflyDown;} 
       }
       ctx.drawImage(dino, this.x, this.y, this.width, this.height);
 
@@ -274,7 +269,7 @@ const lionFlyDown = () => {
         this.y = 0;
         if(hitTopStatus) {
           hitTopFalse(); 
-          var yes = new Audio("./game/knock.wav");
+          var yes = new Audio("./img/game/knock.wav");
           yes.play();
           this.speedUp = 2.0;  
           lionFlyDown();
@@ -288,7 +283,7 @@ const lionFlyDown = () => {
         this.cumulationSpeed = 0;
         if(hitBottomStatus) {
           // console.error("Hit bottom"); 
-          var yes = new Audio("./game/knock.wav");
+          var yes = new Audio("./img/game/knock.wav");
           yes.play();
           hitBottomFalse();  
           lionFlyUp();
@@ -355,7 +350,6 @@ const lionFlyDown = () => {
   // saveStorage - new user
   const saveStorageNewUser = function(newUser) {
       localStorage.setItem(newUser, 0);
-      // userName.textContent = newUser;
       setNewPlayer(newUser);
   }
 
@@ -513,7 +507,6 @@ const lionFlyDown = () => {
       if(countPress <= 1) {
         addCumulationSpeed(-2.0);
         countPress++;
-        console.log(countPress);
         hitBottomTrue();
         hitTopTrue();
         const binded = styleJump.bind(jumperButton);
@@ -542,7 +535,7 @@ const lionFlyDown = () => {
   ];
     intervalOfImages = setTimeout(function() {
       randomImage = Math.floor(Math.random() * arrayImages.length);
-      boardGame.canvas.style.background = 'url(/game/'+arrayImages[randomImage]+')'; 
+      boardGame.canvas.style.background = 'url(/img/game/'+arrayImages[randomImage]+')'; 
       randomShowImages();
     }, 5000);
   }
@@ -587,7 +580,8 @@ const lionFlyDown = () => {
     this.disabled = true;
     document.getElementById('confirm').disabled = false;
     btnShowGame.disabled = false;
-    boardGame.canvas.style.background = 'url(/game/trojmiasto.jpg)';
+    // boardGame.canvas.style.background = 'url(./img/game/trojmiasto.jpg)';
+    boardGame.canvas.style.background = 'url(./img/game/trojmiasto.jpg)';
     boardGame.canvas.style.backgroundSize = 'cover';
   }
 
