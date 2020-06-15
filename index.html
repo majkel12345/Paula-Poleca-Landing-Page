@@ -3,52 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="variables.css">
-    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/jquery.waypoints.js"></script>
-    <link rel="stylesheet" href="game.css">
-    <link rel="shortcut icon" href="images/logo.png" type="image/png">
-    <title>Paula Poleca</title>
+    <link rel="stylesheet" href="/css/game.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
+    <title data-en="Paula Recommends">Paula Poleca</title>
 </head>
 <body>
 
   <div class="container">
+      
     <nav class="nav" id="nav">
+       <div class="translate"><button class="button__translate">English</button></div>
       <ul class="nav__wrapper">
-        <li class="nav__menu"><a class="nav__link active" id="mainPage" href="#glowna">Strona główna</a></li>
+        <li class="nav__menu"><a class="nav__link active"  data-en="Home" id="mainPage" href="#glowna">Strona główna</a></li>
         <!-- <li class="nav__menu"><a class="nav__link" href="#main">Wydarzenia</a></li> -->
-        <li class="nav__menu"><a class="nav__link" href="#oferta">Oferta</a></li>
-        <li class="nav__menu"><a class="nav__link" href="#onas">O nas</a></li>
+        <li class="nav__menu"><a class="nav__link"  data-en="Offer" href="#oferta">Oferta</a></li>
+        <li class="nav__menu"><a class="nav__link" data-en="About us" href="#onas">O nas</a></li>
         <li class="nav__menu"><a class="nav__link icon" href="javascript:void(0);"><i class="fa fa-bars"></i></a></li>         
         <li class="nav__menu"><a class="nav__link logo" href="#glowna"><i class="fa fa-home"></i></a></li>  
       </ul>
     </nav>
-
+    
     <!-- main - for the time - empty -->
     <div class="main"></div>
-    
+   
     <!-- hero -->
     <div class="hero">
+       
       <a id="glowna" class="link-nav"></a>
+      
       <div class="logo addHidden animated delay-03s">
-        <img src="images/logo-white.png" alt="logo">
-        <div class="logo__name">planer<br> weekendowy</div>
+        <img src="img/logo-white.png" alt="logo">
+        <div class="logo__name" data-en="weekend">planer</div>
+        <div class="logo__name" data-en="planner">weekendowy</div>
       </div>
     </div>
 
     <!-- game -->
     <div class="game">
-        <img id="dino1" style="display:none;" width="40" height="100" src="./game/dino1.png"/>
-        <img id="dino2" style="display:none;" width="40" height="100" src="./game/dino2.png"/>
-        <img id="dino3" style="display:none;" width="40" height="100" src="./game/dino3.png"/>
+        <img id="dino1" style="display:none;" width="40" height="100" src="./game/lion_1.png"/>
+        <img id="dino2" style="display:none;" width="40" height="100" src="./game/lion_2.png"/>
+        <img id="dino3" style="display:none;" width="40" height="100" src="./game/lion_3.png"/>
         <img id="ground" style="display:none;" width="40" height="100" src="./game/trojmiasto.jpg"/>
-        <!-- <img id="scream" style="display:none;" width="40" height="100" src="./game/ground1.jpg"/> -->
         <div id="gameDiv" class="gameDiv">
           <span id="closeGame" class="closeGame"><i class="fas fa-times"></i></span>
           <h2>Jumper</h2>
@@ -71,24 +75,39 @@
 
     <!-- new -->
     <div class="new">
-      <h1>Paula Poleca</h1>
-      <p>Przedstawiamy Państwu największe i najciekawsze imprezy oraz wydarzenia w Trójmieście! Na bieżąco zapewniamy użytkownikom informacje na temat najnowszych wydarzeń kulturalnych i rozrywkowych.<br> Zaplanuj swój weekend z Paula Poleca! </p> 
+      <h1 data-en="Paula Recommends">Paula Poleca</h1>
+      <p data-en="We present to you the largest and most interesting events and events in the Tri-City! We constantly provide users with information on the latest cultural and entertainment events.">
+        Przedstawiamy Państwu największe i najciekawsze imprezy oraz wydarzenia w Trójmieście! Na bieżąco zapewniamy użytkownikom informacje na temat najnowszych wydarzeń kulturalnych i rozrywkowych.</p> 
+      <p data-en="Plan your weekend with Paula Recommends!">
+        Zaplanuj swój weekend z Paula Poleca!</p>
     </div>
 
     <!-- cookies_notice -->
     <div class="cookie__notice">
-      <p>Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej.  <a href="">Dowiedz się więcej</a> </p>
+      <p data-en="This site uses cookies, so that our service can work better.">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. <a href="" data-en="Find out more">Dowiedz się więcej</a> </p>
       <div type= 'button'id="cookie-accept" class="cookie-notice__btn">Zgadzam się</div>
     </div>
 
     <!-- func -->
     <div class="func">
       <ul>
-        <li> <i class="fa fa-check-circle "></i> Zaplanuj swój czas z PaulaPoleca!</li>
-        <li> <i class="fa fa-check-circle"></i> Wyszukaj nowe wydarzenie w Trójmieście!</li>
-        <li> <i class="fa fa-check-circle"></i> Poczytaj o nadchodzących wydzarzeniach!</li>
-        <li> <i class="fa fa-check-circle"></i> Bądź na bieząco z wydarzeniami!</li>
-
+        <li><i class="fa fa-check-circle "></i>
+          <span data-en=" Plan your time with Paula Recommends!">
+             Zaplanuj swój czas z PaulaPoleca!
+          </span>
+        </li>
+        <li> <i class="fa fa-check-circle"></i>
+          <span data-en=" Search for a new event in the Tri-City!">
+             Wyszukaj nowe wydarzenie w Trójmieście!</li>
+          </span>
+        <li> <i class="fa fa-check-circle"></i>
+          <span data-en=" Read about upcoming events!">
+           Poczytaj o nadchodzących wydzarzeniach!</li>
+          </span>
+        <li> <i class="fa fa-check-circle"></i>
+          <span data-en=" Stay up to date with events!">
+           Bądź na bieząco z wydarzeniami!</li>
+          </span>
       </ul>
     </div>
     
@@ -96,36 +115,43 @@
     <!-- more -->
     <div class="more">
       <a id="oferta" class="link-nav"></a>
-      <h2>Oferta</h2>
+      <h2 data-en="Offer">Oferta</h2>
       <div class="more__wrapper">
         <div class=" more__col">
           <ul>
             <li>
               <div class="more__col__item">                
                 <img src="https://images.unsplash.com/photo-1514782831304-632d84503f6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" height="150" width="150" alt="Funkcjonalność">
-                <h3>Zaplanuj Weekend</h3>                
-                <p>Stwórz własny harmonogram weekendu. Dodaj do listy wybrane przez siebie wydarzenia aby przeżyć niesamowity weekend.</p>
+                <h3 data-en="Plan the weekend">Zaplanuj Weekend</h3>                
+                <p data-en="Create your own weekend schedule. Add your chosen events to the list to experience an amazing weekend.">
+                  Stwórz własny harmonogram weekendu. Dodaj do listy wybrane przez siebie wydarzenia aby przeżyć niesamowity weekend.
+                </p>
               </div>
             </li>
             <li>
               <div class="more__col__item">                
                 <img src="https://images.unsplash.com/photo-1501960660415-25474dd8caa0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=717&q=80" height="150" width="150" alt="Funkcjonalność">
-                <h3>Wyszukaj wydarzenia w Twoim mieście</h3>                
-                <p>Wybierz interesujące Cię miasto i wyświetl nadchodzące w nim wydarzenia. </p>
+                <h3 data-en="Search for events in your city">Wyszukaj wydarzenia w Twoim mieście</h3>                
+                <p data-en="Select the city you are interested in and view the upcoming events in it.">
+                  Wybierz interesujące Cię miasto i wyświetl nadchodzące w nim wydarzenia. 
+                </p>
               </div>
             </li>
             <li>
               <div class="more__col__item">                
                 <img src="https://images.unsplash.com/photo-1506729623306-b5a934d88b53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" height="150" width="150" alt="Funkcjonalność">
-                <h3>Wybierz kategorie wydarzenia</h3>                
-                <p>Dostępny jest podział wydarzeń na kategorię aby ułatwić dostęp użytkownikowi do interesujących go eventów. </p>
+                <h3 data-en="Select event categories">Wybierz kategorie wydarzenia</h3>                
+                <p data-en="Division of events into categories is available to facilitate user access to events of interest to him.">
+                  Dostępny jest podział wydarzeń na kategorię aby ułatwić dostęp użytkownikowi do interesujących go eventów. </p>
               </div>
             </li>
             <li>
               <div class="more__col__item">                
                 <img src="https://images.unsplash.com/photo-1522098635833-216c03d81fbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" height="150" width="150" alt="Funkcjonalność">
-                <h3>Poleć wydarzenie znajomemu</h3>                
-                <p>Udostępnij i zaproś znajomego na nadchodzące wydarzenie. Dziel się niezapomnianymi chwilami z bliskimi</p>
+                <h3 data-en="Recommend the event to a friend">Poleć wydarzenie znajomemu</h3>                
+                <p data-en="Share and invite a friend to an upcoming event. Share unforgettable moments with loved ones">
+                  Udostępnij i zaproś znajomego na nadchodzące wydarzenie. Dziel się niezapomnianymi chwilami z bliskimi.
+                </p>
               </div>
             </li>  
           </ul>
@@ -135,29 +161,37 @@
             <li>
               <div class="more__col__item">                
                 <img src="https://images.unsplash.com/photo-1560420025-9453f02b4751?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=646&q=80" height="150" width="150" alt="Funkcjonalność">
-                <h3>Dodaj wydarzenia do swojego Kalendarza Google</h3>                
-                <p>Nie zapomnij o nachodzącym wydarzeniu! Dodaj interesujące Cię eventy <!--do Kalendarza Google-->aby nie przeoczyć żadnego z nich.</p>
+                <h3 data-en="Add events to your Google Calendar">Dodaj wydarzenia do swojego Kalendarza Google</h3>                
+                <p data-en="Don't forget about the upcoming event! Add events that interest you so that you do not miss any of them.">
+                  Nie zapomnij o nachodzącym wydarzeniu! Dodaj interesujące Cię eventy aby nie przeoczyć żadnego z nich.
+                </p>
               </div>
             </li>
             <li>
               <div class="more__col__item">                
                 <img src="https://images.unsplash.com/photo-1578575436955-ef29da568c6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" height="150" width="150" alt="Funkcjonalność">
-                <h3>Kup bilet na wydarzenie</h3>                
-                <p>Nie trać czasu i kup bilet na nadchodzące wydarzenie. Pod opisem eventu znajduje się link do sprzedaży biletów online.</p>
+                <h3 data-en="Buy an event ticket">Kup bilet na wydarzenie</h3>                
+                <p data-en="Don't waste time and buy a ticket for the upcoming event. Under the event description there is a link to selling tickets online.">
+                  Nie trać czasu i kup bilet na nadchodzące wydarzenie. Pod opisem eventu znajduje się link do sprzedaży biletów online.
+                </p>
               </div>
             </li>
             <li>
               <div class="more__col__item">                
                 <img src="https://images.unsplash.com/photo-1517263904808-5dc91e3e7044?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" height="150" width="150" alt="Funkcjonalność">
-                <h3>Propozycje wydarzeń</h3>                
-                <p>Dla niezdecydowanych użytkowników mamy gotowy harmonogram najciekawszych wydarzeń nadchodzącego weekendu. Sprawdź co poleca Paula. </p>
+                <h3 data-en="Event suggestions">Propozycje wydarzeń</h3>                
+                <p data-en="For undecided users we have a ready schedule for the most interesting events of the upcoming weekend. Check what Paula recommends.">
+                  Dla niezdecydowanych użytkowników mamy gotowy harmonogram najciekawszych wydarzeń nadchodzącego weekendu. Sprawdź co poleca Paula. 
+                </p>
               </div>
             </li>
             <li>
               <div class="more__col__item">                
                 <img src="https://images.unsplash.com/photo-1533558527255-407147f3ae72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" height="150" width="150" alt="Funkcjonalność">
-                <h3>Oceń wydarzenie</h3>                
-                <p>Oceń eventy, w których uczestniczyliście. Użytkownik może dać notę od 1-10 aby ocenić dane wydarzenie oraz napisać do niego komentarz.</p>
+                <h3 data-en="Rate the event">Oceń wydarzenie</h3>                
+                <p data-en="Rate the events you have participated in. The user can give a rating of 1-10 to rate the event and write a comment to it. ">
+                  Oceń eventy, w których uczestniczyliście. Użytkownik może dać notę od 1-10 aby ocenić dane wydarzenie oraz napisać do niego komentarz.
+                </p>
               </div>
             </li>  
           </ul>
@@ -169,11 +203,11 @@
     <!-- onas -->
     <div class="onas">
       <a id="onas" class="link-nav"></a>
-      <h2>O nas</h2>
+      <h2 data-en="About us">O nas</h2>
       <div class="onas__wrapper">
         <div class="onas__info addHidden animated delay-03s">
           <ul>
-            <li><img src="images/PaulaIMG.png" alt="Foto Paula" height="200" width="200"></li>
+            <li><img src="img/foto_paula.png" alt="Foto Paula" height="200" width="200"></li>
             <li><h3>Paulina Kreft</h3></li>
             <li><i class="fab fa-linkedin-square"></i> <a href="https://www.linkedin.com/feed/" target="_blank">Linkedin</a></li>
             <li><i class="fab fa-github-square"></i> <a href="https://github.com/paulakreft/" target="_blank">GitHub</a></li>
@@ -182,7 +216,7 @@
 
         <div class="onas__info addHidden animated delay-05s">
           <ul>
-            <li><img src="images/foto_as.jpg" alt="Avatar" height="200" width="200"></li>
+            <li><img src="img/foto_andrzej.jpg" alt="Avatar" height="200" width="200"></li>
             <li><h3>Andrzej Stasiński</h3></li>
             <li><i class="fab fa-linkedin-square"></i> <a href="https://www.linkedin.com/feed/" target="_blank">Linkedin</a></li>
             <li><i class="fab fa-github-square"></i> <a href="https://github.com/andisas/" target="_blank">GitHub</a></li>
@@ -191,7 +225,7 @@
 
         <div class="onas__info addHidden animated delay-07s">
           <ul>
-            <li><img src="images/Michal.jpg" alt="Avatar" height="200" width="200"></li>
+            <li><img src="img/foto_michal.jpg" alt="Avatar" height="200" width="200"></li>
             <li><h3>Michał Karnath</h3></li>
             <li><i class="fab fa-linkedin-square"></i> <a href="https://www.linkedin.com/feed/" target="_blank">Linkedin</a></li>
             <li><i class="fab fa-github-square"></i> <a href="https://github.com/michal-karnath" target="_blank">GitHub</a></li>
@@ -200,9 +234,9 @@
 
         <div class="onas__info addHidden animated delay-1s">
           <ul>
-            <li><img src="images/volhan-foto.png" alt="Foto Vol-Han" height="200" width="200"></li>
-            <li><h3>Volodymyr Władyk</h3></li>
-            <li><i class="fab fa-linkedin-square"></i> <a href="https://www.linkedin.com/in/volodymyr-hannibal-501b311a2/" target="_blank">Linkedin</a></li>
+            <li><img src="img/foto_volhan.png" alt="Foto Vol-Han" height="200" width="200"></li>
+            <li><h3>Volodymyr Hannibal</h3></li>
+            <li><i class="fab fa-linkedin-square"></i> <a href="https://www.linkedin.com/in/volodymyr-hannibal/" target="_blank">Linkedin</a></li>
             <li><i class="fab fa-github-square"></i> <a href="https://github.com/Vol-Han" target="_blank">GitHub</a></li>
           </ul>
         </div>
@@ -212,8 +246,10 @@
     <!-- mail -->
     <div class="mail">
       <div class="mail__description"> 
-        <p>Chcesz być na bieżąco z wydarzeniami w Trójmieście. Zapisz się na premierę!</p>
-        <h3>Podaj Twój adres e-mail:</h3>
+        <p data-en="You want to be up to date with events in the Tri-City. Sign up for the premiere!">
+          Chcesz być na bieżąco z wydarzeniami w Trójmieście. Zapisz się na premierę!
+        </p>
+        <h3 data-en="Enter your email address:">Podaj Twój adres e-mail:</h3>
       </div>
       <div id="message" class="mail_message"></div>
       <div class="mail__wrapper">
@@ -223,11 +259,13 @@
           <div class="mail__checkbox">
             <label for="checkbox">
               <input type="checkbox" class="checkbox" id="checkbox" required>
-              Wypełniając formularz zgadzasz się na przetwarzanie Twoich danych w celu nawiązania kontaktu w sprawie udziału w kursie
+                <span data-en="By completing the form you agree to the processing of your data in order to contact us regarding participation in the course">
+                  Wypełniając formularz zgadzasz się na przetwarzanie Twoich danych w celu nawiązania kontaktu w sprawie udziału w kursie
+                </span>>
             </label>
           </div>  
-          <button type="button" id="btnShowGame" class="btnShowGame" disabled>Pokaż grę</button>
-          <button type="submit" id="confirm">Zapisz</button>          
+          <button type="button" id="btnShowGame" class="btnShowGame" disabled><span data-en="Show game">Pokaż grę</span></button>
+          <button type="submit" id="confirm"><span data-en="Save">Zapisz</span></button>          
         </form>
 
       </div>
@@ -236,12 +274,12 @@
     <!-- slider -->
     <div class="slider">
       <div class="slider_items">
-        <img class="slider_img__item active" src="./images/slide_gdansk-2_1400-700.jpg">
-        <img class="slider_img__item" src="./images/slide_gdansk_1400-700.jpg">
-        <img class="slider_img__item" src="./images/slide_sopot_1400-700.jpg">
-        <img class="slider_img__item" src="./images/slide_sopot-2_1400-700.jpg">
-        <img class="slider_img__item" src="./images/slide_gdynia_1400-700.jpg">
-        <img class="slider_img__item" src="./images/slide_gdynia-2_1400-700.jpg">
+        <img class="slider_img__item active" src="./img/slide_gdansk-2_1400-700.jpg">
+        <img class="slider_img__item" src="./img/slide_gdansk_1400-700.jpg">
+        <img class="slider_img__item" src="./img/slide_sopot_1400-700.jpg">
+        <img class="slider_img__item" src="./img/slide_sopot-2_1400-700.jpg">
+        <img class="slider_img__item" src="./img/slide_gdynia_1400-700.jpg">
+        <img class="slider_img__item" src="./img/slide_gdynia-2_1400-700.jpg">
  
 
 
@@ -255,17 +293,23 @@
     <!---Modal-->
     <div class="modal">
       <div class="modal__content">
-        <h3>Jak grać?</h3>
+        <h3 data-en="How to play?">Jak grać?</h3>
         <i id="closeModal" class="fas fa-times"></i>
-        <p>Kliknij START w celu rozpoczęcia gry! Następnie kliknij JUMP w celu przeskoczenia przeszkody. 
-          Spiesz się, wraz z wzrastającą liczbą zdobytych przez Ciebie punktów plansza przyspiesza. 
-          Jeżeli chcesz rozpocząć grę od nowa, kliknij RESTART GAME.</p>
+        <p data-en="Click [Start game] to start the game! Then left-click [JUMP] or the SPACE key on the keyboard to jump over approaching obstacles. Over time, the speed of moving obstacles will increase. If you lose, you can play again by clicking the [Reset game] button. Remember that your best result will be remembered by your browser and you can improve it at any time. Good luck!">
+          Kliknij przycisk [Start game] w celu rozpoczęcia gry! Następnie klikaj lewym przyciskiem myszki na [JUMP] lub klawisz SPACE na klawiaturze w celu przeskoczenia zbliżających się przeszkód. Z upływem czasu szybkość przesuwających się przeszkód będzie wzrastać. Jeśli przegrasz, możesz zagrać jeszcze raz klikając przycisk [Reset game]. Pamiętaj, że Twój najlepszy wynik będzie zapamiętany przez przeglądarke i w każdej chwili możesz go poprawić. Powodzenia!
+          <br/><br/>
+          <p data-en="[Start game] - start of the game">[Start game] - start of the game</p>
+          <br/>
+          <p data-en="[Jump] - left key MOUSE or SPACE keyboard">[Jump] - left key MOUSE or SPACE keyboard</p>
+          <br/>
+          <p data-en="[Reset game] - reset and play again">[Reset game] - reset and play again</p>
+        </p>
       </div>
     </div>
 
     <!-- footer -->
     <footer>
-      <p>Wszelkie prawa zastrzeżone przez paulapoleca.pl 2020  </p>
+      <p data-en="All rights reserved by paulapoleca.pl 2020">Wszelkie prawa zastrzeżone przez paulapoleca.pl 2020  </p>
     </footer> 
 
   </div>      
@@ -286,5 +330,6 @@
   <!-- script JS game -->
   <script src="./js/game.js"></script>
   <script src="menu.js"></script>
+
 </body>
 </html>

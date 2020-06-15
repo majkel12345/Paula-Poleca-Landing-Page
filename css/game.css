@@ -33,7 +33,7 @@
 }
 .game canvas {
     border: 1px solid #444444;
-    background-image: url('game/trojmiasto.jpg');
+    background-image: url('/game/trojmiasto.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #b3ebca;
@@ -98,7 +98,7 @@
     padding: 16px;
     border: 4px solid var(--additional-color);
     width: 80%; 
-    height: 250px;
+    height: 310px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
