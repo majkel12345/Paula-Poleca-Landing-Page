@@ -18,7 +18,7 @@ html{
     display: grid;
     height: 100%;
     width: 100%;
-    max-width: 1700px;
+    max-width: 1600px;
     margin: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -818,7 +818,7 @@ footer{
             display: flex;
             position: absolute;
             align-self: center;
-            justify-content: space-around
+            justify-content: space-evenly;
         }
     
     .fa.fa-chevron-right {
