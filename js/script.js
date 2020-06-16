@@ -1,3 +1,5 @@
+(function() {
+
 // NAV-MENU
 // ====================================
 var nav = document.querySelector("#nav");
@@ -184,3 +186,6 @@ buttonTrans.addEventListener('click', () => {
       }
       langPl = !langPl;
 });
+
+})();
+
