@@ -18,6 +18,8 @@ html{
     display: grid;
     height: 100%;
     width: 100%;
+    max-width: 1600px;
+    margin: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
@@ -63,10 +65,10 @@ html{
 
 .nav {
     grid-area: nav;    
-
     background: var(--nav-bg-color);
     overflow: auto;
     position: fixed;
+    max-width: inherit;
     font-size: 16px;
     width: 100%;
     z-index: 99;
@@ -802,6 +804,31 @@ footer{
     }
 
 }
+@media (min-width: 1800px) {
+    .slider_img__item{
+        display: none;
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        margin-left: 100px;
+        margin-right: 100px;
+        }
+    
+        .slider__arrow{
+            display: flex;
+            position: absolute;
+            align-self: center;
+            justify-content: space-evenly;
+        }
+    
+    .fa.fa-chevron-right {
+            margin-left: 650px;
+        }
+    .fa.fa.fa-chevron-left {
+            margin-right: 650px;
+        }
+    
+    }
 
 .up {
     position: fixed;
