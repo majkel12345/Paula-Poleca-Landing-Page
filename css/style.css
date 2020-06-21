@@ -57,7 +57,6 @@ html{
 
 .more__col__item:hover{
     background-color: white;
-
 }
 
 /* menu            */
@@ -73,9 +72,11 @@ html{
     width: 100%;
     z-index: 99;
 }
+
 .nav__wrapper {
     margin-top: 48px;
 }
+
 .nav__menu .active {
     background-color: lightgreen;
     background-color: var(--nav-bg-color-active);
@@ -89,16 +90,16 @@ html{
     text-align: center;
     transition: all 0.6s;
 }
+
 .nav .nav__link.icon {
     width: 44px;
-
     position: absolute;
     top: 0;
     right: 0;
-
     font-size: 30px;
     padding: 5px;
 }
+
 .nav .nav__link.logo {
     width: 32px;
     position: absolute;
@@ -132,6 +133,7 @@ html{
     font-size: 24px;
     color: #000;
 }
+
 /* narrowed menu */
 
 .small {
@@ -323,7 +325,6 @@ html{
     align-self: center;
     justify-content: space-around;
     background: white;
-    
 }
 .func li{
     text-align: center;
@@ -347,14 +348,12 @@ html{
     font-size: 4em;
 }
 
-
 .more{
     grid-area: more;
     width: 100%;
     height: 100%;
     background-color: var(--primary-bg-color);
     padding: 25px 0;
-
 }
 .more p{
     margin-top: 8px;
@@ -387,7 +386,6 @@ html{
     padding: 8px 0px 8px 0px;
 }
 
-
 .mail{
 
     grid-area: mail;
@@ -404,6 +402,7 @@ h2 {
     padding-top: 16px;
     padding-bottom: 16px;
 }
+
 /* O nas */
 
 .onas__wrapper{
@@ -475,29 +474,29 @@ a:hover {
     -o-animation-delay: .3s;
     animation-delay: .3s;
 }
+.delay-04s{
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    -o-animation-delay: .4s;
+    animation-delay: .4s;
+}
+ 
 .delay-05s{
     -webkit-animation-delay: .5s;
     -moz-animation-delay: .5s;
     -o-animation-delay: .5s;
     animation-delay: .5s;
 }
- 
-.delay-07s{
-    -webkit-animation-delay: .7s;
-    -moz-animation-delay: .7s;
-    -o-animation-delay: .7s;
-    animation-delay: .7s;
-}
 
-.delay-1s{
-    -webkit-animation-delay: 1s;
-    -moz-animation-delay: 1s;
-    -o-animation-delay: 1s;
-    animation-delay: 1s;
+.delay-06s{
+    -webkit-animation-delay: .6s;
+    -moz-animation-delay: .6s;
+    -o-animation-delay: .6s;
+    animation-delay: .6s;
 }
-
 
 /* mail */
+
 .mail {
     grid-area: mail;
     flex-wrap: wrap;
@@ -536,17 +535,10 @@ a:hover {
     justify-content: center;
 }
 
-.mail__checkbox p{
-    /* margin-left: 8px; */
-}
 .mail__checkbox .checkbox{
     align-self: center;
     font-size: 14px;
 }
-
-
-
-
 
 .mail__description h3{
     margin-top: 16px;
@@ -565,7 +557,7 @@ a:hover {
 
 .mail__checkbox .checkbox{
     align-self: center;
-
+    cursor: pointer;
 }
 
 .mail button {
@@ -577,6 +569,7 @@ a:hover {
     display: inline-block;
     margin-top: 16px;
     font-size: 16px;
+    cursor: pointer;
 }
 #confirm[disabled] {
     color: #666;
@@ -609,7 +602,6 @@ input {
 .cookie__notice a{
     color: #fff;
     font-size: 12px;
-
 }
 
 .cookie-notice__btn{
@@ -641,6 +633,7 @@ input {
     margin-left: 52px;
     margin-right: 52px;
 }
+
 .slider_img__item.active{
     display: block;
 }
@@ -658,17 +651,14 @@ input {
     color: var(--additional-color);
     font-size: 2em;
     margin-left: 16px;
-
-
- 
+    cursor: pointer;
 }
 
 .fa.fa-chevron-right{
     color: var(--additional-color);
     margin-right: 16px;
     font-size: 2em;
-
-
+    cursor: pointer;
 }
 
 footer{
@@ -678,9 +668,9 @@ footer{
     font-size: 0.7em;
     text-align: end;
 }
-
        
 /* Modal */
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -690,10 +680,11 @@ footer{
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-  }
+}
   
-  /* Modal Content */
-  .modal__content {
+/* Modal Content */
+
+.modal__content {
     background-color: #fefefe;
     margin: 16% auto; 
     padding: 16px;
@@ -704,10 +695,9 @@ footer{
     justify-content: space-between;
 }
 
-  .fas.fa-times{
-      color: red;
-  }
-
+.fas.fa-times{
+    color: red;
+}
 
 @media (min-width:768px) {
     .container{
@@ -834,6 +824,7 @@ footer{
     position: fixed;
     bottom: 10px;
     right: 10px;
+    cursor: pointer;
 }
 
 .up::after {
@@ -847,10 +838,11 @@ footer{
 
 .hidden {
     display: none;
-    }
+}
+
+/* Translate */
 
 .translate {
-    
     margin-left: 55px;
     float: left;
 }
@@ -858,25 +850,23 @@ footer{
 .translate button {
     background-color: var(--additional-color);
     color: var(--secondary-bg-color);
-    padding: 4px 6px;
+    padding: 4px;
     text-align: center;
     text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    margin: 4px 4px;
-    width:100px;
-    border: none;
-}
-.button__translate span {
-    
+    margin: 3px 3px 1px 3px;
+    width: 87px;
 }
 .translate button:hover {
     cursor: pointer;
 }
 
 @media (max-width: 630px) {
-
     .translate button {
         margin-top: 8px;
     }
+}
+
+.translate button img {
+    margin: 0px;
+    float: right;
 }

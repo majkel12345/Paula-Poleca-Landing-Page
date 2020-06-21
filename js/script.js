@@ -164,19 +164,20 @@ const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".fas.fa-times")
 
 // Translate
+
 const buttonTrans = document.querySelector('.button__translate');
 let langPl = true;
 
 buttonTrans.addEventListener('click', () => {
     if(langPl) {
-        buttonTrans.innerHTML = 'Polish <span>🇵🇱</span>';
+        buttonTrans.innerHTML = 'Polski <span><img src="./img/Flag/pl.png"/></span>';
         const words = document.querySelectorAll('[data-en]');   
         Array.from(words).forEach(word => {
             word.setAttribute('data-pl', word.innerText);       
             word.innerText = word.getAttribute('data-en');
         });
     } else {
-        buttonTrans.innerHTML = 'English <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>';
+        buttonTrans.innerHTML = 'English <span><img src="./img/Flag/eng.png"/></span>';
         const words = document.querySelectorAll('[data-pl]');
         Array.from(words).forEach(word => {
             word.setAttribute('data-en', word.innerText);

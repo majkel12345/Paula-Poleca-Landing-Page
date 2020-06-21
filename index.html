@@ -21,7 +21,7 @@
   <div class="container">
       
     <nav class="nav" id="nav">
-       <div class="translate"><button class="button__translate">English<span>🇵🇱</span>  </button></div>
+      <div class="translate"><button class="button__translate">English<span><img src="./img/Flag/eng.png" alt="flag-eng"/></span></button></div>
       <ul class="nav__wrapper">
         <li class="nav__menu"><a class="nav__link active"  data-en="Home" id="mainPage" href="#glowna">Strona główna</a></li>
         <!-- <li class="nav__menu"><a class="nav__link" href="#main">Wydarzenia</a></li> -->
@@ -49,12 +49,12 @@
 
     <!-- game -->
     <div class="game">
-        <img id="lion1" style="display:none;" src="./img/game/lion_1.png"/>
-        <img id="lion2" style="display:none;" src="./img/game/lion_2.png"/>
-        <img id="lion3" style="display:none;" src="./img/game/lion_3.png"/>
-        <img id="lion_fly_up" style="display:none;" src="./img/game/lion_fly_up.png"/>
-        <img id="lion_fly_down" style="display:none;" src="./img/game/lion_fly_down.png"/>
-        <img id="ground" style="display:none;" src="./img/game/trojmiasto.jpg"/>
+        <img id="lion1" style="display:none;" src="./img/game/lion_1.png" alt="lion_1"/>
+        <img id="lion2" style="display:none;" src="./img/game/lion_2.png" alt="lion_2"/>
+        <img id="lion3" style="display:none;" src="./img/game/lion_3.png" alt="lion_3"/>
+        <img id="lion_fly_up" style="display:none;" src="./img/game/lion_fly_up.png" alt="lion_fly_up"/>
+        <img id="lion_fly_down" style="display:none;" src="./img/game/lion_fly_down.png" alt="lion_fly_down"/>
+        <img id="ground" style="display:none;" src="./img/game/trojmiasto.jpg" alt="trojmiasto"/>
         <div id="gameDiv" class="gameDiv">
           <span id="closeGame" class="closeGame"><i class="fas fa-times"></i></span>
           <h2>Jumper</h2>
@@ -78,7 +78,7 @@
     <!-- new -->
     <div class="new">
       <h1 data-en="Paula Recommends">Paula Poleca</h1>
-      <p data-en="We present to you the largest and most interesting events and events in the Tri-City! We constantly provide users with information on the latest cultural and entertainment events.">
+      <p data-en="We present to you the largest and most interesting events in the Tri-City! We constantly provide users with information on the latest cultural and entertainment events.">
         Przedstawiamy Państwu największe i najciekawsze imprezy oraz wydarzenia w Trójmieście! Na bieżąco zapewniamy użytkownikom informacje na temat najnowszych wydarzeń kulturalnych i rozrywkowych.</p> 
       <p data-en="Plan your weekend with Paula Recommends!">
         Zaplanuj swój weekend z Paula Poleca!</p>
@@ -87,7 +87,7 @@
     <!-- cookies_notice -->
     <div class="cookie__notice">
       <p data-en="This site uses cookies, so that our service can work better.">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. <a href="" data-en="Find out more">Dowiedz się więcej</a> </p>
-      <div type= 'button'id="cookie-accept" class="cookie-notice__btn">Zgadzam się</div>
+      <button data-en="I agree" id="cookie-accept" class="cookie-notice__btn">Zgadzam się </button>
     </div>
 
     <!-- func -->
@@ -100,16 +100,19 @@
         </li>
         <li> <i class="fa fa-check-circle"></i>
           <span data-en=" Search for a new event in the Tri-City!">
-             Wyszukaj nowe wydarzenie w Trójmieście!</li>
+             Wyszukaj nowe wydarzenie w Trójmieście!
           </span>
+        </li>
         <li> <i class="fa fa-check-circle"></i>
           <span data-en=" Read about upcoming events!">
-           Poczytaj o nadchodzących wydzarzeniach!</li>
+           Poczytaj o nadchodzących wydzarzeniach!
           </span>
+        </li>
         <li> <i class="fa fa-check-circle"></i>
           <span data-en=" Stay up to date with events!">
-           Bądź na bieząco z wydarzeniami!</li>
+           Bądź na bieząco z wydarzeniami!
           </span>
+        </li>
       </ul>
     </div>
     
@@ -216,16 +219,16 @@
           </ul>
         </div>
 
-        <div class="onas__info addHidden animated delay-05s">
+        <div class="onas__info addHidden animated delay-04s">
           <ul>
             <li><img src="img/foto_andrzej.jpg" alt="Avatar" height="200" width="200"></li>
             <li><h3>Andrzej Stasiński</h3></li>
-            <li><i class="fab fa-linkedin-square"></i> <a href="https://www.linkedin.com/feed/" target="_blank">Linkedin</a></li>
+            <li><i class="fab fa-linkedin-square"></i> <a href="https://www.linkedin.com/in/andrzej-stasinski/" target="_blank">Linkedin</a></li>
             <li><i class="fab fa-github-square"></i> <a href="https://github.com/andisas/" target="_blank">GitHub</a></li>
           </ul>
         </div>
 
-        <div class="onas__info addHidden animated delay-07s">
+        <div class="onas__info addHidden animated delay-05s">
           <ul>
             <li><img src="img/foto_michal.jpg" alt="Avatar" height="200" width="200"></li>
             <li><h3>Michał Karnath</h3></li>
@@ -234,7 +237,7 @@
           </ul>
         </div>
 
-        <div class="onas__info addHidden animated delay-1s">
+        <div class="onas__info addHidden animated delay-06s">
           <ul>
             <li><img src="img/foto_volhan.png" alt="Foto Vol-Han" height="200" width="200"></li>
             <li><h3>Volodymyr Hannibal</h3></li>
@@ -276,15 +279,12 @@
     <!-- slider -->
     <div class="slider">
       <div class="slider_items">
-        <img class="slider_img__item active" src="./img/slide_gdansk-2_1400-700.jpg">
-        <img class="slider_img__item" src="./img/slide_gdansk_1400-700.jpg">
-        <img class="slider_img__item" src="./img/slide_sopot_1400-700.jpg">
-        <img class="slider_img__item" src="./img/slide_sopot-2_1400-700.jpg">
-        <img class="slider_img__item" src="./img/slide_gdynia_1400-700.jpg">
-        <img class="slider_img__item" src="./img/slide_gdynia-2_1400-700.jpg">
- 
-
-
+        <img class="slider_img__item active" src="./img/slide_gdansk-2_1400-700.jpg" alt="slide_gdansk-2">
+        <img class="slider_img__item" src="./img/slide_gdansk_1400-700.jpg" alt="slide_gdansk-1">
+        <img class="slider_img__item" src="./img/slide_sopot_1400-700.jpg" alt="slide_sopot-1">
+        <img class="slider_img__item" src="./img/slide_sopot-2_1400-700.jpg" alt="slide_sopot-2">
+        <img class="slider_img__item" src="./img/slide_gdynia_1400-700.jpg" alt="slide_gdynia-1">
+        <img class="slider_img__item" src="./img/slide_gdynia-2_1400-700.jpg" alt="slide_gdynia-2">
         <div class="slider__arrow">
           <i class="fa fa-chevron-left"></i>
           <i class="fa fa-chevron-right"></i>
@@ -298,14 +298,13 @@
         <h3 data-en="How to play?">Jak grać?</h3>
         <i id="closeModal" class="fas fa-times"></i>
         <p data-en="Click [Start game] to start the game! Then left-click [JUMP] or the SPACE key on the keyboard to jump over approaching obstacles. Over time, the speed of moving obstacles will increase. If you lose, you can play again by clicking the [Reset game] button. Remember that your best result will be remembered by your browser and you can improve it at any time. Good luck!">
-          Kliknij przycisk [Start game] w celu rozpoczęcia gry! Następnie klikaj lewym przyciskiem myszki na [JUMP] lub klawisz SPACE na klawiaturze w celu przeskoczenia zbliżających się przeszkód. Z upływem czasu szybkość przesuwających się przeszkód będzie wzrastać. Jeśli przegrasz, możesz zagrać jeszcze raz klikając przycisk [Reset game]. Pamiętaj, że Twój najlepszy wynik będzie zapamiętany przez przeglądarke i w każdej chwili możesz go poprawić. Powodzenia!
+          Kliknij przycisk [Start game] w celu rozpoczęcia gry! Następnie klikaj lewym przyciskiem myszki na [JUMP] lub klawisz SPACE na klawiaturze w celu przeskoczenia zbliżających się przeszkód. Z upływem czasu szybkość przesuwających się przeszkód będzie wzrastać. Jeśli przegrasz, możesz zagrać jeszcze raz klikając przycisk [Reset game]. Pamiętaj, że Twój najlepszy wynik będzie zapamiętany przez przeglądarke i w każdej chwili możesz go poprawić. Powodzenia!</p>
           <br/><br/>
           <p data-en="[Start game] - start of the game">[Start game] - start of the game</p>
           <br/>
           <p data-en="[Jump] - left key MOUSE or SPACE keyboard">[Jump] - left key MOUSE or SPACE keyboard</p>
           <br/>
           <p data-en="[Reset game] - reset and play again">[Reset game] - reset and play again</p>
-        </p>
       </div>
     </div>
 
@@ -331,7 +330,7 @@
 
   <!-- script JS game -->
   <script src="./js/game.js"></script>
-  <script src="menu.js"></script>
+  <script src="./js/menu.js"></script>
 
 </body>
 </html>
