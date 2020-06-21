@@ -48,6 +48,7 @@
     transition: all 0.5s;
     color: #eee;
     width: 140px;
+    cursor: pointer;
 }
 .game .startButton,
 .game .resetButton,
