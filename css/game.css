@@ -26,7 +26,7 @@
     background: #ccc;
 }
 .game {
-    background-color: #888;
+    background-color: #fff;
 }
 .game #boardDiv {
     width: 480px;
@@ -48,6 +48,7 @@
     transition: all 0.5s;
     color: #eee;
     width: 140px;
+    cursor: pointer;
 }
 .game .startButton,
 .game .resetButton,
