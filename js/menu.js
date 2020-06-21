@@ -5,8 +5,10 @@ $(window).scroll(function(){
 
     if (top > 300){
         $('nav').addClass('small');
+        $('.translate').addClass('small__button')
     } else {
         $('nav').removeClass('small');
+        $('.translate').removeClass('small__button')
     }
 });
 
