@@ -887,3 +887,7 @@ footer{
         
     }
 }
+.translate button img {
+    float: right;
+    margin-right: 3px;
+}
