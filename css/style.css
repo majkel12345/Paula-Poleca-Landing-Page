@@ -845,6 +845,7 @@ footer{
 .translate {
     margin-left: 55px;
     float: left;
+    height: 50px;
 }
 
 .translate button {
@@ -853,20 +854,29 @@ footer{
     padding: 4px;
     text-align: center;
     text-decoration: none;
-    margin: 8px 3px 1px 3px;
+    /* margin: 8px 3px 1px 3px; */
     width: 87px;
+    height: 100%;
 }
 .translate button:hover {
     cursor: pointer;
 }
 
-@media (max-width: 630px) {
+/* @media (max-width: 630px) {
     .translate button {
         margin-top: 8px;
     }
-}
+} */
 
-.translate button img {
+/* .translate button img {
     margin: 0px;
     float: right;
+} */
+
+@media (min-width:768px) {
+
+    .small__button {
+        height: 32px;
+        
+    }
 }
